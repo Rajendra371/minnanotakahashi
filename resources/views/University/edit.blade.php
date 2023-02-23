@@ -1,0 +1,66 @@
+<div class="row">
+    <input type="hidden" name="id" value="{{!empty($data->id)?$data->id:''}}">
+    <div class="col-md-6 mb-2 form-group"   >
+        <label>Title<code>*</code>: </label>
+       <input type="text" name="title" id="title" value="{{$data->title}}" class="form-control required_field" placeholder="Enter Title">
+    </div> 
+    <div class="col-md-6 mb-2 form-group"   >
+        <label>Country<code>*</code>: </label>
+        <select name="country_id" id="country_id" class="form-control">
+            <option>--Select--</option>
+            @if(!empty($country)) 
+            @foreach($country as $coun)
+                <option value="{{$coun->id}}" @if($data->country_id==$coun->id) {{"selected=selected"}} @endif  >{{$coun->title}} </option>
+            @endforeach
+            @endif
+        </select>
+    </div> 
+    <div class="col-md-6 mb-2 form-group">
+        <label class="">Image<code>*</code>:</label>
+            <div class="file-upload-wrapper" data-text="Select your image!">
+            <input name="file" type="file" class="file-upload-field form-control-file"></div>
+            @if(!empty($data->image))
+            <input type="hidden" name="old_img_file" value="{{$data->image}}" >
+            <img src="{{asset('uploads/university/'.$data->image)}}" style="height:150px; width:150px">
+            @endif
+    </div>
+    <div class="col-md-6 mb-2 form-group"   >
+        <label>Website: </label>
+       <input type="text" name="website" id="website" value="{{$data->website}}" class="form-control required_field" placeholder="Enter website">
+    </div> 
+    <div class="col-md-12 mb-2 form-group">
+        <label>Short Content<code>*</code>: </label>
+        <textarea name="short_content" id="short_content" placeholder="Short Content" class="form-control">{{$data->short_content}}</textarea>
+    </div>
+    <div class="col-md-12 mb-2 form-group">
+        <label>Content<code>*</code>: </label>
+        <textarea name="content" id="content" class="form-control ckeditor">{{!empty($data->content)? "$data->content" :''}}</textarea>
+    </div>
+    <div class="col-md-6 mb-2 form-group"   >
+        <label>Order<code>*</code>: </label>
+       <input type="text" name="order" id="order" value="{{$data->order}}" class="form-control" placeholder="Enter Order">
+    </div> 
+    </div>
+    <div class="row">
+    <div class="col-md-6">
+        <div class="form-group">            
+            <div class="checkbox">
+            <input type="checkbox" id="is_publish" name="is_publish" value="Y" {{$data->is_publish == 'Y' ? 'checked=checked':''}} />
+            <label></label>
+            <span>Is Publish</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="float-right">
+            <button type="submit" class="save btn btn-primary btn-md" data-targetdiv='education_info_employeediv' data-redirect_type='form' data-is_table_refresh="Y" data-target_btn="btnrefresh_edu" > <i class="fa fa-dot-circle-o mr-1"></i>Update</button>
+
+            <button type="button" class="btnreset btn btn-danger btn-md"><i class="fa fa-ban mr-1"></i>Reset</button>  
+        </div>
+    </div>
+    <div class="alert-success success"></div>
+    <div class="alert-danger error"></div>
+</div>
+<script>
+load_ckeditor();
+</script>

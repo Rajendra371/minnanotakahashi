@@ -1,0 +1,68 @@
+@page {
+  margin: 5% 8%;
+}
+@font-face {
+  font-family: freesans;
+  src: url(../../public/fonts/vendor/freeserif/FreeSerif.ttf);
+}
+body {
+  font-family: "freesans";
+}
+.alt_table {
+  border-collapse: collapse;
+  border: 1px solid #000;
+  margin: 0 auto;
+  width: 100%;
+}
+.alt_table thead {
+  border: 1px solid #000;
+}
+.alt_table thead tr th {
+  border: 1px solid #fff;
+  padding: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+  background: black;
+}
+.alt_table tbody tr td {
+  border: 1px solid #000;
+  padding: 8px;
+  font-size: 15px;
+}
+
+/* p.reportDescription{
+    text-align: justify;
+} */
+/* .reportTable tr td{
+    border: 1px solid #212121;
+} */
+.reportTitle {
+  font-size: 22px !important;
+  /* font-weight: 800; */
+  font-weight: bold;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+h4.reportTitle {
+  text-align: center;
+}
+
+h5.reportTitle {
+  /* font-weight: bold;
+    text-align: center;
+    font-size: 18px; */
+  margin-top: 25px;
+  margin-bottom: 5px;
+}
+.reportDescription {
+  /* color: #555; */
+  line-height: 28px;
+  font-size: 17px;
+  font-weight: 100;
+  text-align: justify;
+  /* margin-bottom: 30px; */
+  padding-bottom: 25px;
+  /* border-bottom: 1px solid #ddd;
+    padding-bottom: 10px; */
+}

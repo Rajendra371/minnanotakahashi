@@ -1,0 +1,18 @@
+/* #### Front-End Design and Develop By: Bikash Bhandari (bikash.433@gmail.com) #### */
+@media screen and (max-width:768px){
+    .bk-box{
+        position:relative;
+        width: 100%;
+        margin-top: 20px;
+        text-align: center;
+    }
+    .affix{
+        position: relative;
+    }
+}
+
+/*
+
+RSPONSIVE CSS COMING SOON....... By:  Bikash Bhandari;
+
+*/

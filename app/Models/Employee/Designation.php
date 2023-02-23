@@ -1,0 +1,80 @@
+<?php
+
+namespace App\Models\Employee;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
+
+class Designation extends Model
+{
+    protected $table = 'designation';
+    protected $guarded = [];
+
+    public static function getDepList($page_size, $page, $sorted, $filtered)
+    {
+        if ($page == 0) {
+            $start_page = 0;
+        } else {
+            $start_page = ($page * $page_size);
+        }
+
+        $query = DB::table('designation');
+
+        $nquery = DB::table('designation');
+
+        if (!empty($start_page)) {
+            $query->offset($start_page);
+        }
+
+        if ($page_size) {
+            $query->limit($page_size);
+        }
+
+        if (!empty($filtered)) {
+            foreach ($filtered as $filter) {
+                $query->where($filter['id'], 'like', "%" . $filter['value'] . "%");
+
+                $nquery->where($filter['id'], 'like', "%" . $filter['value'] . "%");
+            }
+        }
+
+        if (!empty($sorted)) {
+            foreach ($sorted as $sort) {
+                $sort_by = $sort['desc'];
+
+                if ($sort_by == true) {
+                    $sort_type = 'DESC';
+                } else {
+                    $sort_type = 'ASC';
+                }
+
+                $query->orderBy($sort['id'], $sort_type);
+
+                $nquery->orderBy($sort['id'], $sort_type);
+            }
+        }
+
+        $data = $query->get();
+        $i = 0;
+        $array = array();
+        foreach ($data as $key => $row) {
+            $array[$i]['id'] = $row->id;
+            $array[$i]['designation_code'] = $row->designation_code;
+            $array[$i]['designation_name'] = $row->designation_name;
+            // $array[$i]['basic_salary'] = $row->basic_salary;
+            $array[$i]['grade_rate'] = $row->grade_rate;
+            $array[$i]['hourly_rate'] = $row->hourly_rate;
+            // $array[$i]['level'] = $row->level;
+            $array[$i]['isactive'] = $row->isactive == "Y" ? "Yes" : "No";
+            $array[$i]['action'] = '<a href="javascript:void(0)">Test</a>';
+            $i++;
+        }
+
+        $all_filtered_data = $nquery->get();
+        $count = count($all_filtered_data);
+
+        $no_of_pages = ceil($count / $page_size);
+
+        return array('rows' => $array, 'pages' => $no_of_pages);
+    }
+}
