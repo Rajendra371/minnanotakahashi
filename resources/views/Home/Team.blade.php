@@ -50,7 +50,10 @@
 			<div class="col-lg-7 col-md-7 col-12">
 				<div class="about-content section-title default text-left">
 					<div class="section-top">
-						<h1><span>{{$team_detail[0]->designation}}</span><b>{{$team_detail[0]->name}}</b></h1>
+						<h1>
+							<span>{{$team_detail[0]->designation}}</span>
+							<b>{{$team_detail[0]->name}}</b>
+						</h1>
 					</div>
 					<div class="section-bottom">
 						<div class="text">
@@ -64,5 +67,5 @@
 </section>	
 <!--/ End Team Us -->
 @endif
-
+@include('Layout.includes.appointment')	
 @endsection

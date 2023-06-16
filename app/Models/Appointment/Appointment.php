@@ -17,7 +17,10 @@ class Appointment extends Model
         $frmDate = $_GET['frmDate'];
         $toDate = $_GET['toDate'];
         $search_text = $_GET['search_text'];
-
+        $countries = $_GET['countries'];
+        // dd($countries);
+        $levels = $_GET['levels'];
+        $branches = $_GET['branches'];
         foreach ($get as $key => $value) {
             $get[$key] = strtolower(htmlspecialchars($get[$key], ENT_QUOTES));
         }
@@ -45,8 +48,20 @@ class Appointment extends Model
                 $nqry->where('c.full_name', 'like', "%$search_text%")
                     ->orWhere('c.email', 'like', "%$search_text%")
                     ->orWhere('c.contact_number', 'like', "%$search_text%")
-                    ->orWhere('c.subject', 'like', "%$search_text%");
+                    ->orWhere('c.address', 'like', "%$search_text%")
+                    ->orWhere('c.country', 'like', "%$search_text%")
+                    ->orWhere('c.level', 'like', "%$search_text%")
+                    ->orWhere('c.nearest_branch', 'like', "%$search_text%");
             });
+        }
+        if (!empty($countries)) {
+                $nquery->where('c.country', '=', "$countries");  
+        }
+        if (!empty($levels)) {
+            $nquery->where('c.level', '=', "$levels");  
+        }
+        if (!empty($branches)) {
+            $nquery->where('c.nearest_branch', '=', "$branches");  
         }
         if (!empty($get['sSearch_1'])) {
             $nquery->where('c.full_name', 'like', "%" . $get['sSearch_1'] . "%");
@@ -58,14 +73,20 @@ class Appointment extends Model
             $nquery->where('c.contact_number', 'like', "%" . $get['sSearch_3'] . "%");
         }
         if (!empty($get['sSearch_4'])) {
-            $nquery->where('c.subject', 'like', "%" . $get['sSearch_4'] . "%");
+            $nquery->where('c.address', 'like', "%" . $get['sSearch_4'] . "%");
         }
         if (!empty($get['sSearch_5'])) {
-            $nquery->where('c.message', 'like', "%" . $get['sSearch_5'] . "%");
+            $nquery->where('c.country', 'like', "%" . $get['sSearch_5'] . "%");
+        }
+        if (!empty($get['sSearch_6'])) {
+            $nquery->where('c.level', 'like', "%" . $get['sSearch_6'] . "%");
+        }
+        if (!empty($get['sSearch_7'])) {
+            $nquery->where('c.nearest_branch', 'like', "%" . $get['sSearch_7'] . "%");
         }
 
         $query = DB::table('appointment as c')
-            ->select('c.id', 'c.full_name', 'c.email', 'c.contact_number', 'c.subject', 'c.message', 'c.postdatead', 'c.posttime');
+            ->select('c.id', 'c.full_name', 'c.email', 'c.contact_number', 'c.address', 'c.country', 'c.level', 'c.nearest_branch', 'c.appointmentdate', 'c.subject', 'c.message', 'c.postdatead', 'c.posttime');
 
         if (!empty($filter_date)) {
             if ($filter_date == 'range') {
@@ -77,12 +98,24 @@ class Appointment extends Model
             }
         }
         if (!empty($search_text)) {
-            $query->where(function ($nqry) use ($search_text) {
-                $nqry->where('c.full_name', 'like', "%$search_text%")
+            $query->where(function ($qry) use ($search_text) {
+                $qry->where('c.full_name', 'like', "%$search_text%")
                     ->orWhere('c.email', 'like', "%$search_text%")
                     ->orWhere('c.contact_number', 'like', "%$search_text%")
-                    ->orWhere('c.subject', 'like', "%$search_text%");
+                    ->orWhere('c.address', 'like', "%$search_text%")
+                    ->orWhere('c.country', 'like', "%$search_text%")
+                    ->orWhere('c.level', 'like', "%$search_text%")
+                    ->orWhere('c.nearest_branch', 'like', "%$search_text%");
             });
+        }
+        if (!empty($countries)) {
+            $query->where('c.country', '=', "$countries");  
+        }
+        if (!empty($levels)) {
+            $query->where('c.level', '=', "$levels");  
+        }
+        if (!empty($branches)) {
+            $query->where('c.nearest_branch', '=', "$branches");  
         }
         if (!empty($get['sSearch_1'])) {
             $query->where('c.full_name', 'like', "%" . $get['sSearch_1'] . "%");
@@ -94,10 +127,16 @@ class Appointment extends Model
             $query->where('c.contact_number', 'like', "%" . $get['sSearch_3'] . "%");
         }
         if (!empty($get['sSearch_4'])) {
-            $query->where('c.subject', 'like', "%" . $get['sSearch_4'] . "%");
+            $query->where('c.address', 'like', "%" . $get['sSearch_4'] . "%");
         }
         if (!empty($get['sSearch_5'])) {
-            $query->where('c.message', 'like', "%" . $get['sSearch_5'] . "%");
+            $query->where('c.country', 'like', "%" . $get['sSearch_5'] . "%");
+        }
+        if (!empty($get['sSearch_6'])) {
+            $query->where('c.level', 'like', "%" . $get['sSearch_6'] . "%");
+        }
+        if (!empty($get['sSearch_7'])) {
+            $query->where('c.nearest_branch', 'like', "%" . $get['sSearch_7'] . "%");
         }
         $order_by = 'c.id';
         $order = 'DESC';

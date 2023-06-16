@@ -49,38 +49,6 @@
 				<!-- Service Content -->
 				<div class="service-content">
 					{!! $destination_details[0]->content !!}
-					{{-- <h5>Here at Gifted Hands care service, we recognise your needs, and we are here to support them.</h5>
-					<p>Gifted Hand Care Services assists with domestic care by offering warm and convenient accommodations, professional care, and assistance for our participants in our fully licenced residence care professionally and respectfully, ensuring that our clients receive personalised care.</p>
-					<p>Our home care service is well packaged to suit your need, we go above and beyond to care for our elderly residents in our home care operation.  We have stringent regulations in place to insure your comfort and safety. Only highly qualified support staff work in our Sydney home care, and they are responsible for our residents 24 hours a day, 7 days a week.</p>
-					<p>We do not take your confidence lightly. We play an important role in the lives of our residents, creating an individual care plan to meet demand and providing a wide variety of home care services in Sydney.</p>
-					<p>Your opinion is valuable to us. Are you considering switching service providers? We are ready to listen and assist you in accessing a plan that is personalised to your unique needs in a comfortable environment.</p>
-					<div class="row service-space">
-						<div class="col-lg-6 col-md-6 col-12">
-							<!-- Service Feature -->
-							<div class="small-list-feature">
-								<h5>We provide you Community Nursing support.</h5>
-								<p><b>Gifted Hands Care Services individualised support team can assist with the following:</b></p>
-								<ul>
-									<li><i class="fa fa-check"></i>We provide you creative servicce</li>
-									<li><i class="fa fa-check"></i>Just awesome trending way</li>
-									<li><i class="fa fa-check"></i>Just awesome trending way</li>
-									<li><i class="fa fa-check"></i>Creative service is most important</li>
-									<li><i class="fa fa-check"></i>99% Server Up-time gurantee</li>
-									<li><i class="fa fa-check"></i>24/7 live support</li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-lg-6 col-md-6 col-12">
-							<!-- Service Img -->
-							<div class="modern-img-feature">
-								<img src="img/portfolio-3.jpg" alt="#">
-								<div class="video-play">
-									<a href="https://www.youtube.com/watch?v=RLlPLqrw8Q4" class="video video-popup mfp-iframe"><i class="fa fa-play"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<p>Female is firmament made land don’t good behold yielding morning hathe seas unto. So first fill shall damn creeping. Seed he was that moveth bearing. Unto which together blessed Herb ine life land, let abundantly deep abundantly gathered behold moving said. Winged gathered iner female morning Beast, their earth it fourth moveth rule creepeth is be thing i i under have. Second to lights all second.</p> --}}
 				</div>
 			</div>
 			<div class="col-lg-4 col-12">
@@ -88,7 +56,7 @@
 				<div class="service-sidebar">
 					<!-- Single Sidebar -->
 						<div class="service-single-sidebar widget">
-							<h2 class="widget-title">Book An Appointment</h2>
+							<h2 class="widget-title">Get an Appointment</h2>
 							<p>Like to speak to one of our counsellor, please call or contact us.</p>
 							<h6>Call Us Now: +977 01 5912412, 01 5912413</h6>
 							<div class="contact-form-area service">
@@ -160,13 +128,6 @@
 									@break
 									@endif
 									<li><a href="{{route('service-details',"$service->slug-$service->id")}}">{{$service->service_name}}</a></li>
-									{{-- <li><a href="service-develop.html">Assistance with Daily Life</a></li>
-									<li><a href="service-market.html">Transport</a></li>
-									<li><a href="service-advertise.html">High-IntensityDaily Personal Activities</a></li>
-									<li><a href="service-design.html">Specialist Disability Accommodation</a></li>
-									<li><a href="service-marketing.html">Household Tasks</a></li>
-									<li><a href="service-marketing.html">Community Nursing Care </a></li>
-									<li><a href="service-marketing.html">Innovative Community Participation </a></li> --}}
 									@endforeach
 								</ul>
 							</div>

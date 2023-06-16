@@ -88,7 +88,7 @@
 				<div class="service-sidebar">
 					<!-- Single Sidebar -->
 						<div class="service-single-sidebar widget">
-							<h2 class="widget-title">Book an appointment</h2>
+							<h2 class="widget-title">Get an appointment</h2>
 							<p>Like to speak to one of our counsellor, please call or contact us.</p>
 							<h6>Call Us Now: +977 01 5912412, 01 5912413</h6>
 							<div class="contact-form-area service">
@@ -160,13 +160,6 @@
 									@break
 									@endif
 									<li><a href="{{route('service-details',"$service->slug-$service->id")}}">{{$service->service_name}}</a></li>
-									{{-- <li><a href="service-develop.html">Assistance with Daily Life</a></li>
-									<li><a href="service-market.html">Transport</a></li>
-									<li><a href="service-advertise.html">High-IntensityDaily Personal Activities</a></li>
-									<li><a href="service-design.html">Specialist Disability Accommodation</a></li>
-									<li><a href="service-marketing.html">Household Tasks</a></li>
-									<li><a href="service-marketing.html">Community Nursing Care </a></li>
-									<li><a href="service-marketing.html">Innovative Community Participation </a></li> --}}
 									@endforeach
 								</ul>
 							</div>

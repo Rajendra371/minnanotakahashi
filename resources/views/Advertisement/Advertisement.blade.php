@@ -12,7 +12,7 @@
             </select>
         </div>
 
-        <div class="col-md-6 mb-2"   >
+        <div class="col-md-6 mb-2">
             <label>Location<code>*</code>: </label>
             <select name="ad_locationid" id="ad_locationid" class="form-control">
                 <option>--Select--</option>
@@ -28,6 +28,21 @@
             <label>Content<code>*</code>: </label>
             <textarea name="content" id="content" class="form-control ckeditor">{{!empty($data->content)?$data->content:''}}</textarea>
         </div>
+
+        <div class="col-md-6 mb-2 form-group">
+            <label>Title: </label>
+            <input type="title"  name="title" id="title" placeholder="Title" class="form-control" value="{{!empty($data->title)?$data->title:''}}"></input>
+        </div>
+
+        <div class="col-6 form-group">
+            <label class="">Image<code>*</code>:</label>
+              <div class="file-upload-wrapper" data-text="Select your image!">
+              <input name="file" type="file" class="file-upload-field form-control-file"></div>
+              @if(!empty($data->adv_image))
+              <input type="hidden" name="old_img_file" value="{{$data->adv_image}}" >
+              <img src="{{asset('uploads/advertisement/'.$data->adv_image)}}" style="height:150px; width:150px">
+              @endif
+          </div>
 
          <div class="col-md-6 mb-2">
             <label>Start Date<code>*</code>: </label>

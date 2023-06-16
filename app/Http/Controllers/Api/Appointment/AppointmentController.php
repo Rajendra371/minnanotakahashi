@@ -24,11 +24,13 @@ class AppointmentController extends Controller
         foreach ($data as $i => $row) {
 
             $array[$i]['id'] = $row->id;
-            $array[$i]['fullname'] = $row->full_name;
+            $array[$i]['full_name'] = $row->full_name;
             $array[$i]['email'] = $row->email;
-            $array[$i]['contact'] = $row->contact_number;
-            $array[$i]['subject'] = $row->subject;
-            $array[$i]['message'] = str_limit($row->message, 50);
+            $array[$i]['contact_number'] = $row->contact_number;
+            $array[$i]['address'] = $row->address;
+            $array[$i]['country'] = $row->country;
+            $array[$i]['level'] = $row->level;
+            $array[$i]['nearest_branch'] = $row->nearest_branch;
             $array[$i]['postdatead'] = $row->postdatead . ' ' . $row->posttime;
             $array[$i]['action'] = '
             <a href="javascript:void(0)" class="view" data-url="/api/appointment/view" data-id=' . $row->id . '><i class="fa fa-eye" /></i></a>
@@ -45,7 +47,7 @@ class AppointmentController extends Controller
             exit;
         }
         $data = DB::table('appointment as cr')
-            ->select('cr.id', 'cr.full_name', 'cr.contact_number', 'cr.country', 'cr.address', 'cr.address2', 'cr.city', 'cr.state', 'cr.course', 'cr.email', 'cr.subject', 'cr.message',  'cr.appointmentdate','cr.message','cr.postdatead', 'cr.posttime')
+            ->select('cr.id', 'cr.full_name', 'cr.contact_number', 'cr.country', 'cr.address', 'cr.country', 'cr.level', 'cr.nearest_branch', 'cr.appointmentdate', 'cr.email', 'cr.subject', 'cr.message',  'cr.appointmentdate','cr.posttime','cr.postdatead')
             ->where('cr.id', $request->id)
             ->first();
         $view = view('Appointment.view')->with('data', $data);

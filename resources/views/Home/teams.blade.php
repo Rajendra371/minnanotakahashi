@@ -31,13 +31,16 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="section-title  style2 text-center">
-                                    <h1><span>Board Members</span> <b>Our Awesome Team</b></h1>
+                                    <h1>
+                                        {{-- <span>Board Members</span>  --}}
+                                        <b>Our Awesome Team</b>
+                                    </h1>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             @foreach ($teams as $team)
-                            <div class="col-lg-4 col-md-6 col-12">
+                            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                                     
                                 <!-- Single Team -->
                                 <div class="single-team">
@@ -78,5 +81,7 @@
             </section>
             <!--/ End Team -->
         @endif
-
+<!-- Appointment -->
+@include('Layout.includes.appointment')	
+<!--/ End Appointment  -->	
 @endsection

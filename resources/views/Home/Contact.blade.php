@@ -28,7 +28,7 @@
 <section class="contact-us section-space">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-7 col-md-7 col-12">
+			<div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12">
 				<!-- Contact Form -->
 				<div class="contact-form-area">
 					<h4>Get In Touch</h4>
@@ -80,7 +80,7 @@
 				</div>
 				<!--/ End contact Form -->
 			</div>
-			<div class="col-lg-5 col-md-5 col-12">
+			<div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12">
 				<div class="contact-box-main">
 					<div class="contact-title">
 						<h2>Contact Us</h2>
@@ -159,7 +159,7 @@
 		<div class="row">
 			
 				@foreach($data['national_branch'] as $key=>$nbranch)
-				<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
 					<div class="b_box">
 						<h5>{{!empty($nbranch->branch_name)?$nbranch->branch_name:''}}</h5>
 						<ul>

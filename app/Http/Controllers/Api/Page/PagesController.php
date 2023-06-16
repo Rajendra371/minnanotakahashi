@@ -40,11 +40,9 @@ class PagesController extends Controller
 
         if ($request->hasFile('file')) {
             $image = $request->file('file');
-            $source = $image->getRealPath();
-            $image_name = time() . rand() . '.' . $image->getClientOriginalExtension();
-            $destination = public_path("uploads/page_image/$image_name");
-            resizeAndCompressImage($source, $destination, 460, 320, 60);
-            $filename = $image_name;
+            $image_name = time() . rand() .$image->getClientOriginalName();
+            $filename = preg_replace('/\s+/', '', $image_name);
+            $image->move(('uploads/page_image/'), $filename);
         }
 
         $old_img_file = $request->get('old_img_file');
@@ -65,7 +63,7 @@ class PagesController extends Controller
                 permission_message();
                 exit;
             }
-            if (!empty($filename)) {
+            if (!empty($filename) && !empty($old_img_file)) {
                 if (\File::exists('uploads/page_image/' . $old_img_file)) {
                     unlink('uploads/page_image/' . $old_img_file);
                 }

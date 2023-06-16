@@ -31,7 +31,10 @@
             <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12">
                 <div class="section-title default text-center">
                     <div class="section-top">
-                        <h1><span>Other Offices in Nepal</span> <b>Our National Branches</b></h1>
+                        <h1>
+                            {{-- <span>Other Offices in Nepal</span>  --}}
+                            <b>Our National Branches</b>
+                        </h1>
                     </div>
                 </div>
             </div>
@@ -39,7 +42,7 @@
 
         <div class="row">
             @foreach($national_branch as $key=>$nbranch)
-            <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                 <div class="b_box">
                     <h5>{{!empty($nbranch->branch_name)?$nbranch->branch_name:''}}</h5>
                     <ul>

@@ -238,6 +238,19 @@ class Home extends Model
         return $data;
     }
 
+    public static function get_advertisement($limit = 0)
+    {
+        $data = DB::table('advertisement')
+            ->select('id', 'ad_locationid', 'title','adv_image', 'ad_page_id', 'content', 'order')
+            ->where('is_publish', 'Y')
+            ->orderBy('order', 'ASC')
+            ->when($limit, function ($query) use ($limit) {
+                return $query->limit($limit);
+            })
+            ->get();
+        return $data;
+    }
+
     public static function get_blog_data($where = false, $limit = false)
     {
         $data = DB::table('blog')

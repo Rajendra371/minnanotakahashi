@@ -1,8 +1,9 @@
 /*!
-Project Name: Global Eye Education
-Front-End Developer: Bikash Bhandari
-Front-End Developer URI: www.bhandaribikash.com.np
-Description: Global Eye Education Consultancy
+	Project Name: Global Eye Education Consultancy https://globaleye.edu.np/
+	UI /UX  Developer: Bikash Bhandari
+	Email: bikash.433@gmail.com
+	URL: www.bhandaribikash.com.np
+	Description: Global Eye Education Consultancy
 */
 
 /*======================================
@@ -1472,7 +1473,7 @@ blockquote {
   position: relative;
   padding: 60px 0 45px 0;
   min-height: 230px;
-  margin-bottom: -73px;
+  /* margin-bottom: -75px; */
   /* z-index: 10; */
 }
 .breadcrumbs::before {
@@ -1489,7 +1490,7 @@ blockquote {
   font-size: 13px;
 }
 .breadcrumbs h2 {
-  color: #000;
+  color: #fff;
   text-transform: capitalize;
   font-size: 40px;
   margin: 0;
@@ -1501,8 +1502,7 @@ blockquote {
   padding-top: 10px;
   letter-spacing: 0.025em;
   /*border white with light shadow*/
-  text-shadow: 1px 1px #d88692, -1px 1px #d88692, 1px -1px #d88692,
-    -1px -1px #d88692, 1px 1px 5px #555;
+  text-shadow: 1px 1px #099ddc, -1px 1px #099ddc, 1px -1px #099ddc, -1px -1px #099ddc, 1px 1px 3px #333;
 }
 .breadcrumbs .bread-list {
   display: block;
@@ -2607,7 +2607,7 @@ p.has-large-font-size {
 	End Features CSS
 ========================================*/
 .about-title{text-align: left !important;}
-.about_img img{margin-top: -45px;}
+.about_img img{margin-top: -45px; max-width: 100%; max-height: 500px;}
 .about-us {
   padding: 30px 0 0px;
 }
@@ -2759,10 +2759,6 @@ p.has-large-font-size {
   margin-bottom: 30px;
   /*overflow: hidden;*/
   text-align: left;
-  -webkit-box-shadow: 0 0 20px #e8e8e8;
-  -moz-box-shadow: 0 0 20px #e8e8e8;
-  box-shadow: 0 0 20px #e8e8e8;
-
   -webkit-box-shadow: 0 5px 20px rgb(0 0 0 / 10%);
   -moz-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   box-shadow: 0 5px 20px rgb(0 0 0 / 10%);
@@ -4355,6 +4351,7 @@ p.has-large-font-size {
   padding: 20px 49px;
   border: 1px solid #ebebeb;
   border-top: none;
+  text-align: justify;
 }
 .faq-body p {
   font-size: 15px;
@@ -4608,12 +4605,15 @@ p.has-large-font-size {
 .img-feature {
   position: relative;
   display: inline-block;
- position: absolute;
- left: 5%; width: 105%;
+  position: relative;
+  margin-left: 5%; width: 100%;
 }
 .img-feature img {
   z-index: 2;
   position: relative;
+  -webkit-box-shadow: 0 5px 20px rgb(0 0 0 / 10%);
+	-moz-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 5px 20px rgb(0 0 0 / 10%);
 }
 .img-feature .video-play {
   position: absolute;
@@ -4713,7 +4713,7 @@ p.has-large-font-size {
   position: absolute;
   z-index: 333;
   font-size: 20px;
-  background: #0059a9;
+  background: #7aaedd;
   color: #fff;
   left: -14px;
   transform: inherit;
@@ -4727,7 +4727,7 @@ p.has-large-font-size {
   top: -25px;
   border-left: 14px solid transparent;
   border-top: 12px solid transparent;
-  border-bottom: 13px solid #004c90;
+  border-bottom: 13px solid #627db3;
 }
 .img-feature .experience img {
   height: 100%;
@@ -5052,8 +5052,8 @@ p.has-large-font-size {
 }
 .service-main-box {
   margin-bottom: 30px;
-  background: #7aaedd;
   background-color: #4fb3dd;
+  background: #e91923;
   letter-spacing: 0.025em;
   color: #fff;
   border-bottom: 0px;
@@ -5064,8 +5064,7 @@ p.has-large-font-size {
   color: #fff;
 }
 .service-main-box h3 {
-  text-shadow: 1px 1px #099ddc, -1px 1px #099ddc, 1px -1px #099ddc,
-    -1px -1px #099ddc, 1px 1px 3px #555;
+  text-shadow: 1px 1px #e91e63, -1px 1px #e91e63, 1px -1px #e91e63, -1px -1px #e91e63, 1px 1px 3px #555
 }
 .service-main-box h5 {
   text-shadow: 1px 1px #4aa7ce, -1px 1px #4aa7ce, 1px -1px #4aa7ce,
@@ -5076,8 +5075,7 @@ p.has-large-font-size {
   color: #fff;
   font-size: 16px;
   font-weight: 500;
-  text-shadow: 1px 1px #4fb3dd, -1px 1px #4fb3dd, 1px -1px #4fb3dd,
-    -1px -1px #4fb3dd, 1px 1px 1px #333;
+  text-shadow: 1px 1px #e91e63, -1px 1px #e91e63, 1px -1px #e91e63, -1px -1px #e91e63, 1px 1px 3px #333;
 }
 .service-img,
 .service-content h5 {
@@ -5349,13 +5347,7 @@ p.has-large-font-size {
 
 /* Mobile Screen */
 @media only screen and (max-width: 991px) {
-  .header .img-logo a {
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
-  .header .img-logo a img {
-    max-height: 60px;
-  }
+  
   .header .nav-inner {
     float: none !important;
     text-align: left !important;
@@ -5363,7 +5355,6 @@ p.has-large-font-size {
     width: 80%;
     top: 75px;
     background: #fff;
-    padding-left: 30px;
     box-shadow: 0 15px 39px 0 rgba(8, 18, 109, 0.1);
   }
   .navbar-expand-lg .navbar-collapse {
@@ -5479,11 +5470,6 @@ p.has-large-font-size {
 @media only screen and (max-width: 767px) {
   .header .nav li a {
     padding: 15px 0px;
-  }
-  .header .nav-inner {
-    width: 100%;
-    right: 0;
-    padding-left: 15px;
   }
   .header .nav li {
     margin-right: 15px;
@@ -5861,12 +5847,13 @@ Quiz CSS Start By Bikash Bhandari
 .main_body{min-height: 37%;}
 .b_box{border-bottom: 3px solid #ff343f; padding: 15px; min-height: 160px; margin-bottom: 30px;
         background: url(img/niche-ellipse.svg) no-repeat; background-position: center right -100px;
+        background-size: contain;
   -webkit-box-shadow: -2px 2px 6px #0000002e;
   -moz-box-shadow: -2px 2px 6px #0000002e;
   box-shadow: -2px 2px 6px #0000002e;
 }
 .b_box h5{color: #0059a9; padding: 5px 0px;}
-.b_box ul li{padding: 5px 0px; position: relative; padding-left: 30px;}
+.b_box ul li{padding: 5px 0px; position: relative; padding-left: 25px;}
 .b_box ul li i{position: absolute; top: 10px; left: 0px; color: #ff343f;}
 .b_box:hover{background: #f6e1e1;}
 
@@ -5885,24 +5872,56 @@ Quiz CSS Start By Bikash Bhandari
 
 .message{
   position: relative;
-  margin-top: 60px;
+  margin-top: 0px !important;
   background: #fff url(img/message_bg.png) no-repeat; font-size: 16px;
   background-size: cover;
   background-position: left;
 }
 .message-inner figure{text-align: center; margin-top: 45px;}
 .message-inner figure img{border-radius: 100%; max-height: 200px; max-width: 200px; border-bottom: 10px solid #ed9fad; margin-top: 30px;}
-.message-box{    position: relative; padding: 30px; background: #fff; text-align: left;
+.message-box{position: relative; padding: 30px; background: #fff; text-align: left;
   -webkit-box-shadow: 0 0 15px #1010101f; -moz-box-shadow: 0 0 15px #1010101f; box-shadow: 0 0 15px #10101036;
-   margin: 15px;
+   margin: 15px; text-align: justify;
 }
-.message-box:after{right: 100%; top: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none;
+.message-box:after{right: 100%; top: 25%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none;
   border-color: rgba(194, 225, 245, 0); border-right-color: #fff; border-width: 18px; margin-top: -18px;}
 .message-box h5{display: block; text-align: right; margin-top: 30px;}
 .message-box h6{display: block; text-align: right; margin-top: 10px;}
+.message-box p{line-height: 30px;}
 
 .video_gallery iframe{height:250px; width: 100%; position: relative; margin-bottom: 20px; 
   box-shadow: 0px 5px 15px 0px rgb(8 18 109 / 15%); background: #fff; padding: 4px;}
+
+.section-bottom ul li{
+  padding: 5px 0px;
+  padding-left: 20px;
+  display: block;
+  position: relative;
+  width: 100%;
+  line-height: 30px;
+  font-size: 16px;
+}
+.section-bottom ul li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  background: #e91923;
+  border-radius: 100%;
+  margin-top: -4px;
+}
+
+.c-text{padding-left: 75px; word-break: break-all;}
+
+/*!
+	Project Name: Global Eye Education Consultancy https://globaleye.edu.np/
+	UI /UX  Developer: Bikash Bhandari
+	Email: bikash.433@gmail.com
+	URL: www.bhandaribikash.com.np
+	Description: Global Eye Education Consultancy
+*/
 
 @-webkit-keyframes levitation {
   0% {
@@ -6123,8 +6142,122 @@ Quiz CSS Start By Bikash Bhandari
 }
 
 
-@media only screen and (min-width: 1400px) {
-  .main_body {
-    min-height: 57%;
-  }
-}
+/*!
+	Project Name: Global Eye Education Consultancy https://globaleye.edu.np/
+	UI /UX  Developer: Bikash Bhandari
+	Email: bikash.433@gmail.com
+	URL: www.bhandaribikash.com.np
+	Description: Global Eye Education Consultancy
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*!
+	Project Name: Global Eye Education Consultancy https://globaleye.edu.np/
+	UI /UX  Developer: Bikash Bhandari
+	Email: bikash.433@gmail.com
+	URL: www.bhandaribikash.com.np
+	Description: Global Eye Education Consultancy
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*!
+	Project Name: Global Eye Education Consultancy https://globaleye.edu.np/
+	UI /UX  Developer: Bikash Bhandari
+	Email: bikash.433@gmail.com
+	URL: www.bhandaribikash.com.np
+	Description: Global Eye Education Consultancy
+*/

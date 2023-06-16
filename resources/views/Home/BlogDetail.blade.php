@@ -69,7 +69,7 @@
 						</div>
 						<!--/ End Single Sidebar -->
 						<!-- News Tags -->
-						<div class="single-sidebar tagcloud">
+						{{-- <div class="single-sidebar tagcloud">
 							<h2 class="sidebar-title">Tags</h2>
 							<ul>
 								<li><a href="#">Household</a></li>
@@ -82,16 +82,16 @@
 								<li><a href="#">Innovative</a></li>
 								<li><a href="#">Assist Daily Life</a></li>
 							</ul>
-						</div>
+						</div> --}}
 						<!--/ End News Tags -->
 						<!-- News Tags -->
-						<div class="single-sidebar subscribe-form">
+						{{-- <div class="single-sidebar subscribe-form">
 							<h2 class="sidebar-title">Subscribe Form</h2>
 							<form action="#" method="post">
 								<input type="email" placeholder="Your email address">
 								<button type="submit" value="send">Subscribe Now</button>
 							</form>
-						</div>
+						</div> --}}
 						<!--/ End News Tags -->
 					</div>
 					<!--/ End Blog Sidebar -->

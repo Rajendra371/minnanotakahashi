@@ -21,7 +21,7 @@
         
                  <div class="col-md-6 mb-2 form-group">
                     <label>Title<code>*</code>: </label>
-                    <input name="title" id="title" class="form-control" value={{!empty($data->title)?$data->title:''}}></input>
+                    <input name="title" id="title" class="form-control" value="{{!empty($data->title)?$data->title:''}}"></input>
                 </div>
         
                   

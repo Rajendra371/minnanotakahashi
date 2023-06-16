@@ -17,31 +17,31 @@
            <span>{{$data->contact_number}}</span>
         </div> 
         <div class="col-md-3 col-sm-3">
-         <label>Street Address:</label>
+         <label>Address:</label>
          <span>{{$data->address}}</span>
       </div> 
       <div class="col-md-3 col-sm-3">
-         <label>Street Address 2:</label>
-         <span>{{$data->address2}}</span>
+         <label>Country:</label>
+         <span>{{$data->country}}</span>
       </div> 
         <div class="col-md-3 col-sm-3">
-           <label>City:</label>
-           <span>{{$data->city}}</span>
+           <label>Level:</label>
+           <span>{{$data->level}}</span>
         </div>
         <div class="col-md-3 col-sm-3">
-            <label>State/Region/Province:</label>
-            <span>{{$data->state}}</span>
-         </div>
-         <div class="col-md-3 col-sm-3">
-            <label>Applying Country:</label>
-            <span>{{$data->country}}</span>
+            <label>Nearest Branch:</label>
+            <span>{{$data->nearest_branch}}</span>
          </div>
          <div class="col-md-3 col-sm-3">
             <label>Appointment(Date & Time)</label>
             <span>{{$data->appointmentdate}}</span>
          </div>
-         <div class="col-md-3 col-sm-3">
-            <label>Time:</label>
+         <div class="col-md-12 col-sm-12">
+            <label>Message</label>
+            <span>{{$data->message}}</span>
+         </div>
+         <div class="col-md-12 col-sm-12">
+            <label>Submmission Time:</label>
             <span>{{$data->postdatead}} {{$data->posttime}}</span>
          </div>
     @endif   

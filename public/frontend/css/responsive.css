@@ -1,403 +1,457 @@
 /*Responsive CSS By Bikash Bhandari (bikash.433@gmail.com)*/
 
-@media only screen and (max-width: 1199px) {
+
+	@media only screen and (min-width: 1400px) {
+		.main_body {min-height: 57%;}
+		.img-feature{margin-left: 10%; width: 100%;}
+		.video-feature.side.overlay:before{height: 620px;}
+	}
+	@media only screen and (min-width: 1500px) {
+		.video-feature.side.overlay:before{height: 660px;}
+	}
+	@media only screen and (min-width: 1600px) {
+		.video-feature.side.overlay:before{height: 720px;}
+	}
+	@media only screen and (min-width: 1700px) {
+		.video-feature.side.overlay:before{height: 760px;}
+	}
+	@media only screen and (min-width: 1800px) {
+		.video-feature.side.overlay:before{height: 800px; left: 42%;}
+	}
+
+	@media only screen and (max-width: 1280px) {
+		.img-feature{left: 0%;}
+	}
+
+	@media only screen and (max-width: 1199px) {
+		.blog-latest .single-news .news-head figure{min-height: 275px; max-height: 300px;}
 		.header .nav li{margin-right: 15px;}
 		.right-bar .right-nav li a img{max-height: 60px;}
 		.right-bar .right-nav li a:after{width: 75px; left:-7px; height: 75%;}
 		.right-bar .right-nav li a{margin-right: 45px;}
-		.header .nav li a{padding: 20px 0;}
+		.header .nav li a{padding: 10px 20px;}
 		.right-bar .right-nav li a img{margin-top: -25px;}
-		.header .text-logo a img, .header .img-logo a img{max-height: 120px;}
-		.header .img-logo a{height: 124px; top: -60px; width: 130px;}
 		.topbar-right .button .homes-btn{padding: 5px 15px;}
 		.header.sticky .right-bar .right-nav li a img{margin-top: -7px;}
-		.top-contact{padding-top: 5px;}
 		.hero-slider .hero-text h1{font-size: 35px; line-height: 35px;}
 		.single-news .news-title a{font-size: 18px;}
-		.features-main p, .section-title p, .att-area p, .testimonial-inner .single-slider p
-		{font-size: 14px;}
-		.single-feature p{font-size: 13px;}
+		.features-main p, .section-title p, .att-area p, .testimonial-inner .single-slider p,
+		.single-feature p{font-size: 14px;}
 		.hero-slider .owl-carousel .owl-nav div, .blog-latest.owl-carousel .owl-nav div, 
-		.service-slider.owl-carousel .owl-nav div{width: 35px; height: 40px; line-height: 35px;}
-		.single-news .news-title a, p{line-height: 20px;}
+		.service-slider.owl-carousel .owl-nav div{width: 35px; height: 35px; line-height: 35px;}
 		.img-wrapper img{max-height: 330px;}
+		.hero-slider:hover .owl-carousel .owl-nav .owl-next{left: 50px;}
+		.header .nav li .sub-menu{left: -65px;}
+		.middle-header{max-width: 99.5%;}
+		.header.sticky .nav li a {padding: 14px 10px;}
+		.att-area{background-position: center;}
+		.img-feature{width: 90%;}
+		.top-contact.text-right{text-align: left !important; padding-left: 30px; padding-top: 0px;}
+	}
+	@media only screen and (max-width: 1024px) {
+		.header .nav li a{padding: 10px 18px;}
+		.blog-latest .single-news .news-head figure{min-height: 255px; max-height: 260px;}
+		.contact-form-area, .contact-box-main{padding:20px;}
 	}
 
 	@media only screen and (max-width: 991px) {
+		.blog-latest .single-news .news-head figure{min-height: 225px; max-height: 250px;}
+		.message-box:after{bottom: 100%; top: auto; right: 48%; rotate: 90deg;}
+		.faq_list, .img-feature{padding-top: 30px;}
+		.img-feature{position: relative; width: auto; left: 0;}
+		.side.overlay:before{top: 25%; width: 100%; left: 0%;}
 	    .right-bar .right-nav li a:after{left: -20px;}
 	    .header .img-logo a{padding-top: 5px; padding-bottom: 5px;}
 	    .header .nav-inner{float: none !important; text-align: left !important; 
-	    	position: absolute; width: 60%; right: 9%;
-	        top: 0px; background: #fff; box-shadow: 0 15px 39px 0 rgba(8,18,109,.1);}
+	    	position: absolute; width: 60%; right: 2%;  z-index: 2;  top: 0px; background: #fff; 
+			box-shadow: 0 15px 39px 0 rgba(8,18,109,.1);}
+		.header .nav li .sub-menu{
+			padding: 0px; right: 6px; left: auto; width: 97%;
+		}
+		.topbar-right{padding-top: 5px; margin-right: 60px;}
 	    .navbar-expand-lg .navbar-collapse {display: none !important;}
 	    .navbar-expand-lg .navbar-collapse.show {display: block !important;}
-	    .navbar-toggler{position: absolute; right: 50px; top: 0; border:0 !important;
+	    .navbar-toggler{position: absolute; right: 0px; top: 0; border:0 !important;
 	        border-radius: 0px; outline: none !important; padding: 5px 20px;}
 	    .navbar-toggler{ color: #fff;  text-align: center; display: block;
 	        cursor: pointer; margin-right: 0px; letter-spacing: 0.05em; 
-	        margin-top: -55px; transform: skew(0deg); background: #79addc; 
-	        font-size: 24px; border-radius: 100%; width: 50px; height: 50px;
+	        margin-top: -45px; transform: skew(0deg); background: #79addc; 
+	        font-size: 20px; width: 40px; height: 35px;
 	        line-height: 10px; padding: 2px;
 	    }
 	    .navbar-toggler .navbar-toggler-icon {
 	    background-image: url(../img/list.png); width: 1em; height: 1em;}
-	    .navbar-toggler:hover{background: #e20c30;}
 	    .right-bar{top: -40px;}
 	    .right-bar, .right-bar .right-nav li a{line-height: 15px;}
 	    .header .nav li a::before{height: 2px;}
-	    .header .nav li a{border-bottom: 2px solid #eee; padding: 10px 0px;}
-	    .breadcrumbs{padding: 40px 0px 45px 0px;}
+	    .header .nav li a{border-bottom: 1px solid #234567; padding: 10px 15px;}
+	    .breadcrumbs{padding: 75px 0px 45px 0px;}
 	    .blog-sidebar{margin-top: 0px;}
 	    .footer .f-link ul li{line-height: 20px; margin-bottom: 10px;}
 		.footer .f-link ul li:last-child{margin-bottom: 10px;}
 		.header .nav li{display: block;}
 		.right-bar .right-nav li a{margin-right: 0px;}
 		.right-bar .right-nav li a, 
-		.header.sticky .right-bar .right-nav li a{margin-top: px;}
-		.topbar{padding: 10px;}
+		.header.sticky .right-bar .right-nav li a{margin-top: 2px;}
 		.right-bar .right-nav li a:after{display: none;}
 		.header .img-logo a{background: transparent;}
-		.header .text-logo a img, .header .img-logo a img, 
-		.header.sticky .img-logo img{max-height: 65px;}
-		.header .img-logo a, .header.sticky .img-logo a{top:-70px; height: auto; width: auto;}
-		.top-contact.text-right{text-align: center !important;}
+		.top-contact.text-right{text-align: right !important; padding-left: 0px;}
 		.header.sticky .right-bar .right-nav li a img,
 		.right-bar .right-nav li a img{max-height: 65px;}
 		.header.sticky .right-bar .right-nav li a img{margin-top: -55px;}
-		.topbar .single-contact{font-size: 13px; padding-top: 10px;}
 		.img-wrapper img{max-height: 400px;}
 		.career-box li span{font-size: 12px;}
 		.single-contact-box h4{font-size: 14px;}
 		.pf-details .single-content h2, .contact-form-area h4, .contact-box-main .contact-title h2
 		{font-size: 18px;}
-		.single-contact-box i{font-size: 40px; width: 70px; height: 70px; line-height: 70px}
 		.single-contact-box .c-icon{margin-right: 10px;}
+		.contact-box-main{margin-top: 15px;}
+		.header .img-logo a img {max-height: 60px;}
+		.video-feature{padding: 45px 0px;}
+		.img-feature img{
+			-webkit-box-shadow: 0 5px 20px rgb(0 0 0 / 10%);
+			-moz-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+			box-shadow: 0 5px 20px rgb(0 0 0 / 10%);
+		}
 
 }
+
+
+/*Responsive CSS By Bikash Bhandari (bikash.433@gmail.com)*/
+/*!
+	Project Name: Global Eye Education Consultancy https://globaleye.edu.np/
+	UI /UX  Developer: Bikash Bhandari
+	Email: bikash.433@gmail.com
+	URL: www.bhandaribikash.com.np
+	Description: Global Eye Education Consultancy
+*/
 /* Tablet Screen */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-body{
-	font-size:14px; 
-}
-.career-details .small-list-feature ul li span{padding-left: 5px;}
-p{
-	font-size:14px;
-}
-.section-title {
-    padding: 0;
-}
-.section-title.style2 {
-	padding: 0;
-}
-.section-title.text-left{
-	padding:0;
-}
-.breadcrumbs h2{
-    font-size:34px;
-}
-.breadcrumbs .bread-title, 
-.breadcrumbs .bread-menu {
-	float: none;
-}
-.breadcrumbs .bread-menu{
-	margin-top:0px;
-}
-.topbar {
-    text-align: center;
-}
-.top-contact{
-    padding:0;
-}
-.topbar .single-contact{
-	margin-right:10px;
-}
-.topbar .single-contact:last-child{
-	margin:0;
-}
-.topbar-right {
-    margin-top: 10px;
-    float: none;
-    text-align: center;
-}
-.topbar .social-icons {
-    text-align: center;
-    margin: 0;
-    float: none;
-    padding: 0;
-}
-.topbar-right .button{
-	/* display:none; */
-	float: none !important;
-}
-.topbar-right .button .homes-btn {
-    padding: 2px 5px;
-}
-.header .nav-inner {
-	float: left;
-	margin-right: 0px;
-}
-.right-bar .right-nav li a {
-	color: #333;
-	width: auto;
-	height: auto;
-}
-/*.header .navbar {
-    padding: 0;
-    display: initial;
-    flex-wrap: initial;
-}*/
-.header .navbar-nav {
-    display: initial;
-}
-.header .nav li {
-	margin-right: 15px;
-}
-.header .nav li a {
-    font-size: 14px;
-}
-.header .nav li a:after{
-	display:none;
-}
-.header.style2 .middle-header{
-	top:83px;
-}
-/* .right-bar:after{
-} */
-.right-bar ul li {
-	margin-right: 8px;
-}
-.right-bar .right-nav li a:hover{
-	color:#F3A712;
-}
-.hero-slider .hero-text h1 {
-    font-size: 35px;
-    line-height: 50px;
-}
-.hero-slider, .hero-slider .single-slider {
-    height: 550px !important;
-}
-.hero-slider .welcome-text {
-    margin: 109px 0 0;
-}
-.header .nav li .sub-menu{
-	padding:15px; right: 0; left: auto; width: 90%;
-}
-.about-content .section-top h1 {
-	font-size: 22px;
-	line-height: 30px;
-}
-/* Hero Agency */
-.hero-agency .agency-inner {
-	height: 700px !important;
-}
-.hero-agency .ageny-main {
-	padding-top: 117px;
-}
-.hero-agency .hero-text h1 {
-	font-size: 45px;
-	line-height: 50px;
-}
-.hero-agency .a-feature {
-	width: 165px;
-	padding: 20px 5px;
-	margin-right: 10px;
-}
-.hero-agency .a-feature p {
-	line-height: 18px;
-	font-size: 13px;
-}
-.hero-agency .a-feature h4 {
+	body{
+		font-size:14px; 
+	}
+	.career-details .small-list-feature ul li span{padding-left: 5px;}
+	p{
+		font-size:14px;
+	}
+	.section-title {
+		padding: 0;
+	}
+	.section-title.style2 {
+		padding: 0;
+	}
+	.section-title.text-left{
+		padding:0;
+	}
+	.breadcrumbs h2{
+		font-size:34px;
+	}
+	.breadcrumbs .bread-title, 
+	.breadcrumbs .bread-menu {
+		float: none;
+	}
+	.breadcrumbs .bread-menu{
+		margin-top:0px;
+	}
+	.topbar {
+		text-align: center;
+	}
+	.top-contact{
+		padding:0;
+	}
+	.topbar .single-contact:last-child{
+		margin:0;
+	}
+	.topbar .social-icons {
+		text-align: center;
+		margin: 0;
+		float: none;
+		padding: 0;
+	}
+	.header .nav-inner {
+		float: left;
+		margin-right: 0px;
+	}
+	.right-bar .right-nav li a {
+		color: #333;
+		width: auto;
+		height: auto;
+	}
+	/*.header .navbar {
+		padding: 0;
+		display: initial;
+		flex-wrap: initial;
+	}*/
+	.header .navbar-nav {
+		display: initial;
+	}
+	.header .nav li {
+		margin-right: 15px;
+	}
+	.header .nav li a {
+		font-size: 14px;
+	}
+	.header .nav li a:after{
+		display:none;
+	}
+	.header.style2 .middle-header{
+		top:83px;
+	}
+	/* .right-bar:after{
+	} */
+	.right-bar ul li {
+		margin-right: 8px;
+	}
+	.right-bar .right-nav li a:hover{
+		color:#F3A712;
+	}
+	.hero-slider .hero-text h1 {
+		font-size: 35px;
+		line-height: 50px;
+	}
+	.hero-slider, .hero-slider .single-slider {
+		height: 550px !important;
+	}
+	.hero-slider .welcome-text {
+		margin: 109px 0 0;
+	}
+
+	.about-content .section-top h1 {
+		font-size: 22px;
+		line-height: 30px;
+	}
+	/* Hero Agency */
+	.hero-agency .agency-inner {
+		height: 700px !important;
+	}
+	.hero-agency .ageny-main {
+		padding-top: 117px;
+	}
+	.hero-agency .hero-text h1 {
+		font-size: 45px;
+		line-height: 50px;
+	}
+	.hero-agency .a-feature {
+		width: 165px;
+		padding: 20px 5px;
+		margin-right: 10px;
+	}
+	.hero-agency .a-feature p {
+		line-height: 18px;
+		font-size: 13px;
+	}
+	.hero-agency .a-feature h4 {
+		font-size: 16px;
+	}
+	.service-sidebar {
+		margin-top: 30px;
+	}
+	/* .side.overlay::before{
+		display:none;
+	} */
+	.img-feature span {
 	font-size: 16px;
-}
-.service-sidebar {
-	margin-top: 30px;
-}
-.side.overlay::before{
-	display:none;
-}
-.img-feature span {
-  font-size: 14px;
-  padding: 8px 15px;
-  margin-top: -20px;
-}
-.img-feature .video-play a {
-    width: 75px;
-    height: 75px;
-    line-height: 75px;
-    font-size: 25px;
-    top: 50%;
-}
-.img-feature .video-play {
-    margin-left: -37.5px;
-    margin-top: -37.5px;
-}
-.features-main .b-features {
-	margin-top: 10px;
-}
-.features-main h2 {
-	margin-bottom: 0;
-	font-size: 21px;
-	padding-top: 10px;
-}
-.features-main .single-list-feature h4 {
-	font-size: 15px;
-	margin-bottom: 5px;
-}
-.features-main .single-list-feature i,.features-main .title p{
-	display:none;
-}
-.features-main .single-list-feature {
-	padding: 0;
-	margin-top: 10px;
-}
-.features-main .single-list-feature p{
-	line-height:20px;
-	font-size:13px;
-}
-.single-service p {
-  font-size: 14px;
-  margin:0;
-}
-.single-service h4 a {
-  font-size: 18px;
-}
-.single-service h4 {
-  margin-bottom: 5px;
-}
-.single-service .service-content {
-	padding: 30px 15px;
-}
-.single-service h4 a {
-	color: #28243C;
+	padding: 8px 15px;
+	margin-top: 60px;
+	}
+	.img-feature .video-play a {
+		width: 75px;
+		height: 75px;
+		line-height: 75px;
+		font-size: 25px;
+		top: 50%;
+	}
+	.img-feature .video-play {
+		margin-left: -37.5px;
+		margin-top: -37.5px;
+	}
+	.features-main .b-features {
+		margin-top: 10px;
+	}
+	.features-main h2 {
+		margin-bottom: 0;
+		padding-top: 10px;
+	}
+	.features-main .single-list-feature h4 {
+		font-size: 15px;
+		margin-bottom: 5px;
+	}
+	.features-main .single-list-feature i,.features-main .title p{
+		display:none;
+	}
+	.features-main .single-list-feature {
+		padding: 0;
+		margin-top: 10px;
+	}
+	.features-main .single-list-feature p{
+		line-height:20px;
+		font-size:13px;
+	}
+	.single-service p {
+	font-size: 14px;
+	margin:0;
+	}
+	.single-service h4 a {
 	font-size: 18px;
-}
-.single-service .icon-bg {
-	bottom: -30px;
-	width: 60px;
-	height: 60px;
-	line-height: 60px;
-	font-size: 22px;
-}
-.call-action .call-inner{
-	text-align:center;
-}
-.call-action .call-inner h2 {
-	font-size: 30px;
-	margin-bottom: 10px;
-}
-.call-action .button {
-	float: none;
-	text-align: center;
-	margin-top: 15px;
-}
-.single-team .team-arrow a {
-	width: 44px;
-	height: 44px;
-	line-height: 44px;
-	font-size: 22px;
-}
-.header.style2 .logo {
-	margin-top: 14px;
-}
-.header.style2 .nav-inner {
-	margin-right: 92px;
-	float: right;
-}
-.header.style2 .nav li {
-	margin-right: 10px;
-}
-.header.style2 .nav li a {
-	font-size: 13px;
-}
-.header.style2 .button {
-	top: 10px;
-}
-.header.style2 .homes-btn {
-	padding: 10px 5px;
-	font-size: 13px;
-}
-.blog-latest .single-news .news-head, .blog-latest .single-news .news-body {
-    width: 100%;
-    display: initial;
-    background: transparent;
-    vertical-align: initial;
-	padding:0;
-}
-.blog-single .blog-detail .blog-title {
-	font-size: 24px;
-	line-height: 40px;
-	margin: 8px 0;
-}
-.blog-latest .single-news .news-head span {
-    width: 100%;
-    position: relative;
-    height: 200px;
-    background-size: cover;
-}
-.blog-latest .single-news .homes-btn {
-    width: 122px;
-    padding: 10px 00px;
-}
-.blog-latest .single-news .news-content {
-    padding: 20px;
-}
-.blog-latest .single-news .news-text {
-    margin-top: 10px;
+	}
+	.single-service h4 {
+	margin-bottom: 5px;
+	}
+	.single-service .service-content {
+		padding: 30px 15px;
+	}
+	.single-service h4 a {
+		color: #28243C;
+		font-size: 18px;
+	}
+	.single-service .icon-bg {
+		bottom: -30px;
+		width: 60px;
+		height: 60px;
+		line-height: 60px;
+		font-size: 22px;
+	}
+	.call-action .call-inner{
+		text-align:center;
+	}
+	.call-action .call-inner h2 {
+		font-size: 30px;
+		margin-bottom: 10px;
+	}
+	.call-action .button {
+		float: none;
+		text-align: center;
+		margin-top: 15px;
+	}
+	.single-team .team-arrow a {
+		width: 44px;
+		height: 44px;
+		line-height: 44px;
+		font-size: 22px;
+	}
+	.header.style2 .logo {
+		margin-top: 14px;
+	}
+	.header.style2 .nav-inner {
+		margin-right: 92px;
+		float: right;
+	}
+	.header.style2 .nav li {
+		margin-right: 10px;
+	}
+	.header.style2 .nav li a {
+		font-size: 13px;
+	}
+	.header.style2 .button {
+		top: 10px;
+	}
+	.header.style2 .homes-btn {
+		padding: 10px 5px;
+		font-size: 13px;
+	}
+	.blog-latest .single-news .news-head, .blog-latest .single-news .news-body {
+		width: 100%;
+		display: initial;
+		background: transparent;
+		vertical-align: initial;
+		padding:0;
+	}
+	.blog-single .blog-detail .blog-title {
+		font-size: 24px;
+		line-height: 40px;
+		margin: 8px 0;
+	}
+	.blog-latest .single-news .news-head span {
+		width: 100%;
+		position: relative;
+		height: 200px;
+		background-size: cover;
+	}
+	.blog-latest .single-news .news-content {
+		padding: 20px;
+	}
+	.blog-latest .single-news .news-text {
+		margin-top: 10px;
+	}
+
+	.faq-title a{
+		padding:12px;
+		font-size:16px;
+	}
+	.faq-body{
+		padding:15px 20px;
+	}
+	.pf-details .small-list-feature{
+		margin-top:40px;
+	}
+	.error .error-inner h2 {
+		font-size: 30px;
+	}
+	.error-inner h4 {
+		font-size: 80px;
+		line-height: 80px;
+	}
+	.error .error-inner h2{
+		margin:10px 0;
+	}
+
+	.contact-form-area{
+		padding:20px;
+	}
+
+	.map{
+		height:350px !important;
+	}
+	.single-pricing .p-best p {
+		font-size: 12px;
+	}	
+	.single-pricing .small-title span{
+		font-size:13px;
+	}
+	.single-pricing .price-head {
+		padding: 28px 0 20px;
+	}
+	.single-pricing .p-best {
+		top: 4px;
+		left: -48px;
+	}
+
 }
 
-.faq-title a{
-	padding:12px;
-	font-size:16px;
-}
-.faq-body{
-	padding:15px 20px;
-}
-.pf-details .small-list-feature{
-	margin-top:40px;
-}
-.error .error-inner h2 {
-	font-size: 30px;
-}
-.error-inner h4 {
-	font-size: 80px;
-	line-height: 80px;
-}
-.error .error-inner h2{
-	margin:10px 0;
+@media only screen and (max-width: 860px) {
+	.topbar .single-contact{padding-top: 0px;}
+	.top-contact.text-right{padding-left: 0px; line-height: 10px; padding-bottom: 5px;}
+	.single-feature h4 a{font-size: 18px;}
+	.single-feature .country-img figure{max-height: 260px;}
+	.blog-latest .single-news .news-head figure{min-height: 200px; max-height: 215px;}
 }
 
-.contact-form-area{
-	padding:20px;
+@media only screen and (max-width: 768px) {
+	.breadcrumbs{background-position: center right;}
+	.breadcrumbs .bread-inner{display: none !important;}
+	.header .nav li a{padding: 7px 15px;}
+	.single-feature .country-img figure{max-height: 250px;}
+	.faq-title a{padding: 10px 0px;}
+	.blog-latest .single-news .news-head figure{min-height: 175px; max-height: 190px;}
+	.single-team .t-content .name a{font-size: 18px;}
+	.single-feature h4 a {font-size: 16px;}
 }
 
-.map{
-	height:350px !important;
-}
-.single-pricing .p-best p {
-    font-size: 12px;
-}	
-.single-pricing .small-title span{
-	font-size:13px;
-}
-.single-pricing .price-head {
-    padding: 28px 0 20px;
-}
-.single-pricing .p-best {
-    top: 4px;
-    left: -48px;
-}
-
-
-
-}
 /* Mobile Screen */
 @media only screen and (max-width: 767px) {
-.single-contact-box i{font-size: 25px; width: 55px; height: 55px; line-height: 55px}
+.country .country-img figure img{width: 100%;}
+.service-main-box{padding: 25px;}
+.blog-latest .single-news .news-head figure{min-height: 300px; max-height: 390px;}
+.single-feature .country-img figure{max-height: 220px;}
+.about_img{text-align: center;}
+.about_img img{margin-top: 0px; margin-left: auto; margin-right: autos;}
+.topbar .single-contact, .topbar .single-contact a, .faq-body p{font-size: 14px;}
+.header .main-menu{width: 100%;}
+.appointment_head h6 span{min-width: inherit;}
+.navbar-toggler{margin-top: -20px; right: 5px;}
+.header .nav-inner{top: 24px; right: 4%;}
 .breadcrumbs h2{line-height: 30px;}
 .img-wrapper img{max-height: 340px;}
-.breadcrumbs{
-    padding:50px 0;
-}
 .breadcrumbs .bread-title, 
 .breadcrumbs .bread-menu {
 	float: none;
@@ -412,7 +466,6 @@ p{
     font-size:26px;
 }
 
-
 .header .img-logo,.header.style2 .img-logo{
     margin: 0;
 }
@@ -425,10 +478,6 @@ p{
     margin-top: -24px;
     z-index: 5000;
 }
-/*.middle-header {
-    padding: 20px 0 25px;
-}*/
-.topbar .single-contact{padding-top: 0px;}
 .header.style2 .middle-header {
     padding: 0;
     top: 112px;
@@ -455,7 +504,7 @@ p{
 	text-align: left;
 }
 
-.section-title h1 {
+.section-title h1, .section-title h2 {
 	font-size: 24px; line-height: 30px;
 }	
 /*.mobile-nav {
@@ -467,6 +516,7 @@ p{
 }*/
 .topbar .top-contact{
 	margin:0;
+	text-align: right !important;
 }
 /*.slicknav_nav li {
 	border-bottom: 1px solid #ebebeb;
@@ -611,17 +661,14 @@ p{
     text-align: center; padding: 9px;
 }
 .topbar .single-contact{
-	margin-right:10px;
-	display:block;
-	line-height: 15px;
+	line-height: 5px; margin: 0px; 
 }
 .topbar .single-contact:last-child{
-	margin:0;
+	margin:0; display: none;
 }
 .topbar-right {
     text-align: center;
-    margin-top: 10px;
-	float:none;
+	margin-right: 45px;
 }
 .topbar .social-icons {
     text-align: center;
@@ -630,16 +677,6 @@ p{
     float: none;
 }
 
-.topbar-right .button{
-	/* display:none; */
-	float: none !important;
-	margin-left: auto; margin-right: auto;
-	font-size: 13px;
-}
-/*.header .nav-inner {
-	float: left;
-	margin-right: 64px;
-}*/
 .right-bar .right-nav li a {
 	color: #333;
 	width: auto;
@@ -669,10 +706,6 @@ p{
 }
 .header .nav li a:after{
 	display:none;
-}
-.header .logo{
-	width:80%;
-	z-index: 9999;
 }
 /* .right-bar:after{
 } */
@@ -707,9 +740,6 @@ p{
 }
 .hero-slider .hero-text .button {
 	margin-top: 25px;
-}
-.testimonial-inner .single-slider{
-	box-shadow:none;
 }
 /* Hero Agency */
 .hero-agency .agency-inner {
@@ -755,9 +785,6 @@ p{
 .service-sidebar {
 	margin-top: 30px;
 }
-.side.overlay::before{
-	display:none;
-}
 .service-single .service-content h2 {
 	font-size: 24px;
 	margin: 18px 0;
@@ -770,8 +797,7 @@ p{
 .img-feature span {
 	font-size: 14px;
 	padding: 8px 15px;
-	margin: 0;
-	top: 13px;
+	margin-top: 30px;
 }
 .img-feature .video-play a {
   width: 70px;
@@ -792,7 +818,6 @@ p{
 }
 .features-main h2 {
 	margin-bottom: 0;
-	font-size: 21px;
 	padding-top: 10px;
 }
 .features-main .single-list-feature h4 {
@@ -853,22 +878,11 @@ p{
 .pf-details .single-content h1{
 	font-size:22px;
 }
-.testimonial-inner .single-slider {
-	margin: 0;
-}
-.testimonial-inner .testimonial-slider {
-	margin: 0;
-}
 .testimonial-inner .client-head {
     display: inline-block;
-    float: none;
 }
 .testimonial-inner .t-left h2 {
     font-size: 16px;
-    display: block;
-}
-.testimonial-slider .owl-controls .owl-dots {
-    margin-top: 30px;
 }
 .single-pricing .p-best {
 	top: 9px;
@@ -919,8 +933,7 @@ p{
     background-size: cover;
 }
 .blog-latest .single-news .homes-btn {
-    width: 122px;
-    padding: 10px 00px;
+    padding: 5px 15px; font-size: 14px;
 }
 .blog-latest .single-news .news-content {
     padding:20px;
@@ -960,8 +973,38 @@ p{
 	line-height: 30px;
 }
 }
+	/*Responsive CSS By Bikash Bhandari (bikash.433@gmail.com)*/
+/*!
+	Project Name: Global Eye Education Consultancy https://globaleye.edu.np/
+	UI /UX  Developer: Bikash Bhandari
+	Email: bikash.433@gmail.com
+	URL: www.bhandaribikash.com.np
+	Description: Global Eye Education Consultancy
+*/
+@media only screen and (max-width: 600px) {
+	.header .img-logo a{padding-top: 10px;}
+	.topbar{padding-top: 2px;}
+	.img-feature span{padding: 5px 15px;}
+	.topbar .single-contact:last-child{display: none !important;}
+	.img-feature img{width: 99%;}
+	.breadcrumbs {padding: 90px 0px 45px 0px; background-position: center right;}
+	.social_media li a, .social_media li a i{font-size: 18px;}
+	.single-team .t-content .name a{font-size: 16px;}
+	.social_media li a{height: 30px; width: 30px;}
+	.social_media li a img{max-height: 20px; margin-top: -7px;}
+	.side.overlay:before{top: 30%;}
+	.single-feature .country-img figure{max-height: 360px;}
+	.blog-latest .single-news .news-head figure{min-height: 290px; max-height: 300px;}
+	#scrollUp{right: 20px; top: 96%;}
+}
 
 @media only screen and (max-width: 575px) {
+	.testimonial-inner .single-slider, .service-main-box{padding: 20px;}
+	.faq-title a{padding: 5px 0px;}
+	.faq-title i{line-height: 45px;}
+	.message-box p{line-height: 24px;}
+	.testimonial-inner .t-right .quote{height: 50px; font-size: 40px;}
+	.img-feature{margin-bottom: -15px;}
 	#scrollUp i{height: 30px; width: 30px; line-height: 30px;}
 	.topbar{min-height: 62px;}
 	.img-wrapper img{max-height: inherit;}
@@ -971,30 +1014,31 @@ p{
 	.single-service .icon-bg{height: 50px; width: 50px; line-height: 50px;}
 	.section-title h1, .small-list-feature ul li, .pf-details .single-content h2,
 	.single-team .team-social li a, .service-main-box h3,
-	.service-sidebar .widget ul li, .breadcrumbs h2{line-height: 24px;}
+	.service-sidebar .widget ul li, .breadcrumbs h2, .section-title h2, .text, .att-area p, .features-main p{line-height: 24px;}
 	.footer-news .single-f-news .content .title, .career-details .small-list-feature ul li{line-height: 20px;}
 	.topbar .col-lg-8.col-12{display: none;}
-	.header .nav-inner{width: 95%;}
-	.header .nav li .sub-menu, .img-wrapper img{width: 100%;}
 	.hero-slider .hero-text h1, .section-title h1, .service-main-box h3,
-	.breadcrumbs h2{font-size: 20px;}
-	.features-main h2, .pf-details .single-content h2{font-size: 18px;}
+	.breadcrumbs h2, .section-title h2{font-size: 20px;}
+	.pf-details .single-content h2{font-size: 18px;}
 	.single-service h4 a, .single-feature h4 a, .single-news .news-title a,
 	.footer .single-widget h3, .single-team .t-content .name a,
 	.breadcrumbs ul li, .gallery-album .img-wrapper .caption h6 a,
-	.career-box li i, .modal-title{font-size: 16px;}
-	p, .service-main-box p, .gallery-album .img-wrapper .caption h6 a,
-	.career-box li b{font-size: 14px;}
-	.small-list-feature ul li, .footer-news .single-f-news .content .title a,
-	.footer .address-widget-list li, .footer .address-widget-list li a, 
-	.single-service p, .gallery-album .img-wrapper .caption span, .btn{font-size: 13px;}
+	.career-box li i, .modal-title, .message-box h5{font-size: 16px;}
+	.service-main-box p{font-size: 15px;}
+	p, .gallery-album .img-wrapper .caption h6 a, .career-box li b, 
+	.quick-links ul li a, .features-main ul li a, .faq-title a, .contact-form-area h6, .single-service p, 
+	.gallery-album .img-wrapper .caption span, .btn, p, .service-sidebar .widget a, .message-box h6,
+	.service-sidebar .widget h6{font-size: 14px;}
+	.blog-latest .single-news .news-meta li, .footer .address-widget-list li a, .footer-news .single-f-news .content .title a,
+	.footer .address-widget-list li, .footer .copyright a{font-size: 13px;}
 	.features-main p, .section-title p, .att-area p, 
 	.testimonial-inner .single-slider p, .footer .copyright-content p, 
 	.footer-news .single-f-news .content .title, .footer .f-link ul li a
-	{font-size: 12px; text-align: justify;}
-	.section-title h1 span, .career-box li span{font-size: 11px;}
-	.hero-slider .hero-text .button .homes-btn, .homes-btn.theme-2
-	{padding: 5px 15px;}
+	{font-size: 13px; text-align: justify;}
+	.section-title h1 span, .career-box li span{font-size: 12px;}
+	.hero-slider .hero-text .button .homes-btn, .homes-btn.theme-2, .homes-btn, .contact-form-area .form-group.button button
+	{padding: 4px 15px; font-size: 14px; line-height: 20px; letter-spacing: 0.02em;}
+	.contact-form-area .form-group.button button{min-width: 120px;}
 	.single-team .team-social li a{padding: 2px 9px;}
 	.features-area{padding-top: 0px;}
 	.footer .footer-top{padding: 10px;}
@@ -1003,26 +1047,309 @@ p{
 	.small-list-feature ul li, .single-team .t-content .designation{padding-bottom: 10px;}
 	.hero-slider .welcome-text{margin: 30px 0 0;}
 	.section-title{margin-bottom: 15px;}
-	.footer .single-widget{margin-top: 0px;}
+	.footer .single-widget, .message-inner figure{margin-top: 0px;}
 	.pf-details .small-list-feature{margin-top: 20px;}
-	.team-archive .single-team{margin-top: 15px;}
+	.team-archive .single-team, .message-box h5{margin-top: 15px;}
 	.footer .f-link ul li, .widget{margin-bottom: 5px;}
-	.blog-latest-slider .single-news, .small-list-feature ul{margin: 0px;}
-}
-@media only screen and (max-width: 575px) {
-		p, .service-sidebar .widget a{font-size: 13px;}
-		.homes-btn{padding: 10px 30px;}
-		.topbar-right{margin-top: 5px;float: right; padding-right: 20%;}
-		.navbar-toggler{font-size: 18px; width: 40px; height: 40px;}
-		.right-bar .right-nav li a img{max-height: 50px; margin-top:-20px}
-		.topbar-right .button .homes-btn{padding: 5px 10px; font-size: 13px;}
+	.message-box, .blog-latest-slider .single-news, .small-list-feature ul{margin: 0px;}
+
+	.navbar-toggler{font-size: 18px;}
+	.header .img-logo a{padding-top: 5px;}
+	.top-contact.text-right{padding-top: 10px;}
+	.top-contact.text-right{padding-bottom: 0px;}
+	.right-bar .right-nav li a img{max-height: 50px; margin-top:-20px}
+	.appointment_head{padding: 2px 10px; font-size: 13px;}
+	.header .nav-inner{width: 70%;}
+	.message-box:after{right: 46%;}
+	.topbar .single-contact{ line-height: 20px; max-height: 20px; overflow: hidden;}
+	.header .nav li a, .header .nav li .sub-menu li a{padding: 5px 15px;}
+	.faq-body{padding: 15px 20px;}
+	.topbar .col-12{display: block; width: 100%; -ms-flex: 100%; flex: 100%; max-width: 100%; padding-right: 15px;}
+	.blog-latest .single-news .news-head figure{min-height: 250px; max-height: 290px;}
+
 	}
+	/*Responsive CSS By Bikash Bhandari (bikash.433@gmail.com)*/
 	@media only screen and (max-width: 481px) {
-		.topbar-right{padding-right: 23%;}
+		.u_list{display: block; width: 100%; -ms-flex: 100%; flex: 100%; max-width: 100%;}
+		.topbar .col-xl-2{padding-left: 0px;}
+		.message-box{padding: 15px;}
+		.message-inner figure img{margin-top: 0px;}
+		.header .nav li .sub-menu{width: 96%;}
+		.header .nav-inner{right: 5%;}
+		.section-title .section-bottom p, .about-us ul li, .pf-details .single-content p{font-size: 14px;}
+		.topbar-right{margin-right: 35px; margin-left: -15px;}
+		.topbar-right .button .homes-btn{font-size: 13px;}
+		.topbar-right .button .homes-btn{padding: 3px 5px;}
+		.navbar-toggler{height: 28px; width: 35px; margin-top: -13px;}
+		.single-feature .country-img figure{max-height: 300px;}
+		.blog-latest .single-news .news-head figure{min-height: 230px; max-height: 245px;}
 	}
+	/*Responsive CSS By Bikash Bhandari (bikash.433@gmail.com)*/
 	@media only screen and (max-width: 450px) {
-		.navbar-toggler{margin-right: -10px;}
+		@-webkit-keyframes levitation-1 {
+			0% {
+				transform: translate(-50px, -40px);
+			  }
+			  20% {
+				transform: translate(75px, -50px) scale(0.86);
+			  }
+			  30% {
+				transform: translate(120px, 50px) scale(0.86);
+			  }
+			  40% {
+				transform: translate(100px, 100px) scale(0.86);
+			  }
+			  50% {
+				transform: translate(50px, 160px) scale(0.86);
+			  }
+			  60% {
+				transform: translate(-100px, 100px) scale(0.86);
+			  }
+			  70% {
+				transform: translate(-100px, 75px) scale(0.86);
+			  }
+			  80% {
+				transform: translate(-100px, 45px) scale(0.86);
+			  }
+			  90% {
+				transform: translate(-100px, 20px) scale(0.86);
+			  }
+			  100% {
+				transform: translate(-75px, 2px);
+			  }
+		 }
+		 @keyframes levitation-1 {
+			0% {
+				transform: translate(-50px, -40px);
+			  }
+			  20% {
+				transform: translate(75px, -50px) scale(0.86);
+			  }
+			  30% {
+				transform: translate(120px, 50px) scale(0.86);
+			  }
+			  40% {
+				transform: translate(100px, 100px) scale(0.86);
+			  }
+			  50% {
+				transform: translate(50px, 160px) scale(0.86);
+			  }
+			  60% {
+				transform: translate(-100px, 100px) scale(0.86);
+			  }
+			  70% {
+				transform: translate(-100px, 75px) scale(0.86);
+			  }
+			  80% {
+				transform: translate(-100px, 45px) scale(0.86);
+			  }
+			  90% {
+				transform: translate(-100px, 20px) scale(0.86);
+			  }
+			  100% {
+				transform: translate(-75px, 2px);
+			  }
+		 }
+		 @-webkit-keyframes levitation-2 {
+		   0% {
+			 transform: translate(0);
+		   }
+		   15% {
+			 transform: translate(-200px, -75px) scale(0.86);
+		   }
+		   35% {
+			 transform: translate(40px, 100px) scale(0.85);
+		   }
+		   50% {
+			 transform: translate(-10px, 150px);
+		   }
+		   70% {
+			 transform: translate(-200px, 200px) scale(0.86);
+		   }
+		   100% {
+			 transform: translate(0);
+		   }
+		 }
+		 @keyframes levitation-2 {
+		   0% {
+			 transform: translate(0);
+		   }
+		   15% {
+			 transform: translate(-200px, -75px) scale(0.86);
+		   }
+		   35% {
+			 transform: translate(40px, 100px) scale(0.85);
+		   }
+		   50% {
+			 transform: translate(-10px, 150px);
+		   }
+		   70% {
+			 transform: translate(-200px, 200px) scale(0.86);
+		   }
+		   100% {
+			 transform: translate(0);
+		   }
+		 }
+		 
+		.header .nav-inner {width: 92%;}
+		.testimonial-inner .t-right .quote{height: 40px; font-size: 36px;}
+		.topbar .top-contact{margin-left: -30px;}
+		.service-slider .single-service{margin-bottom: 125px;}
+		.main-service .single-service .service-content{bottom: -110px;}
+		.single-feature .country-img figure{max-height: 260px;}
+		.blog-latest .single-news .news-head figure{min-height: 210px; max-height: 220px;}
 	}
-	@media only screen and (max-width: 390px) {
-		.topbar-right{padding-right: 25%;}
+
+	@media only screen and (max-width: 420px) {
+		.breadcrumbs {padding: 90px 0px 45px 0px; background-position: center right -30px;}
+		.header .nav-inner{right: 6%;}
+		.img-feature span {padding: 2px 10px;}
+		.side.overlay:before{top: 32%;}
+		.blog-latest .single-news .news-head figure{min-height: 200px; max-height: 200px;}
+		.testimonial-inner .single-slider, .service-main-box{padding: 15px;}
 	}
+
+	@media only screen and (max-width: 393px) {
+		.header .nav li .sub-menu{width: 95%;}
+		.topbar-right{margin-left: -15px; margin-right: 30px;}
+		.footer .copyright-content p{font-size: 12px;}
+		.footer .copyright-content p{text-align: left !important;}
+		.blog-latest .single-news .news-head figure{min-height: 185px; max-height: 190px;}
+		.navbar-toggler{right: -5px;}
+	}
+	@media only screen and (max-width: 370px) {
+		.main-service .single-service .service-content{bottom: -120px;}
+		.service-slider .single-service{margin-bottom: 135px;}
+		.side.overlay:before{top: 35%;}
+		.blog-latest .single-news .news-head figure{min-height: inherit; max-height: 182px;}
+		.topbar-right{margin-right: 25px;}
+	}
+	@media only screen and (max-width: 352px) {
+		.topbar .col-5, .topbar .col-7{display: block; width: 100%; -ms-flex: 100%; flex: 100%; max-width: 100%; padding-left: 15px;}
+		.topbar .top-contact{display: none;}
+		.topbar-right{float: none !important; margin-left: 0px;  margin-right:0px;}
+		.breadcrumbs {padding: 90px 0px 45px 0px; background-position: center right -45px;}
+	}
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Responsive CSS By Bikash Bhandari (bikash.433@gmail.com)*/
+/*!
+	Project Name: Global Eye Education Consultancy https://globaleye.edu.np/
+	UI /UX  Developer: Bikash Bhandari
+	Email: bikash.433@gmail.com
+	URL: www.bhandaribikash.com.np
+	Description: Global Eye Education Consultancy
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*!
+	Project Name: Global Eye Education Consultancy https://globaleye.edu.np/
+	UI /UX  Developer: Bikash Bhandari
+	Email: bikash.433@gmail.com
+	URL: www.bhandaribikash.com.np
+	Description: Global Eye Education Consultancy
+*/

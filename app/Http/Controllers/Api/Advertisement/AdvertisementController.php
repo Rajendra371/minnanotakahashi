@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\Advertisement;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Advertisement\Advertisement;
 
@@ -37,10 +38,20 @@ class AdvertisementController extends Controller
         $validator = Validator::make($request->all(), [
             'ad_page_id' => 'required',
             'content' => 'required',
+            'file' => 'file|mimes:jpeg,png,gif,jpg|max:5120',
         ]);
         if ($validator->fails()) {
             return response()->json(['status' => 'error', 'message' => $validator->errors()->all()]);
         }
+        $input = $request->except('old_img_file');
+
+        if ($request->hasFile('file')) {
+            $adv_image = $request->file('file');
+            $adv_image_name = time() . rand() .$adv_image->getClientOriginalName();
+            $filename = preg_replace('/\s+/', '', $adv_image_name);
+            $adv_image->move(('uploads/advertisement/'), $filename);
+        }
+
         $input = $request->all();
         $id = $request->get('id');
         $postby = auth()->user()->id;
@@ -50,12 +61,17 @@ class AdvertisementController extends Controller
         $postdatebs = EngToNepDateConv(CURDATE_EN);
         $postip = get_real_ipaddr();
         $postmac = get_Mac_Address();
-
+        $old_img_file = $request->get('old_img_file');
         if ($id) {
             $trans = check_permission('Update');
             if ($trans == 'error') {
                 permission_message();
                 exit;
+            }
+            if (!empty($filename)) {
+                if (File::exists('uploads/advertisement/' . $old_img_file)) {
+                    unlink('uploads/advertisement/' . $old_img_file);
+                }
             }
             $data = Advertisement::where('id', $id)->first();
 
@@ -66,9 +82,15 @@ class AdvertisementController extends Controller
             $input['modifyby'] = $postby;
             $input['modifydatead'] = $postdatead;
             $input['modifydatebs'] = $postdatead;
+            $input['adv_image'] = !empty($filename) ? $filename : $old_img_file;
             $input['modifytime'] = date('H:i:s');
             $input['is_publish'] = !empty($request->get('is_publish')) ? $request->get('is_publish') : 'N';
             $input['is_unlimited'] = !empty($request->get('is_unlimited')) ? $request->get('is_unlimited') : 'N';
+
+            unset($input['id']);
+            unset($input['file']);
+            unset($input['old_img_file']);
+
             save_log('advertisement', 'id', $id, $input, 'Update');
             $update = DB::table('advertisement')->where('id', $id)->update($input);
             if ($update) {
@@ -77,17 +99,14 @@ class AdvertisementController extends Controller
                 return response()->json(['status' => 'error', 'message' => 'Operation Unsuccessful !!']);
             }
         } else {
-            $trans = check_permission('Insert');
-            if ($trans == 'error') {
-                permission_message();
-                exit;
-            }
             $input['postip'] = $postip;
             $input['postmac'] = $postmac;
             $input['postdatead'] = $postdatead;
             $input['postdatebs'] = $postdatebs;
             $input['posttime'] = date('H:i:s');
             $input['postby'] = $postby;
+            $input['adv_image'] = !empty($filename) ? $filename : $old_img_file;
+            unset($input['file']);
             if ($data = Advertisement::forceCreate($input)) {
                 return response()->json(['status' => 'success', 'message' => 'Record Saved Successfully!!']);
             }

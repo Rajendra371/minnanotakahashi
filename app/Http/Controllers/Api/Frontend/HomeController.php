@@ -100,6 +100,7 @@ class HomeController extends Controller
         $data['destination'] = Home::get_destination_data();
         $data['news'] = Home::get_events_data(array(['nne_typeid', '1']));
         $data['events'] = Home::get_events_data(array(['nne_typeid', '2']));
+        $data['advertisement'] = Home::get_advertisement();
         // dd($data['news']);
         $data['organization'] = Home::get_organization_data();
         $data['seo_data'] = Home::get_seo_list(array('sp.id' => 1));

@@ -48,6 +48,12 @@
 <link rel="stylesheet" href="{{asset('frontend/style.css')}}">
 <link rel="stylesheet" href="{{asset('frontend/css/responsive.css')}}">
 
+  {{-- Project Name: Global Eye Education Consultancy https://globaleye.edu.np/
+	UI /UX  Developer: Bikash Bhandari
+	Email: bikash.433@gmail.com
+	URL: www.bhandaribikash.com.np
+	Description: Global Eye Education Consultancy --}}
+
 <!--[if lt IE 9]>
 	 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
 	 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -67,8 +73,9 @@
   <!-- Topbar -->
   <div class="topbar">
     <div class="container">
+
       <div class="row">
-        <div class="col-xl-3 col-lg-3 col-md-3 col-12"> 
+        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5 col-12  pad_right_0"> 
           <div class="logo"> 
             <div class="img-logo"> 
               <a href="{{route('home')}}">
@@ -79,44 +86,51 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-6 col-lg-6 col-md-6 col-12 pad_left_0  pad_right_0"> 
-          <!-- Top Contact -->
-          <div class="top-contact text-right">
-            @php
-                $contact = '';
-                if (!empty($dat['organization'][0])) {
-                  $contact = $dat['organization'][0]->phone;
-                }
-                $phones = explode(",", $dat['organization'][0]->phone);
-               
-            @endphp  
-            {{-- <div class="single-contact"><i class="fa fa-phone"></i>Phone:{{trim($contact,',')}}</div> --}}
-          
-            @if(!empty($dat['organization'][0]))<div class="single-contact"><i class="fa fa-phone"></i><a href="tel:{{$phones[0]}}">Phone:{{$phones[0]}}</a>, <a href="tel:{{$phones[1]}}">{{$phones[1]}}</a></div>@endif
-            @if(!empty($dat['organization'][0]))<div class="single-contact"><i class="fa fa-envelope"></i><a href="mailto:{{$dat['organization'][0]->email}}">Email:{{$dat['organization'][0]->email}}</a></div>@endif
-          </div>
-          <!-- End Top Contact --> 
-        </div>
-        <div class="col-lg-3 col-lg-3 col-md-3 col-12 pad_left_0">
-          <div class="topbar-right">
-            @auth('employee')
-            <div class="dropdown">
-              <div class="button dropdown-toggle" id="userdetail" data-toggle="dropdown"> <a href="#" class="homes-btn"><i class="fa fa-user"></i> Welcome {{ Auth::guard('employee')->user()->first_name}}</a> </div>
-              <div class="dropdown-menu" aria-labelledby="userdetail">
-                <a class="dropdown-item" href="{{route('dashboard')}}">Dashboard</a>
-                <form action="{{route('logout')}}" method="post" id="logoutForm">
-                  {{ csrf_field() }}
-                  <button type="submit" class="dropdown-item">Logout</button>
-                </form>
+
+        
+        <div class="col-xl-9 col-lg-9 col-md-8 col-sm-7 col-12">
+          <div class="row">
+            <div class="col-lg-8 col-lg-8 col-md-12 col-sm-12 col-5"> 
+              <!-- Top Contact -->
+              <div class="top-contact text-right">
+                @php
+                    $contact = '';
+                    if (!empty($dat['organization'][0])) {
+                      $contact = $dat['organization'][0]->phone;
+                    }
+                    $phones = explode(",", $dat['organization'][0]->phone);
+                   
+                @endphp  
+                {{-- <div class="single-contact"><i class="fa fa-phone"></i>Phone:{{trim($contact,',')}}</div> --}}
+              
+                @if(!empty($dat['organization'][0]))<div class="single-contact"><i class="fa fa-phone"></i><a href="tel:{{$phones[0]}}">{{$phones[0]}}</a>, <a href="tel:{{$phones[1]}}">{{$phones[1]}}</a></div>@endif
+                @if(!empty($dat['organization'][0]))<div class="single-contact"><i class="fa fa-envelope"></i><a href="mailto:{{$dat['organization'][0]->email}}">{{$dat['organization'][0]->email}}</a></div>@endif
+              </div>
+              <!-- End Top Contact --> 
+            </div>
+            <div class="col-lg-4 col-lg-4 col-md-12 col-sm-12 col-7 pad_left_0">
+              <div class="topbar-right">
+                @auth('employee')
+                <div class="dropdown">
+                  <div class="button dropdown-toggle" id="userdetail" data-toggle="dropdown"> <a href="#" class="homes-btn"><i class="fa fa-user"></i> Welcome {{ Auth::guard('employee')->user()->first_name}}</a> </div>
+                  <div class="dropdown-menu" aria-labelledby="userdetail">
+                    <a class="dropdown-item" href="{{route('dashboard')}}">Dashboard</a>
+                    <form action="{{route('logout')}}" method="post" id="logoutForm">
+                      {{ csrf_field() }}
+                      <button type="submit" class="dropdown-item">Logout</button>
+                    </form>
+                  </div>
+                </div>
+                  @endauth
+                @guest('employee')
+    
+                <div class="button"> <a href="{{route('book-appointment')}}" class="homes-btn">Get an Appointment</a> </div>
+                @endguest
               </div>
             </div>
-              @endauth
-            @guest('employee')
-
-            <div class="button"> <a href="{{route('book-appointment')}}" class="homes-btn">Book An Appointment</a> </div>
-            @endguest
           </div>
         </div>
+
       </div>
     </div>
   </div>
@@ -152,20 +166,20 @@
                     @if ($current_route == 'about')
                       class="active icon-active"
                     @endif  class="icon-active"> 
-                  <a href="{{route('about')}}">About Us</a> 
+                  <a href="javascript:void(0)">About Us</a> 
                     <ul class="sub-menu">                     
-                      <li> <a href="{{route('about')}}">Who are we?</a></li>
+                      <li> <a href="{{route('who_are_we')}}">Who are we?</a></li>
                       <li> <a href="{{route('message-from-founder')}}">Message from Founder</a></li>  
                       <li> <a href="{{route('message-from-ceo')}}">Message from CEO</a></li>  
                       <li> <a href="{{route('choose')}}">Why us?</a></li>           
-                      <li> <a href="{{route('team')}}">Our Team</a></li>           
+                      {{-- <li> <a href="{{route('team')}}">Our Team</a></li>            --}}
                     </ul>
                   </li>
                   <li 
                     @if ($current_route == 'services' || $current_route == 'service-details')
                       class="active icon-active"
                     @endif class="icon-active">
-                     <a href="{{route('services')}}">Services</a>
+                     <a href="javascript:void(0)">Services</a>
                     <ul class="sub-menu">
                       @if (!empty($services_menu) && count($services_menu))
                       @foreach ($services_menu as $smenu)
@@ -178,7 +192,7 @@
                     @if ($current_route == 'study-abroad' || $current_route == 'destination-details')
                       class="active icon-active"
                     @endif class="icon-active">
-                     <a href="{{route('study-abroad')}}">Study Abroad</a>
+                     <a href="javascript:void(0)">Study Abroad</a>
                     <ul class="sub-menu">
                       @if (!empty($dat['destination_menu']) && count($dat['destination_menu']))
                       @foreach ($dat['destination_menu'] as $dmenu)
@@ -204,7 +218,7 @@
                     @if ($current_route == 'gallery'|| $current_route == 'video')
                       class="active icon-active"
                     @endif class="icon-active"> 
-                    <a href="{{route('gallery')}}">Media</a>
+                    <a href="javascript:void(0)">Media</a>
                     <ul class="sub-menu">                     
                       <li> <a href="{{route('gallery')}}">Gallery</a></li>
                       <li> <a href="{{route('video')}}">Video</a></li>          
@@ -220,7 +234,7 @@
                   @if ($current_route == 'training' || $current_route == 'training-details')
                     class="active icon-active"
                   @endif class="icon-active">
-                   <a href="{{route('training')}}">Training</a>
+                   <a href="javascript:void(0)">Training</a>
                   <ul class="sub-menu">
                     @if (!empty($dat['training_menu']) && count($dat['training_menu']))
                     @foreach ($dat['training_menu'] as $tmenu)

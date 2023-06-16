@@ -38,7 +38,10 @@
 				<div class="col-lg-7 col-md-6 col-12">
 					<div class="about-content section-title default text-left">
 						<div class="section-top">
-							<h1><span>{{$about->page_title}}</span><b>{{$about->short_content}}</b></h1>
+							<h1>
+								{{-- <span>{{$about->page_title}}</span> --}}
+								<b>{{$about->short_content}}</b>
+							</h1>
 						</div>
 						<div class="section-bottom">
 							<div class="text">
@@ -67,7 +70,9 @@
 			</div>
 		</section>
 	@endif
-	
+
+@include('Layout.includes.appointment')	
+
 @endsection
 
 

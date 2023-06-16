@@ -30,7 +30,10 @@
             <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12">
             <div class="section-title default text-center">
                 <div class="section-top">
-                <h1><span>Faqs</span><b>Frequently Asked Questions</b></h1>
+                <h1>
+                    {{-- <span>Faqs</span> --}}
+                    <b>Frequently Asked Questions</b>
+                </h1>
                 </div>
             </div>
             </div>

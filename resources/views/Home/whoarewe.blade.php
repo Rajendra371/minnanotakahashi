@@ -12,10 +12,10 @@
 								<li>
 									<a href="{{route('home')}}">Home</a>
 								</li>
-								<li>About Us</li>
+								<li>Who are we</li>
 							</ul>
 						</div>
-						<div class="bread-title"><h2>About Us</h2></div>
+						<div class="bread-title"><h2>Who are we</h2></div>
 					</div>
 				</div>
 			</div>
@@ -38,7 +38,9 @@
 				<div class="col-lg-7 col-md-6 col-12">
 					<div class="about-content section-title default text-left">
 						<div class="section-top">
-							<h1><span>{{$about->page_title}}</span><b>{{$about->short_content}}</b></h1>
+							<h1>
+								{{-- <span>{{$about->page_title}}</span> --}}
+								<b>{{$about->short_content}}</b></h1>
 						</div>
 						<div class="section-bottom">
 							<div class="text">
@@ -52,6 +54,6 @@
 	</section>	
 	<!--/ End About Us -->
 	@endif
-
+@include('Layout.includes.appointment')	
 	
 @endsection

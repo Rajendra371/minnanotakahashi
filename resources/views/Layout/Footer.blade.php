@@ -130,7 +130,7 @@
           <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12">
             <div class="copyright-content lext-left"> 
               <!-- Copyright Text -->
-              <p>© Copyright <?php echo date("Y"); ?> <a href="{{route('home')}}"> {{$dat['organization'][0]->organization_name}} all right reserved</a>. Powered by <a href="https://globaliotnepal.com.np/" target="_blank">Global IOT Nepal</a></p>
+              <p>© Copyright <?php echo date("Y"); ?> <a href="{{route('home')}}"> {{$dat['organization'][0]->organization_name}} </a> Powered by <a href="https://globaliotnepal.com.np/" target="_blank">Global IOT Nepal</a></p>
             
             </div>
           </div>
@@ -139,12 +139,13 @@
     </div>
     <!--/ End Copyright --> 
   </footer>
-  <!-- Messenger Chat Plugin Code -->
+
+  {{-- <!-- Messenger Chat Plugin Code -->
   <div id="fb-root"></div>
 
   <!-- Your Chat Plugin code -->
   <div id="fb-customer-chat" class="fb-customerchat">
-  </div>
+  </div> --}}
 
   <!-- Jquery JS --> 
   <script src="{{asset('frontend/js/jquery.min.js')}}"></script> 
@@ -163,7 +164,13 @@
   <script src="{{asset('frontend/js/axios.min.js')}}"></script> 
   <script src="{{asset('frontend/js/axios_setup.js')}}"></script> 
   <!-- Active JS --> 
-  <script src="{{asset('frontend/js/custom.js')}}"></script> 
+  <script src="{{asset('frontend/js/custom.js')}}"></script>
+
+  {{-- Project Name: Global Eye Education Consultancy https://globaleye.edu.np/
+	UI /UX  Developer: Bikash Bhandari
+	Email: bikash.433@gmail.com
+	URL: www.bhandaribikash.com.np
+	Description: Global Eye Education Consultancy --}}
 
   {{-- <script>
     var chatbox = document.getElementById('fb-customer-chat');
@@ -188,8 +195,39 @@
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
   </script> --}}
-
+ 
   @yield('scripts') 
   @stack('script') 
+  <!-- Messenger Chat Plugin Code -->
+   <div id="fb-root"></div>
+
+   <!-- Your Chat Plugin code -->
+   <div id="fb-customer-chat" class="fb-customerchat">
+   </div>
+ 
+   <script>
+     var chatbox = document.getElementById('fb-customer-chat');
+     chatbox.setAttribute("page_id", "104862838917662");
+     chatbox.setAttribute("attribution", "biz_inbox");
+   </script>
+ 
+   <!-- Your SDK code -->
+   <script>
+     window.fbAsyncInit = function() {
+       FB.init({
+         xfbml            : true,
+         version          : 'v16.0'
+       });
+     };
+ 
+     (function(d, s, id) {
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) return;
+       js = d.createElement(s); js.id = id;
+       js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+   </script> 
+
   </body>
   </html>

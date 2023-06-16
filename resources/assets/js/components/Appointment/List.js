@@ -86,6 +86,44 @@ export default class List extends Component {
                       </Col>
                       <Col md="2" sm="6" xs="6">
                         <div>
+                          <Label>Country:</Label>
+                          <Input type="select" name="countries" id="countries">
+                            <option value="0">Select</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Canada">Canada</option>
+                            <option value="South Korea">South Korea</option>
+                            <option value="UK">UK</option>
+                            <option value="Japan">Japan</option>
+                            <option value="New Zealand">New Zealand</option>
+                            <option value="Others">Others</option>
+                          </Input>
+                        </div>
+                      </Col>
+                      <Col md="2" sm="6" xs="6">
+                        <div>
+                          <Label>Level:</Label>
+                          <Input type="select" name="levels" id="levels">
+                            <option value="0">Select</option>
+                            <option value="Diploma">Diploma</option>
+                            <option value="Bachelors">Bachelors</option>
+                            <option value="Masters">Masters</option>
+                            <option value="Ph.D"> Ph.D</option>
+                            <option value="Others">Others</option>
+                          </Input>
+                        </div>
+                      </Col>
+                      <Col md="2" sm="6" xs="6">
+                        <div>
+                          <Label>Nearest Branch:</Label>
+                          <Input type="select" name="branches" id="branches">
+                            <option value="0">Select</option>
+                            <option value="Putalisadak">Putalisadak</option>
+                            <option value="Kalanki">Kalanki</option>
+                          </Input>
+                        </div>
+                      </Col>
+                      <Col md="2" sm="6" xs="6">
+                        <div>
                           <label>Search:</label>
                           <input
                             type="text"
@@ -120,11 +158,13 @@ export default class List extends Component {
                   <thead>
                     <tr>
                       <th width="5%">S.No.</th>
-                      <th width="10%">Name</th>
-                      <th width="10%">Email</th>
-                      <th width="10%">Contact</th>
-                      <th width="20%">Subject</th>
-                      <th width="30%">Message</th>
+                      <th width="15%">Name</th>
+                      <th width="15%">Email</th>
+                      <th width="10%">Mobile Mumber</th>
+                      <th width="10%">Address</th>
+                      <th width="10%">Country</th>
+                      <th width="10%">Level</th>
+                      <th width="10%">Nearest Branch</th>
                       <th width="10%">Time</th>
                       <th width="5%">Action</th>
                     </tr>
@@ -145,6 +185,9 @@ function load_table_data() {
   var filter_date = $("#filter_date").val();
   var frmDate = $("#frmDate").val();
   var toDate = $("#toDate").val();
+  var countries = $("#countries").val();
+  var levels = $("#levels").val();
+  var branches = $("#branches").val();
   var dataurl = constvar.api_url + "appointment/appointment_list";
   var message = "";
   message = "<p class='text-danger'>No Record Found!! </p>";
@@ -190,11 +233,13 @@ function load_table_data() {
 
       aoColumns: [
         { data: null },
-        { data: "fullname" },
+        { data: "full_name" },
         { data: "email" },
-        { data: "contact" },
-        { data: "subject" },
-        { data: "message" },
+        { data: "contact_number" },
+        { data: "address" },
+        { data: "country" },
+        { data: "level" },
+        { data: "nearest_branch" },
         { data: "postdatead" },
         { data: "action" },
       ],
@@ -204,6 +249,9 @@ function load_table_data() {
         aoData.push({ name: "filter_date", value: filter_date });
         aoData.push({ name: "frmDate", value: frmDate });
         aoData.push({ name: "toDate", value: toDate });
+        aoData.push({ name: "countries", value: countries });
+        aoData.push({ name: "levels", value: levels });
+        aoData.push({ name: "branches", value: branches });
       },
 
       fnRowCallback: function(nRow, aData, iDisplayIndex) {
@@ -228,6 +276,8 @@ function load_table_data() {
         { type: "text" },
         { type: "text" },
         { type: "text" },
+        { type: "text" },
+        { type: "text" },
         { type: null },
         { type: null },
       ],
@@ -238,6 +288,9 @@ function load_table_data() {
     filter_date = $("#filter_date").val();
     frmDate = $("#frmDate").val();
     toDate = $("#toDate").val();
+    countries = $("#countries").val();
+    levels = $("#levels").val();
+    branches = $("#branches").val();
     dtablelist.fnDraw();
   });
 }

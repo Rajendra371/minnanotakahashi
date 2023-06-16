@@ -24,34 +24,64 @@
 </div>
 <!--/ End Breadcrumb -->
 
-@if ($news)
-	
-<!-- Start Services -->
-<section class="services section-bg section-space">
+<!-- Latest news -->
+<section class="latest-blog section-space">
 	<div class="container">
-		<div class="main-service">
-			<div class="row">
-				@foreach ($news as $new)
-				<div class="col-lg-4 col-md-6 col-12">
-					<!-- Single Service -->
-					<div class="single-service">
-                        <div class="service-head"> <img src="{{asset("uploads/nne_image/$new->image")}}" alt="{{$new->title}}">
-                        </div>
-                        <div class="service-content">
-                            <h4><a href="{{route('event-details',"$new->slug-$new->id")}}">{{$new->title}}</a></h4>
-                            <p>{{$new->short_content}}</p>
-                            <a href="{{route('event-details',"$new->slug-$new->id")}}" class="icon-bg">
-                                <i class="fa fa-arrow-circle-o-right"></i>
-                            </a> 
-                        </div>
-                    </div>
-					<!--/ End Single Service -->
+		<div class="row">
+			<div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12">
+				<div class="section-title default text-center">
+					<div class="section-top">
+						<h2>
+							{{-- <span>Our News</span>  --}}
+							<b>Latest News</b>
+						</h2>
+					</div>
 				</div>
-				@endforeach
 			</div>
 		</div>
+		@if ($news)
+		  
+				<div class="blog-latest">
+					<div class="row">
+						@foreach ($news as $new)
+							<div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+								<!-- Single news -->
+								<div class="single-news">
+									<div class="news-head overlay">
+										<figure>
+											<img src="{{asset("uploads/nne_image/$new->image")}}" alt="{{$new->title}}"/>
+										</figure>
+										{{-- <span class="news-img"
+											style="background-image:url('{{ asset('uploads/blog_image/' . $blog->image) }}')"></span> --}}
+										<a href="{{route('news-details',"$new->slug-$new->id")}}"
+											class="homes-btn theme-2">Read more <i class="fa fa-long-arrow-right"></i> </a>
+									</div>
+									<div class="news-body">
+										<div class="news-content">
+											<h3 class="news-title">
+												<a href="{{route('news-details',"$new->slug-$new->id")}}">{{$new->title}}
+												</a>
+											</h3>
+											<div class="news-text">
+												<p>{{ Illuminate\Support\Str::limit(strip_tags($new->description), 200, '...') }}
+												</p>
+											</div>
+											<ul class="news-meta">
+												<li class="date"><i
+														class="fa fa-calendar"></i>{{ date('j F, Y', strtotime($new->postdatead)) }}
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<!--/ End Single news -->
+							</div>
+						@endforeach
+					</div>
+				</div>
+		  
+		@endif
 	</div>
 </section>
-@endif
-<!--/ End Services -->
+<!--/ End Latest news -->
 @endsection

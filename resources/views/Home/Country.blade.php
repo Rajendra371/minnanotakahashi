@@ -31,13 +31,16 @@
 	<div class="container">
 		<div class="section-title default text-center mb-0">
 			<div class="section-top">
-				<h2 class="mb-0"><span>Browse Our</span><b>Top Countries</b></h2>
+				<h2 class="mb-0">
+					{{-- <span>Browse Our</span> --}}
+					<b>Top Countries</b>
+				</h2>
 			</div>
 		</div>
 
 		<div class="row">
 			@foreach ($destination as $tile)
-			<div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-6">
+			<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 u_list">
 				<div class="single-feature country">
 					@if ($tile->icon)
 						<div class="icon-head"><i class="{{ $tile->icon }}"></i></div>

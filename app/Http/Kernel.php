@@ -66,5 +66,6 @@ class Kernel extends HttpKernel
         'constants' => \App\Http\Middleware\DefineConstant::class,
         'setiplog' => \App\Http\Middleware\InsertIpLog::class,
         'maintenance' => MaintenanceMode::class,
+        // 'cors' => \App\Http\Middleware\Cors::class, 
     ];
 }

@@ -43,11 +43,11 @@ class BannerController extends Controller
         $postmac = get_Mac_Address();
         $old_img_file = $request->get('old_img_file');
         if ($id) {
-            $trans = check_permission('Update');
-            if ($trans == 'error') {
-                permission_message();
-                exit;
-            }
+            // $trans = check_permission('Update');
+            // if ($trans == 'error') {
+            //     permission_message();
+            //     exit;
+            // }
 
             if (!empty($filename)) {
                 if (File::exists('uploads/banner_image/' . $old_img_file)) {

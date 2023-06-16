@@ -27,10 +27,10 @@
 
     $(".home-slider").owlCarousel({
       items: 1,
-      autoplay: false,
-      autoplayTimeout: 5000,
-      smartSpeed: 400,
-      autoplayHoverPause: true,
+      autoplay: true,
+      autoplayTimeout: 9000,
+      smartSpeed: 4000,
+      autoplayHoverPause: false,
       loop: true,
       merge: true,
       nav: true,
@@ -53,6 +53,9 @@
       nav: false,
       dots: true,
       responsive: {
+        0: {
+          items: 1,
+        },
         300: {
           items: 1,
         },
@@ -80,14 +83,20 @@
       nav: false,
       dots: true,
       responsive: {
-        360: {
+        0: {
           items: 1,
         },
-        480: {
-          items: 2,
+        360: {
+          items: 1,
+          margin: 10,
         },
-        768: {
+        601: {
+          items: 2,
+          margin: 15,
+        },
+        860: {
           items: 3,
+          margin: 20,
         },
         1170: {
           items: 4,
@@ -95,11 +104,9 @@
       },
     });
 
-
-      $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip();
-      });
-
+    $(document).ready(function() {
+      $('[data-toggle="tooltip"]').tooltip();
+    });
 
     /*====================================
 			Portfolio Details JS
@@ -343,5 +350,8 @@
           .addClass("alert alert-danger");
         console.log(error);
       });
+  });
+  $(document).ready(function() {
+    $("#myModal2").modal("show");
   });
 })(jQuery);

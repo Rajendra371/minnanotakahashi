@@ -25,6 +25,8 @@
     <link href="{{asset('/plugin/template/all.css')}}" rel="stylesheet" type="text/css" /> 
     <link rel="stylesheet" href="{{asset('/plugin/autocomplete/jquery-ui.css')}}">
     <link href="{{ asset('/plugin/Trumbo/dist/ui/trumbowyg.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('/plugin/Trumbo/dist/plugins/table/ui/trumbowyg.table.min.css') }}" rel="stylesheet"
+    type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
     <script src="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone-min.js"></script>
@@ -146,8 +148,13 @@ function load_ckeditor() {
                 ["horizontalRule"],
                 ["removeformat"],
                 ["fullscreen"],
-                ["base64"],
+                ["base64", "table"],
             ],
+            plugins: {
+                        table: {
+                            styler: "table table-bordered table-striped"
+                        }
+                    },
             autogrow: true,
             removeformatPasted: true,
             tagsToRemove: ["script"],
@@ -188,6 +195,7 @@ function checkValidValue(value=false,selector=false){
 {{-- <script src="{{asset('/plugin/ckeditor/ckeditor.js')}}"></script>  --}}
 <script src="{{ asset('/plugin/Trumbo/dist/trumbowyg.js') }}"></script>
 <script src="{{ asset('plugin/Trumbo/dist/plugins/base64/trumbowyg.base64.min.js') }}"></script>
+<script src="{{ asset('plugin/Trumbo/dist/plugins/table/trumbowyg.table.min.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
 
 

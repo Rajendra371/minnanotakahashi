@@ -33,10 +33,10 @@
                     <div class="bubble-2" data-v-d293d346></div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-9 col-md-9 col-12">
+                    <div class="col-lg-12 col-md-12 col-12">
                         <div class="message-inner">                            
                             <div class="row">
-                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                                <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12">
                                     @if(!empty($foundermessage[0]->image))
                                     <figure>
                                         <img src="{{ asset('uploads/testimonial_image/' . $foundermessage[0]->image) }}"
@@ -44,12 +44,12 @@
                                     </figure>
                                     @endif
                                 </div>
-                                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                                <div class="col-xl-9 col-lg-8 col-md-12 col-sm-12">
                                     @if(!empty($foundermessage[0]->description))
                                     <div class="message-box">
                                         {!!$foundermessage[0]->description!!}
                                         <h5><span>✍️</span> {{!empty($foundermessage[0]->name)?$foundermessage[0]->name:''}}</h5>
-                                        <h6>{{!empty($foundermessage[0]->designation)?$foundermessage[0]->designation:''}} <small> | Global Eye Education</small></h6>
+                                        <h6>{{!empty($foundermessage[0]->designation)?$foundermessage[0]->designation:''}} <small> | Global Eye Education Consultancy</small></h6>
                                     </div>
                                     @endif
                                 <div class="clearfix"></div>

@@ -1,6 +1,18 @@
 @extends('Layout.Main')
 @section('content')
-
+<style>
+    .main-modal .modal-header .close {
+    position: absolute;
+    top: 25px;
+    right: 15px;
+    font-size: 16px;
+    background: #e00c1b;
+    color: #fff;
+    padding: 5px 10px;
+    opacity: 1;
+    font-weight: normal;
+}
+</style>
 
 <ul class="social_media">
     @if(!empty($organization[0]->facebook_link))
@@ -184,7 +196,7 @@
     <section class="video-feature side overlay section-bg">
         <div class="container">
             <div class="row">
-                <div class="col-lg-7 col-md-7 col-12">
+                <div class="col-lg-7 col-md-12 col-sm-12 col-12">
                     <div class="features-main">
                         <div class="section-title default about-title">
                             <div class="section-top">
@@ -197,15 +209,15 @@
 
                         {{-- {!! $choose->description !!} --}}
                         <p>{!! str_limit($choose->description,300) !!}</p>
-                        <div class="feature-btn"> <a href="{{ route('about') }}" class="homes-btn theme-1">View More</a>
+                        <div class="feature-btn"> <a href="{{ route('choose') }}" class="homes-btn theme-1">View More</a>
                         </div>
                     </div>
                 </div>
                 @if (!empty($video) && count($video))
-                    <div class="col-lg-5 col-md-5 col-12">
+                    <div class="col-lg-5 col-md-12 col-sm-12 col-12">
                         <div class="img-feature"> <img src="{{ asset('uploads/video_gallery/' . $video[0]->image_url) }}"
                                 alt="{{ $video[0]->title }}">
-                            <div class="video-play"> <a href="{{ $video[0]->link }}" class="video video-popup mfp-iframe">
+                            <div class="video-play"> <a href="https://www.youtube.com/watch?v=_ZHbRKmj360" class="video video-popup mfp-iframe">
                                     <i class="fa fa-play"></i> </a>
                                 <div class="waves-block">
                                     <div class="waves wave-1"></div>
@@ -290,6 +302,9 @@
                                             <option value="Canada">Canada</option>
                                             <option value="Japan">Japan</option>
                                             <option value="South Korea">South Korea</option>
+                                            <option value="United Kingdom">United Kingdom</option>
+                                            <option value="New Zealand">New Zealand</option>
+                                            <option value="Others">Others</option>
                                         </select>
                                     </div>
                                 </div>
@@ -324,10 +339,10 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-12 col-12">
+                <div class="col-lg-6 col-md-12 col-12 faq_list">
                     <div class="section-title default text-center">
                         <div class="section-top">
-                            <h2><span>Faq's</span><b>Frequently Asked Questions</b></h2>
+                            <h2><span>FAQ's</span><b>Frequently Asked Questions</b></h2>
                         </div>
                     </div>
                     <div class="faqs-main m-top-30">
@@ -600,5 +615,26 @@
         </section>
         <!--/ End Testimonials -->
     @endif
-
+    @if(!empty($advertisement))     
+    <div id="myModal2" class="modal fade main-modal" role="dialog">
+      
+        <div class="modal-dialog modal-lg">
+         
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <span>{{!empty($advertisement[0]->title)?$advertisement[0]->title:''}} </span>
+              <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"></i> Skip This</button>
+            </div>
+            <div class="modal-body">
+                <figure>
+                  <img src="{{ URL::asset('uploads/advertisement/' . $advertisement[0]->adv_image) }}" alt="Image" class="img-responsive" />
+                </figure>
+            </div>
+          </div>
+         
+        </div>
+       
+      </div>
+    @endif
 @endsection
