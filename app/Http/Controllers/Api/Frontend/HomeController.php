@@ -101,7 +101,7 @@ class HomeController extends Controller
         $data['news'] = Home::get_events_data(array(['nne_typeid', '1']));
         $data['events'] = Home::get_events_data(array(['nne_typeid', '2']));
         $data['advertisement'] = Home::get_advertisement();
-        // dd($data['news']);
+        // dd($data['advertisement']);
         $data['organization'] = Home::get_organization_data();
         $data['seo_data'] = Home::get_seo_list(array('sp.id' => 1));
         // dd($data['seo_data']);
@@ -648,6 +648,7 @@ class HomeController extends Controller
     public function gallery_details($id)
     {
         $data['photos'] = DB::table('galleries')->select('id', 'gly_title', 'gly_content', 'image_file')->where('gly_catid', $id)->where('is_display', 'Y')->get();
+        // dd($data['photos']);
         $data['seo_data'] = Home::get_seo_list(array('sp.id' => 10));
         if ($data['seo_data']) {
             //set SEO data 
@@ -876,11 +877,11 @@ class HomeController extends Controller
                 ->where('cr.id', $insert_id)
                 ->first();
             $template = view('Contact.view')->with('data', $data)->render();
-            $parseValues = array(
-                'TITLE' => 'Contact Us Message',
-                'TEMPLATE' => $template,
-            );
-            $mail_message = sendMail($parseValues, "form_submit", 'jharana07.jr@gmail.com', $data->email);
+            // $parseValues = array(
+            //     'TITLE' => 'Contact Us Message',
+            //     'TEMPLATE' => $template,
+            // );
+            // $mail_message = sendMail($parseValues, "form_submit", 'jharana07.jr@gmail.com', $data->email);
             return response()->json(['status' => 'success', 'message' => 'Thank you for contacting us!!', 'redirect' => route('home')]);
         }
         return response()->json(['status' => 'error', 'message' => 'Error, please try after few moments!!']);

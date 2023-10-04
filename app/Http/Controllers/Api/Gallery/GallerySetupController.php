@@ -203,6 +203,9 @@ class GallerySetupController extends Controller
             $content = $request->gly_content;
             $order = $request->order;
             $is_display = $request->is_display ?? 'N';
+            // echo "hi";
+            // echo $is_display;
+            // die();
             $images = $request->images;
 
             DB::beginTransaction();
@@ -230,6 +233,7 @@ class GallerySetupController extends Controller
 
                 $details = [];
                 $i = 1;
+                if(!empty($new_images)){
                 foreach ($new_images as $key => $image) {
                     if (!empty($image) && file_exists(public_path("tmp/uploads/$image"))) {
                         rename(public_path("tmp/uploads/$image"), public_path('uploads/gallery_image/' . $image));
@@ -269,9 +273,27 @@ class GallerySetupController extends Controller
                     );
                     $i++;
                 }
-
+                // dd($details);
                 if (!empty($details)) {
                     DB::table('galleries')->insert($details);
+                }
+                }
+                else{
+                        $details['gly_title'] = $title;
+                        $details['gly_content'] = $content;
+                        $details['is_display'] = $is_display;
+                        $details['postip'] = $postip;
+                        $details['postmac'] = $postmac;
+                        $details['postdatead'] = $postdatead;
+                        $details['postdatebs'] = $postdatebs;
+                        $details['posttime'] = date('H:i:s');
+                        $details['postby'] = $postby;
+                        $details['created_at'] = date('Y-m-d H:i:s');
+                        $details['updated_at'] = date('Y-m-d H:i:s');
+                    
+                    if (!empty($details)) {
+                        DB::table('galleries')->where('master_id',$id)->update($details);
+                    }
                 }
                 DB::table('gallery_master')->where('id', $id)->update(['image_count' => count($images)]);
                 GalleryCategory::where('id', $category_id)->update(['updated_at' => date('Y-m-d H:i:s')]);
@@ -328,7 +350,6 @@ class GallerySetupController extends Controller
                         'updated_at' => date('Y-m-d H:i:s'),
                     );
                 }
-
                 if (!empty($details)) {
                     DB::table('galleries')->insert($details);
                     DB::table('gallery_master')->where('id', $master_id)->update(['image_count' => count($details)]);

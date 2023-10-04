@@ -378,7 +378,7 @@ class Home extends Model
     {
         $data = DB::table('gallery_categories as gc')
             ->select('gc.id', 'gc.title', 'gc.updated_at')
-            ->selectRaw("(SELECT COUNT(*) as image_count from galleries as g where g.gly_catid = gc.id) as image_count,(SELECT MAX(g.gly_content) from galleries as g where g.gly_catid = gc.id )as gly_content,(SELECT g.image_file from galleries as g where g.gly_catid = gc.id and g.order = 1 ORDER BY id DESC LIMIT 1) as image_file")
+            ->selectRaw("(SELECT COUNT(*) as image_count from galleries as g where g.is_display = 'Y' and g.gly_catid = gc.id) as image_count,(SELECT MAX(g.gly_content) from galleries as g where g.gly_catid = gc.id )as gly_content,(SELECT g.image_file from galleries as g where g.is_display = 'Y' and g.gly_catid = gc.id and g.order = 1 ORDER BY id DESC LIMIT 1) as image_file")
             ->where('is_active', 'Y')
             ->when($where, function ($query) use ($where) {
                 $query->where($where);
