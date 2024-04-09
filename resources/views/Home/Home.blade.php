@@ -217,14 +217,21 @@
                     <div class="col-lg-5 col-md-12 col-sm-12 col-12">
                         <div class="img-feature"> <img src="{{ asset('uploads/video_gallery/' . $video[0]->image_url) }}"
                                 alt="{{ $video[0]->title }}">
-                            <div class="video-play"> <a href="https://www.youtube.com/watch?v=_ZHbRKmj360" class="video video-popup mfp-iframe">
-                                    <i class="fa fa-play"></i> </a>
+                            @if(!empty($video[0]->link))
+                            <div class="video-play"> 
+                                {{-- <a href="{{$video[0]->link ?? ''}}" class="video video-popup mfp-iframe">
+                                    <i class="fa fa-play"></i> 
+                                </a> --}}
+                                <a href="{{$video[0]->link ?? ''}}" class="play-btn lightbox-image" data-fancybox="images" target="_blank">
+                                    <i class="fa fa-play"></i> 
+                                </a>
                                 <div class="waves-block">
                                     <div class="waves wave-1"></div>
                                     <div class="waves wave-2"></div>
                                     <div class="waves wave-3"></div>
                                 </div>
                             </div>
+                            @endif
                             <span>Watch Our Video</span>
                         </div>
                     </div>

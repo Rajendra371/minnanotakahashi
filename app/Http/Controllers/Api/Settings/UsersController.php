@@ -130,7 +130,7 @@ class UsersController extends Controller
             $data['userdetail'] = $data;
             $data['location'] = DB::table('location')->where(['isactive' => 'Y', 'orgid' => $orgid])->get();
             $data['usergroup'] = DB::table('usergroup')->where(['orgid' => $orgid])->get();
-            $data['department'] = DB::table('department')->where(['isactive' => 'Y'])->get();
+            $data['department'] = DB::table('department')->where(['is_publish' => 'Y'])->get();
             $view = view("Settings/Users/MainForm")->with('data', $data);
             $template = $view->render();
 

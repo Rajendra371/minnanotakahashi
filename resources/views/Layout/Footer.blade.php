@@ -81,7 +81,7 @@
                   $phones = explode(",", $dat['organization'][0]->phone);
                 @endphp
                 @if(!empty($contact))
-                  <li class="footer-mobile-number"><i class="fa fa-phone"></i><a href="tel:{{$phones[0]}}">{{$phones[0]}}</a>,<a href="tel:{{$phones[1]}}">{{$phones[1]}}</a>,<a href="tel:{{$dat['organization'][0]->mobile}}">{{$dat['organization'][0]->mobile}}</a>
+                  <li class="footer-mobile-number"><i class="fa fa-phone"></i><a href="tel:{{$phones[0]}}">{{$phones[0]}}</a>, <a href="tel:{{$phones[1]}}">{{$phones[1]}}</a>, <a href="tel:{{$dat['organization'][0]->mobile}}">{{$dat['organization'][0]->mobile}}</a>
                   </li>
                 @endif
                 @if(!empty($dat['organization'][0]->email))

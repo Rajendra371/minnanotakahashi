@@ -17,6 +17,14 @@
                     @endforeach
                 @endif
             </select>
+        </div>
+        <div class="col-md-6 mb-2 ">
+            <label>Type<code>*</code>: </label>
+            <select name="nne_typeid" id="nne_typeid" class="form-control">
+                <option value="1" @if($data->nne_typeid=='1') {{"selected=selected"}} @endif >News</option>
+                <option value="2" @if($data->nne_typeid=='2') {{"selected=selected"}} @endif >Notices</option>
+                <option value="3" @if($data->nne_typeid=='3') {{"selected=selected"}} @endif >Events</option>
+            </select>
         </div> 
          <div class="col-6 col-sm-6 col-md-6 form-group">
           <label class="">Title<code>*</code>:</label>

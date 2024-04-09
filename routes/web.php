@@ -71,35 +71,35 @@ if (strpos($requrl, 'admin') !== false || strpos($requrl, 'badministrator') !== 
 
 
         /*Employee Portal*/
-        Route::namespace('Api\Employee')->middleware(['guest:employee'])->group(function () {
-            Route::get('/login', 'EmployeePortalController@login_view')->name('login');
-            Route::post('/login', 'EmployeePortalController@login')->name('login');
-            Route::get('/forgot_password', 'EmployeePortalController@forgot_password_view')->name('forgot-password');
-            Route::post('/forgot_password', 'EmployeePortalController@forgot_password')->name('forgot-password');
-            Route::get('/verify_reset_code', 'EmployeePortalController@verify_reset_code_view')->name('verify-reset-code');
-            Route::post('/verify_reset_code', 'EmployeePortalController@verify_reset_code')->name('verify-reset-code');
-            Route::get('/new_password', 'EmployeePortalController@new_password_view')->name('new_password');
-            Route::post('/new_password', 'EmployeePortalController@new_password')->name('new_password');
-        });
+        // Route::namespace('Api\Employee')->middleware(['guest:employee'])->group(function () {
+        //     Route::get('/login', 'EmployeePortalController@login_view')->name('login');
+        //     Route::post('/login', 'EmployeePortalController@login')->name('login');
+        //     Route::get('/forgot_password', 'EmployeePortalController@forgot_password_view')->name('forgot-password');
+        //     Route::post('/forgot_password', 'EmployeePortalController@forgot_password')->name('forgot-password');
+        //     Route::get('/verify_reset_code', 'EmployeePortalController@verify_reset_code_view')->name('verify-reset-code');
+        //     Route::post('/verify_reset_code', 'EmployeePortalController@verify_reset_code')->name('verify-reset-code');
+        //     Route::get('/new_password', 'EmployeePortalController@new_password_view')->name('new_password');
+        //     Route::post('/new_password', 'EmployeePortalController@new_password')->name('new_password');
+        // });
 
-        Route::middleware(['auth:employee'])->group(function () {
-            Route::group(['namespace' => 'Api\Employee'], function () {
-                Route::get('/dashboard', 'EmployeePortalController@dashboard')->name('dashboard');
-                Route::get('/trainings', 'EmployeePortalController@trainings')->name('trainings');
-                Route::get('/refresh_training', 'EmployeePortalController@refresh_training')->name('refresh-training');
-                Route::post('/save_trainings', 'EmployeePortalController@save_trainings')->name('save-training');
-                Route::post('/shift_view', 'EmployeePortalController@shift_view')->name('shift-view');
-                Route::get('/refresh_roster', 'EmployeePortalController@refresh_roster')->name('refresh-roster');
-                Route::get('/refresh_book_shifts', 'EmployeePortalController@refresh_book_shifts')->name('refresh-book-shifts');
-                Route::get('/change_password', 'EmployeePortalController@change_password_view')->name('change-password');
-                Route::post('/change_password', 'EmployeePortalController@change_password')->name('change-password');
-                Route::post('/logout', 'EmployeePortalController@logout')->name('logout');
-                Route::post('/shift_book', 'EmployeePortalController@shift_book')->name('shift-book');
-                Route::post('/shift_completed', 'EmployeePortalController@shift_completed')->name('shift-completed');
-                Route::post('/shift_complete_view', 'EmployeePortalController@shift_complete_view')->name('shift-complete-view');
-                Route::post('/shift_clockin', 'EmployeePortalController@shift_clockin')->name('shift-clockin');
-            });
-        });
+        // Route::middleware(['auth:employee'])->group(function () {
+        //     Route::group(['namespace' => 'Api\Employee'], function () {
+        //         Route::get('/dashboard', 'EmployeePortalController@dashboard')->name('dashboard');
+        //         Route::get('/trainings', 'EmployeePortalController@trainings')->name('trainings');
+        //         Route::get('/refresh_training', 'EmployeePortalController@refresh_training')->name('refresh-training');
+        //         Route::post('/save_trainings', 'EmployeePortalController@save_trainings')->name('save-training');
+        //         Route::post('/shift_view', 'EmployeePortalController@shift_view')->name('shift-view');
+        //         Route::get('/refresh_roster', 'EmployeePortalController@refresh_roster')->name('refresh-roster');
+        //         Route::get('/refresh_book_shifts', 'EmployeePortalController@refresh_book_shifts')->name('refresh-book-shifts');
+        //         Route::get('/change_password', 'EmployeePortalController@change_password_view')->name('change-password');
+        //         Route::post('/change_password', 'EmployeePortalController@change_password')->name('change-password');
+        //         Route::post('/logout', 'EmployeePortalController@logout')->name('logout');
+        //         Route::post('/shift_book', 'EmployeePortalController@shift_book')->name('shift-book');
+        //         Route::post('/shift_completed', 'EmployeePortalController@shift_completed')->name('shift-completed');
+        //         Route::post('/shift_complete_view', 'EmployeePortalController@shift_complete_view')->name('shift-complete-view');
+        //         Route::post('/shift_clockin', 'EmployeePortalController@shift_clockin')->name('shift-clockin');
+        //     });
+        // });
     });
     Route::get('/clear-cache', function () {
         Artisan::call('optimize:clear');

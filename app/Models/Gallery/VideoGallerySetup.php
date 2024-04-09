@@ -25,7 +25,7 @@ class VideoGallerySetup extends Model
         }
 
         $nquery = DB::table('video_galleries as sd')
-            ->select('sd.id', 'sd.title', 'sd.content', 'sd.is_display', 'sd.order', 'sd.link');
+            ->select('sd.id', 'sd.title', 'sd.content', 'sd.is_display', 'sd.is_home_display', 'sd.order', 'sd.link', 'sd.image_url');
 
         if (!empty($get['sSearch_1'])) {
             $nquery->where('sd.title', 'like', "%" . $get['sSearch_1'] . "%");
@@ -35,7 +35,7 @@ class VideoGallerySetup extends Model
         }
 
         $query = DB::table('video_galleries as sd')
-            ->select('sd.id', 'sd.title', 'sd.content', 'sd.is_display', 'sd.order', 'sd.link');
+            ->select('sd.id', 'sd.title', 'sd.content', 'sd.is_display', 'sd.is_home_display', 'sd.order', 'sd.link', 'sd.image_url');
 
         if (!empty($get['sSearch_1'])) {
             $query->where('sd.title', 'like', "%" . $get['sSearch_1'] . "%");

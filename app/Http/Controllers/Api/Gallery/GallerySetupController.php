@@ -54,10 +54,10 @@ class GallerySetupController extends Controller
         $postdatebs = EngToNepDateConv(CURDATE_EN);
         $postip = get_real_ipaddr();
         $postmac = get_Mac_Address();
-        $input = $request->except('is_display', 'id', 'image');
+        $input = $request->except('is_display', 'id', 'image', 'is_home_display');
         $id = $request->id;
         $input['is_display'] = $request->is_display ?? 'N';
-
+        $input['is_home_display'] = $request->is_home_display ?? 'N';
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             // 560*450
@@ -155,6 +155,7 @@ class GallerySetupController extends Controller
             $array[$i]['link'] = $row->link;
             $array[$i]['order'] = $row->order;
             $array[$i]['is_display'] = $row->is_display;
+            $array[$i]['is_home_display'] = $row->is_home_display;
             $array[$i]['action'] = '<a href="javascript:void(0)" class="btnEdit" data-url="/api/video_gallery/edit" data-id=' . $row->id . ' data-targetForm="videoGalleryForm"><i class="fa fa-edit"></i></a>
             &nbsp
             <a href="javascript:void(0)" class="btnDelete" data-url="/api/video_gallery/delete" data-id=' . $row->id . ' data-targetForm="videoGalleryForm" data-edittype="template"><i class="fa fa-trash"></i></a>

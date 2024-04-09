@@ -75,7 +75,7 @@ class HomeController extends Controller
     {
         $data['banners'] = Home::get_banner_data();
         $data['services'] = Home::get_service_data(false, 9);
-        $data['form_services'] = DB::table('services')->select('id', 'service_name')->where('is_publish', 'Y')->where('for_form', 'Y')->get();
+        // $data['form_services'] = DB::table('services')->select('id', 'service_name')->where('is_publish', 'Y')->where('for_form', 'Y')->get();
         $data['testimonials'] = Home::get_testimonials(array(['type', '2']), 5);
         $data['about'] = DB::table('pages')
             ->select('id', 'page_title', 'page_slug', 'short_content', 'description', 'images')
@@ -87,19 +87,20 @@ class HomeController extends Controller
         ->where('is_publish', 'Y')
         ->where('page_slug', 'choose')
         ->first();
-        $data['brief_information'] = DB::table('pages')
-            ->select('id', 'page_title', 'page_slug', 'short_content', 'description', 'images')
-            ->where('is_publish', 'Y')
-            ->where('page_slug', 'brief-information')
-            ->first();
-        $data['video'] = Home::get_video_gallery(1);
-        $data['useful_links'] = Home::get_useful_link_data();
+        // $data['brief_information'] = DB::table('pages')
+        //     ->select('id', 'page_title', 'page_slug', 'short_content', 'description', 'images')
+        //     ->where('is_publish', 'Y')
+        //     ->where('page_slug', 'brief-information')
+        //     ->first();
+        $data['video'] = Home::get_video_gallery(array(['is_home_display', 'Y']),1);
+        // dd($data['video']);
+        // $data['useful_links'] = Home::get_useful_link_data();
         $data['blogs'] = Home::get_blog_data(false, 4);
-        $data['body_tiles'] = Home::get_frontend_tiles(array(['for_body', 'Y']), 4);
+        // $data['body_tiles'] = Home::get_frontend_tiles(array(['for_body', 'Y']), 4);
         $data['faqs'] = FaqSetup::select('id', 'title', 'description')->where('is_publish', 'Y')->orderBy('order')->limit(3)->get();
         $data['destination'] = Home::get_destination_data();
         $data['news'] = Home::get_events_data(array(['nne_typeid', '1']));
-        $data['events'] = Home::get_events_data(array(['nne_typeid', '2']));
+        $data['events'] = Home::get_events_data(array(['nne_typeid', '3']));
         $data['advertisement'] = Home::get_advertisement();
         // dd($data['advertisement']);
         $data['organization'] = Home::get_organization_data();
@@ -318,7 +319,7 @@ class HomeController extends Controller
 
     public function events(Request $request)
     {  
-        $data['events'] = Home::get_events_data(array(['nne_typeid', '2']));
+        $data['events'] = Home::get_events_data(array(['nne_typeid', '3']));
         // dd( $data['events'] );
         $data['seo_data']= Home::get_seo_list(array('sp.id'=> 17));
         // dd($data['team_detail']);
@@ -405,7 +406,7 @@ class HomeController extends Controller
         // $data['blog_categories'] = Home::get_blog_cat_data();
         $data['seo_data']= Home::get_seo_list(array('sp.id'=> 20));
         if(!empty($data['news_detail'][0]->image)){
-            $og_blog_image = asset('uploads/nne_image/' . $data['news_detail'][0]->image);
+            $og_image = asset('uploads/nne_image/' . $data['news_detail'][0]->image);
         }
         if( $data['seo_data'])
 		{
@@ -415,7 +416,7 @@ class HomeController extends Controller
 			$data['meta_desc']= !empty( $data['seo_data'][0]->seo_metadescription)? $data['seo_data'][0]->seo_metadescription:'';
             $data['og_title'] = !empty( $data['news_detail'][0]->title)? $data['news_detail'][0]->title:'' ;
 			$data['og_desc'] = !empty( $data['seo_data'][0]->seo_metakeyword)? $data['seo_data'][0]->seo_metakeyword:'';
-			$data['og_blog_image']=!empty($og_blog_image)?$og_blog_image:'';
+			$data['og_image']=!empty($og_image)?$og_image:'';
 		}
         // dd($data['service']);
         return view('Home.newsdetail', $data );

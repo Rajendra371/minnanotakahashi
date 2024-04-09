@@ -43,6 +43,7 @@ export default class List extends Component {
                       <th width="20%">Link</th>
                       <th width="10%">Order</th>
                       <th width="10%">Is Display?</th>
+                      <th width="10%">Home Disp.</th>
                       <th width="5%">Action</th>
                     </tr>
                   </thead>
@@ -108,6 +109,7 @@ function load_table_data() {
         { data: "link" },
         { data: "order" },
         { data: "is_display" },
+        { data: "is_home_display" },
         { data: "action" },
       ],
 

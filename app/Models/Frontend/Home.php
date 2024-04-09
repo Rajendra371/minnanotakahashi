@@ -28,15 +28,18 @@ class Home extends Model
         return $data;
     }
 
-    public static function get_video_gallery($limit = 0)
+    public static function get_video_gallery($where=false, $limit = 0)
     {
         $data = DB::table('video_galleries')
             ->select('id', 'title', 'link', 'content', 'image_url')
             ->where('is_display', 'Y')
-            ->orderBy('order', 'ASC')
+            ->when($where, function ($query) use ($where) {
+                $query->where($where);
+            })
             ->when($limit, function ($query) use ($limit) {
                 return $query->limit($limit);
             })
+            ->orderBy('order', 'ASC')
             ->get();
         return $data;
     }

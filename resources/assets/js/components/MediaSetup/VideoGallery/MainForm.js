@@ -91,6 +91,18 @@ class MainForm extends Component {
                         <FormattedMessage id="isdisplay" />
                       </div>
                     </Col>
+                    <Col md="6" sm="6" xs="6">
+                      <div className="checkbox">
+                        <Input
+                          type="checkbox"
+                          id="is_home_display"
+                          name="is_home_display"
+                          value="Y"
+                        />
+                        <Label for="is_home_display" />
+                        <FormattedMessage id="Homepage Display" />
+                      </div>
+                    </Col>
                   </FormGroup>
                   <CardFooter>
                     <div className="clearfix">

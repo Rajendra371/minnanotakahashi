@@ -63,6 +63,14 @@ class MainForm extends Component {
                       </Input>
                     </Col>
                     <Col md="6" sm="6" xs="6">
+                      <Label>Type:</Label>
+                      <Input type="select" name="nne_typeid" id="nne_typeid">
+                        <option value="1">News</option>
+                        <option value="2">Notices</option>
+                        <option value="3">Events</option>
+                      </Input>
+                    </Col>
+                    <Col md="6" sm="6" xs="6">
                       <Label>
                         Title<code>*</code>:
                       </Label>
