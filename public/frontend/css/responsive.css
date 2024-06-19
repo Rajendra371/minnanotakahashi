@@ -55,6 +55,7 @@
 	}
 
 	@media only screen and (max-width: 991px) {
+		.header{margin-bottom: -15px;}
 		.blog-latest .single-news .news-head figure{min-height: 225px; max-height: 250px;}
 		.message-box:after{bottom: 100%; top: auto; right: 48%; rotate: 90deg;}
 		.faq_list, .img-feature{padding-top: 30px;}
@@ -113,6 +114,19 @@
 			-moz-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 			box-shadow: 0 5px 20px rgb(0 0 0 / 10%);
 		}
+
+		.hero-slider .owl-carousel .owl-nav div, .blog-latest.owl-carousel .owl-nav div, .service-slider.owl-carousel .owl-nav div {
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+			font-size: 25px;
+		}
+		.hero-slider:hover .owl-carousel .owl-nav .owl-next {
+			left: 35px;
+		}
+		/* .hero-slider, .hero-slider .single-slider {
+			height: 400px !important;
+		} */
 
 }
 
@@ -208,9 +222,6 @@
 	.hero-slider .hero-text h1 {
 		font-size: 35px;
 		line-height: 50px;
-	}
-	.hero-slider, .hero-slider .single-slider {
-		height: 550px !important;
 	}
 	.hero-slider .welcome-text {
 		margin: 109px 0 0;
@@ -424,6 +435,11 @@
 	.single-feature h4 a{font-size: 18px;}
 	.single-feature .country-img figure{max-height: 260px;}
 	.blog-latest .single-news .news-head figure{min-height: 200px; max-height: 215px;}
+
+	/* .hero-slider, .hero-slider .single-slider {
+		height: 375px !important;
+	} */
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -435,10 +451,16 @@
 	.blog-latest .single-news .news-head figure{min-height: 175px; max-height: 190px;}
 	.single-team .t-content .name a{font-size: 18px;}
 	.single-feature h4 a {font-size: 16px;}
+
+	/* .hero-slider, .hero-slider .single-slider {
+		height: 350px !important;
+	} */
+
 }
 
 /* Mobile Screen */
 @media only screen and (max-width: 767px) {
+.header{margin-bottom: 15px;}
 .country .country-img figure img{width: 100%;}
 .service-main-box{padding: 25px;}
 .blog-latest .single-news .news-head figure{min-height: 300px; max-height: 390px;}
@@ -722,9 +744,11 @@ p{
 	font-size: 25px;
 	line-height: 32px;
 }
-.hero-slider, .hero-slider .single-slider {
-	height: 450px !important;
-}
+
+/* .hero-slider, .hero-slider .single-slider {
+	height: 320px !important;
+} */
+
 /*.hero-slider .single-slider {
 	background: #fff !important;
 }*/
@@ -996,6 +1020,11 @@ p{
 	.single-feature .country-img figure{max-height: 360px;}
 	.blog-latest .single-news .news-head figure{min-height: 290px; max-height: 300px;}
 	#scrollUp{right: 20px; top: 96%;}
+
+	/* .hero-slider, .hero-slider .single-slider {
+		height: 300px !important;
+	} */
+
 }
 
 @media only screen and (max-width: 575px) {
@@ -1008,7 +1037,9 @@ p{
 	#scrollUp i{height: 30px; width: 30px; line-height: 30px;}
 	.topbar{min-height: 62px;}
 	.img-wrapper img{max-height: inherit;}
-	.hero-slider, .hero-slider .single-slider {height: 350px!important;}
+
+	/* .hero-slider, .hero-slider .single-slider {height: 275px!important;} */
+
 	.single-team .team-social{width: 32px;}
 	.career-box li i{min-width: 20px;}
 	.single-service .icon-bg{height: 50px; width: 50px; line-height: 50px;}
@@ -1054,7 +1085,7 @@ p{
 	.message-box, .blog-latest-slider .single-news, .small-list-feature ul{margin: 0px;}
 
 	.navbar-toggler{font-size: 18px;}
-	.header .img-logo a{padding-top: 5px;}
+	.header .img-logo a{padding-top: 5px; padding-bottom: 0px;}
 	.top-contact.text-right{padding-top: 10px;}
 	.top-contact.text-right{padding-bottom: 0px;}
 	.right-bar .right-nav li a img{max-height: 50px; margin-top:-20px}
@@ -1066,6 +1097,16 @@ p{
 	.faq-body{padding: 15px 20px;}
 	.topbar .col-12{display: block; width: 100%; -ms-flex: 100%; flex: 100%; max-width: 100%; padding-right: 15px;}
 	.blog-latest .single-news .news-head figure{min-height: 250px; max-height: 290px;}
+
+		.hero-slider .owl-carousel .owl-nav div, .blog-latest.owl-carousel .owl-nav div, .service-slider.owl-carousel .owl-nav div {
+			width: 25px;
+			height: 25px;
+			line-height: 25px;
+			font-size: 20px;
+		}
+		.hero-slider:hover .owl-carousel .owl-nav .owl-next {
+			left: 30px;
+		}
 
 	}
 	/*Responsive CSS By Bikash Bhandari (bikash.433@gmail.com)*/
@@ -1083,6 +1124,11 @@ p{
 		.navbar-toggler{height: 28px; width: 35px; margin-top: -13px;}
 		.single-feature .country-img figure{max-height: 300px;}
 		.blog-latest .single-news .news-head figure{min-height: 230px; max-height: 245px;}
+
+		/* .hero-slider, .hero-slider .single-slider {
+			height: 260px !important;
+		} */
+
 	}
 	/*Responsive CSS By Bikash Bhandari (bikash.433@gmail.com)*/
 	@media only screen and (max-width: 450px) {
@@ -1198,6 +1244,11 @@ p{
 		.main-service .single-service .service-content{bottom: -110px;}
 		.single-feature .country-img figure{max-height: 260px;}
 		.blog-latest .single-news .news-head figure{min-height: 210px; max-height: 220px;}
+
+		/* .hero-slider, .hero-slider .single-slider {
+			height: 250px !important;
+		} */
+
 	}
 
 	@media only screen and (max-width: 420px) {
@@ -1207,6 +1258,11 @@ p{
 		.side.overlay:before{top: 32%;}
 		.blog-latest .single-news .news-head figure{min-height: 200px; max-height: 200px;}
 		.testimonial-inner .single-slider, .service-main-box{padding: 15px;}
+
+		/* .hero-slider, .hero-slider .single-slider {
+			height: 220px !important;
+		} */
+
 	}
 
 	@media only screen and (max-width: 393px) {
@@ -1216,6 +1272,11 @@ p{
 		.footer .copyright-content p{text-align: left !important;}
 		.blog-latest .single-news .news-head figure{min-height: 185px; max-height: 190px;}
 		.navbar-toggler{right: -5px;}
+
+		/* .hero-slider, .hero-slider .single-slider {
+			height: 200px !important;
+		} */
+
 	}
 	@media only screen and (max-width: 370px) {
 		.main-service .single-service .service-content{bottom: -120px;}
@@ -1223,12 +1284,22 @@ p{
 		.side.overlay:before{top: 35%;}
 		.blog-latest .single-news .news-head figure{min-height: inherit; max-height: 182px;}
 		.topbar-right{margin-right: 25px;}
+
+		/* .hero-slider, .hero-slider .single-slider {
+			height: 175px !important;
+		} */
+
 	}
 	@media only screen and (max-width: 352px) {
 		.topbar .col-5, .topbar .col-7{display: block; width: 100%; -ms-flex: 100%; flex: 100%; max-width: 100%; padding-left: 15px;}
 		.topbar .top-contact{display: none;}
 		.topbar-right{float: none !important; margin-left: 0px;  margin-right:0px;}
 		.breadcrumbs {padding: 90px 0px 45px 0px; background-position: center right -45px;}
+
+		/* .hero-slider, .hero-slider .single-slider {
+			height: 150px !important;
+		} */
+
 	}
 
 

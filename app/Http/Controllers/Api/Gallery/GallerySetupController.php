@@ -153,6 +153,7 @@ class GallerySetupController extends Controller
             $array[$i]['image_url'] = $image;
             // $array[$i]['content'] = str_limit($row->content, 50, '...');
             $array[$i]['link'] = $row->link;
+            $array[$i]['homepage_video_link'] = $row->homepage_video_link;
             $array[$i]['order'] = $row->order;
             $array[$i]['is_display'] = $row->is_display;
             $array[$i]['is_home_display'] = $row->is_home_display;

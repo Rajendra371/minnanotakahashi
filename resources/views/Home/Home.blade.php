@@ -59,9 +59,15 @@
             <div class="home-slider">
                 @foreach ($banners as $banner)
                     <!-- Single Slider -->
-                    <div class="single-slider"
-                        style="background-image:url('{{ asset("uploads/banner_image/$banner->banner_img") }}')">
-                        <div class="container">
+                    <div class="single-slider">
+
+                        {{-- style="background-image:url('{{ asset("uploads/banner_image/$banner->banner_img") }}')" --}}
+
+                        <figure>
+                            <img src="{{ asset("uploads/banner_image/$banner->banner_img") }}" />
+                        </figure> 
+
+                        {{-- <div class="container">
                             <div class="row">
                                 <div class="col-lg-7 col-md-8 col-12">
                                     <div class="welcome-text">
@@ -77,7 +83,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
+
                     </div>
                     <!--/ End Single Slider -->
                 @endforeach
@@ -217,14 +224,17 @@
                     <div class="col-lg-5 col-md-12 col-sm-12 col-12">
                         <div class="img-feature"> <img src="{{ asset('uploads/video_gallery/' . $video[0]->image_url) }}"
                                 alt="{{ $video[0]->title }}">
-                            @if(!empty($video[0]->link))
-                            <div class="video-play"> 
-                                {{-- <a href="{{$video[0]->link ?? ''}}" class="video video-popup mfp-iframe">
-                                    <i class="fa fa-play"></i> 
-                                </a> --}}
-                                <a href="{{$video[0]->link ?? ''}}" class="play-btn lightbox-image" data-fancybox="images" target="_blank">
+                            @if(!empty($video[0]->homepage_video_link))
+                            <div class="video-play">
+
+                                <a href="{{ $video[0]->homepage_video_link }}" class="video video-popup mfp-iframe">
                                     <i class="fa fa-play"></i> 
                                 </a>
+                                
+                                {{-- <a href="{{$video[0]->link ?? ''}}" class="play-btn lightbox-image" data-fancybox="images" target="_blank">
+                                    <i class="fa fa-play"></i> 
+                                </a> --}}
+
                                 <div class="waves-block">
                                     <div class="waves wave-1"></div>
                                     <div class="waves wave-2"></div>

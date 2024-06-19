@@ -12,7 +12,7 @@
 							<li>
 								<a href="{{route('home')}}">Home</a>
 							</li>
-							<li>Contact Us</li>
+							<li>Contact </li>
 						</ul>
 					</div>
 					<!-- Bread Title -->

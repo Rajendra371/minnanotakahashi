@@ -2154,15 +2154,18 @@ p.has-large-font-size {
 .hero-slider {
   position: relative;
 }
-.hero-slider,
+
+/* .hero-slider,
 .hero-slider .single-slider {
   height: 600px;
-}
+} */
+
 .hero-slider .single-slider {
   background-size: cover;
   background-position: center;
   position: relative;
 }
+.hero-slider .single-slider figure{margin-bottom: 0px;}
 .hero-slider .single-slider .slide-overlay {
   position: absolute;
   top: 0;
@@ -5057,7 +5060,7 @@ p.has-large-font-size {
   line-height: 30px;
 }
 .att-area {
-  background: #fff url(img/att-bg.png) no-repeat left -15px center;
+  background: #fff url(img/att-bg.png) no-repeat left -45px;
   font-size: 16px;
   background-size: cover;
 }
@@ -5246,6 +5249,8 @@ p.has-large-font-size {
   max-height: 400px;
   overflow: hidden;
 }
+.gallery-album .img-wrapper a img{min-height: 200px;} 
+.gallery-album .img-wrapper a { max-height: 200px; overflow: hidden;}
 .img-wrapper img {
   max-width: 100%;
   width: 100%;

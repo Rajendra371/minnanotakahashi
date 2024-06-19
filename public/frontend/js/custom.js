@@ -256,8 +256,8 @@
       type: "iframe",
       removalDelay: 300,
       mainClass: "mfp-fade",
+      });
     });
-  });
 
   /*====================================
 			Scrool Up JS

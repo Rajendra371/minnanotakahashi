@@ -10,6 +10,7 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
 <meta name="keywords" content="{{!empty($meta_keys)?strip_tags($meta_keys):''}}">
 <meta name="description" content="{{!empty($meta_desc)?strip_tags($meta_desc):''}}">
 <!-- Title Tag  -->

@@ -41,13 +41,25 @@ class MainForm extends Component {
 
                     <Col sm="6">
                       <Label>
-                        <FormattedMessage id="video.link" />
+                        Embed Video Link
                         <code>*</code>:
                       </Label>
                       <Input
                         type="textarea"
                         name="link"
-                        placeholder="Enter Video Link "
+                        placeholder="Enter Embed Video Link "
+                      />
+                    </Col>
+                  </FormGroup>
+                  <FormGroup row>
+                    <Col md="6" sm="6" xs="6">
+                      <Label>
+                        Homepage Video Link:
+                      </Label>
+                      <Input
+                        type="textarea"
+                        name="homepage_video_link"
+                        placeholder="Enter Homepage Video Link"
                       />
                     </Col>
                   </FormGroup>

@@ -40,7 +40,8 @@ export default class List extends Component {
                       <th width="5%">S.No.</th>
                       <th width="10%">Title</th>
                       <th width="10%">Image</th>
-                      <th width="20%">Link</th>
+                      <th width="20%">Embed Link</th>
+                      <th width="20%">Homepage Video Link</th>
                       <th width="10%">Order</th>
                       <th width="10%">Is Display?</th>
                       <th width="10%">Home Disp.</th>
@@ -98,7 +99,7 @@ function load_table_data() {
       aoColumnDefs: [
         {
           bSortable: false,
-          aTargets: [0, 2, 4, 5, 6],
+          aTargets: [0, 2, 4, 5, 6,7],
         },
       ],
 
@@ -107,6 +108,7 @@ function load_table_data() {
         { data: "title" },
         { data: "image_url" },
         { data: "link" },
+        { data: "homepage_video_link" },
         { data: "order" },
         { data: "is_display" },
         { data: "is_home_display" },

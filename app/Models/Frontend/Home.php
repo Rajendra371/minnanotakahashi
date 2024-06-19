@@ -31,7 +31,7 @@ class Home extends Model
     public static function get_video_gallery($where=false, $limit = 0)
     {
         $data = DB::table('video_galleries')
-            ->select('id', 'title', 'link', 'content', 'image_url')
+            ->select('id', 'title', 'link', 'homepage_video_link','content', 'image_url')
             ->where('is_display', 'Y')
             ->when($where, function ($query) use ($where) {
                 $query->where($where);
