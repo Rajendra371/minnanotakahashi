@@ -57,6 +57,7 @@ if (strpos($requrl, 'admin') !== false || strpos($requrl, 'badministrator') !== 
             // Route::post('/apply_job', 'HomeController@apply_job')->name('apply-job');
             Route::get('/faqs', 'HomeController@faqs')->name('faqs');
             Route::get('/book_appointment', 'HomeController@book_appointment')->name('book-appointment');
+            Route::get('/message_from_chairman', 'HomeController@message_from_chairman')->name('message-from-chairman');
             Route::get('/message_from_founder', 'HomeController@message_from_founder')->name('message-from-founder');
             Route::get('/message_from_ceo', 'HomeController@message_from_ceo')->name('message-from-ceo');
             Route::get('/team', 'HomeController@team')->name('team');

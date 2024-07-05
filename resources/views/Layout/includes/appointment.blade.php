@@ -13,7 +13,7 @@
                 </div>
                 <div class="contact-form-area">
                     <div class="appointment_head">
-                        <h6> <span> ABROAD STUDY </span> : Australia | Canada | South Korea | Japan | UK | New Zealand</h6>
+                        <h6> <span> ABROAD STUDY </span> : Australia | Canada | South Korea | Japan | UK</h6>
                         <h6><span> TEST PREPARATION </span> : IELTS | PTE | Japanese Language | Korean Language</h6>
                     </div>
                     <form class="form" id="appointmentForm" method="post" action="{{ route('appointment') }}">
@@ -78,7 +78,7 @@
                                         <option value="South Korea">South Korea</option>
                                         <option value="UK">UK</option>
                                         <option value="Japan">Japan</option>
-                                        <option value="New Zealand">New Zealand</option>
+                                        {{-- <option value="New Zealand">New Zealand</option> --}}
                                         <option value="Others">Others</option>
                                     </select>
                                 </div>

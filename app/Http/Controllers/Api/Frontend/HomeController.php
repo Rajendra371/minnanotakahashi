@@ -796,6 +796,20 @@ class HomeController extends Controller
         return view('Home.appointment', $data);
     }
 
+    public function message_from_chairman(Request $request)
+    {
+        $data['cmmessage'] = Home::get_team_data(array(['type', '3']),false,"designation = 'Chairman'");
+        if ($data['cmmessage']) {
+            //set SEO data
+            $data['page_title'] = !empty($data['cmmessage'][0]->seo_meta_title) ? $data['cmmessage'][0]->seo_meta_title : '';
+            $data['meta_keys'] = !empty($data['cmmessage'][0]->seo_meta_keyword) ? $data['cmmessage'][0]->seo_meta_keyword : '';
+            $data['meta_desc'] = !empty($data['cmmessage'][0]->seo_meta_description) ? $data['cmmessage'][0]->seo_meta_description : '';
+            $data['og_title'] = !empty($data['cmmessage'][0]->seo_meta_title) ? $data['cmmessage'][0]->seo_meta_title : '';
+            $data['og_desc'] = !empty($data['cmmessage'][0]->seo_meta_description) ? $data['cmmessage'][0]->seo_meta_description : '';
+        }
+        return view('Home.messagefromchairman',$data);
+    }
+
     public function message_from_founder(Request $request)
     {
         $data['foundermessage'] = Home::get_team_data(array(['type', '3']),false,"designation = 'Founder'");

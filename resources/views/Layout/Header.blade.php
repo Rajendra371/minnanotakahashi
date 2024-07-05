@@ -170,8 +170,9 @@
                   <a href="javascript:void(0)">About Us</a> 
                     <ul class="sub-menu">                     
                       <li> <a href="{{route('who_are_we')}}">Who are we?</a></li>
+                      <li> <a href="{{route('message-from-chairman')}}">Message from Chairman</a></li> 
                       <li> <a href="{{route('message-from-founder')}}">Message from Founder</a></li>  
-                      <li> <a href="{{route('message-from-ceo')}}">Message from CEO</a></li>  
+                      {{-- <li> <a href="{{route('message-from-ceo')}}">Message from CEO</a></li>   --}}
                       <li> <a href="{{route('choose')}}">Why us?</a></li>           
                       {{-- <li> <a href="{{route('team')}}">Our Team</a></li>            --}}
                     </ul>

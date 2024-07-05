@@ -320,7 +320,7 @@
                                             <option value="Japan">Japan</option>
                                             <option value="South Korea">South Korea</option>
                                             <option value="United Kingdom">United Kingdom</option>
-                                            <option value="New Zealand">New Zealand</option>
+                                            {{-- <option value="New Zealand">New Zealand</option> --}}
                                             <option value="Others">Others</option>
                                         </select>
                                     </div>
