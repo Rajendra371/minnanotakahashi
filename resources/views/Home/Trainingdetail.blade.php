@@ -90,7 +90,7 @@
 						<div class="service-single-sidebar widget">
 							<h2 class="widget-title">Get an appointment</h2>
 							<p>Like to speak to one of our counsellor, please call or contact us.</p>
-							<h6>Call Us Now: +977 01 5912412, 01 5912413</h6>
+							<h6>Call Us Now: +977-1-4975530, 9743900536</h6>
 							<div class="contact-form-area service">
 								<!-- Service Form -->
 								<form class="form" method="POST" id="appointmentForm" action="{{route('appointment')}}">

@@ -49,7 +49,7 @@
                                     <div class="message-box">
                                         {!!$foundermessage[0]->description!!}
                                         <h5><span>✍️</span> {{!empty($foundermessage[0]->name)?$foundermessage[0]->name:''}}</h5>
-                                        <h6>{{!empty($foundermessage[0]->designation)?$foundermessage[0]->designation:''}} <small> | Global Eye Education Consultancy</small></h6>
+                                        <h6>{{!empty($foundermessage[0]->designation)?$foundermessage[0]->designation:''}} <small> | Minnano Takahasi Japanese Language Institute</small></h6>
                                     </div>
                                     @endif
                                 <div class="clearfix"></div>

@@ -43,6 +43,7 @@
 <link rel="stylesheet" href="{{asset('frontend/css/font-awesome.css')}}">
 <link rel="stylesheet" href="{{asset('frontend/css/magnific-popup.min.css')}}">
 <link rel="stylesheet" href="{{asset('frontend/css/owl-carousel.min.css')}}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
 
 <!-- homes Stylesheet -->
 <link rel="stylesheet" href="{{asset('frontend/css/reset.css')}}">
@@ -62,6 +63,38 @@
 
 </head>
 <body>
+
+<!-- ======= Top Bar ======= -->
+<div class="top-bar">
+    <div class="container-fluid container-xl">
+        <div class="row align-items-center">
+            <div class="col-md-6 col-12">
+                <div class="d-flex align-items-center flex-wrap justify-content-center justify-content-md-start">
+                    <span class="me-3 mb-2 mb-md-0">
+                        <i class="bi bi-geo-alt"></i> <span class="d-none d-sm-inline">Pachau Marg, Kathmandu 44600</span><span class="d-inline d-sm-none">Kathmandu</span>
+                    </span> &nbsp;
+                    <span class="mb-2 mb-md-0">
+                        <i class="bi bi-telephone"></i> +977-1-4975530
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-6 col-12 text-center text-md-end">
+                <div class="social-links d-inline-flex">
+                    <a href="https://www.facebook.com/minnanotakahasi" target="_blank" class="me-2">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="#" target="_blank" class="me-2">
+                        <i class="bi bi-tiktok"></i>
+                    </a>
+                    <a href="https://www.instagram.com/minnanotakahasi/" target="_blank">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Top Bar -->
 
 <!-- Preloader -->
 <div class="preeloader">

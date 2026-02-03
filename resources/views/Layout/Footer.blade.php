@@ -130,7 +130,7 @@
           <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12">
             <div class="copyright-content lext-left"> 
               <!-- Copyright Text -->
-              <p>© Copyright <?php echo date("Y"); ?> <a href="{{route('home')}}"> {{$dat['organization'][0]->organization_name}} </a> Powered by <a href="https://globaliotnepal.com.np/" target="_blank">Global IOT Nepal</a></p>
+              <p>© Copyright <?php echo date("Y"); ?> <a href="{{route('home')}}"> {{$dat['organization'][0]->organization_name}} </a> Powered by <a href="https://minnanotakahasi.com.np/" target="_blank"> Minnano Takahasi Japanese Language Institute Pvt.Ltd.</a></p>
             
             </div>
           </div>
@@ -205,7 +205,7 @@
    <div id="fb-customer-chat" class="fb-customerchat">
    </div>
  
-   <script>
+   {{-- <script>
      var chatbox = document.getElementById('fb-customer-chat');
      chatbox.setAttribute("page_id", "104862838917662");
      chatbox.setAttribute("attribution", "biz_inbox");
@@ -227,7 +227,28 @@
        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
        fjs.parentNode.insertBefore(js, fjs);
      }(document, 'script', 'facebook-jssdk'));
-   </script> 
+   </script>  --}}
+
+
+ <!-- Meta Pixel Code -->
+ <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1395564971716732');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1395564971716732&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 
   </body>
   </html>
+
+ 

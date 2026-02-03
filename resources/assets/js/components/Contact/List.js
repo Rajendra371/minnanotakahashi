@@ -240,4 +240,12 @@ function load_table_data() {
     toDate = $("#toDate").val();
     dtablelist.fnDraw();
   });
+  $(document).off("keyup", "#search_text");
+  $(document).on("keyup", "#search_text", function() {
+    search_text = $("#search_text").val();
+    filter_date = $("#filter_date").val();
+    frmDate = $("#frmDate").val();
+    toDate = $("#toDate").val();
+    dtablelist.fnDraw();
+  });
 }

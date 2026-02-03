@@ -105,7 +105,7 @@
                         <div class="col-lg-8 col-md-8 col-12">
                             <div class="section-title default about-title">
                                 <div class="section-top">
-                                    <h1><span>About Us</span> <b>Global Eye Education Consultancy</b></h1>
+                                    <h1><span>About Us</span> <b>Minnano Takahasi Japanese Language Institute</b></h1>
                                 </div>
                             </div>
                         </div>
@@ -314,12 +314,13 @@
                                         <label>Applying Country</label>
                                         <div class="icon"><i class="fa fa-flag"></i></div>
                                         <select class="form-control" aria-placeholder="Choose Country" name="country">
-                                            <option>Choose Country</option>
+                                            <option value="0">Choose Country</option>
+                                            <option value="South Korea">South Korea</option>
+                                            <option value="USA">USA</option>
                                             <option value="Australia">Australia</option>
                                             <option value="Canada">Canada</option>
-                                            <option value="Japan">Japan</option>
-                                            <option value="South Korea">South Korea</option>
-                                            <option value="United Kingdom">United Kingdom</option>
+                                            <option value="UK">UK</option>
+                                            {{-- <option value="Japan">Japan</option> --}}
                                             {{-- <option value="New Zealand">New Zealand</option> --}}
                                             <option value="Others">Others</option>
                                         </select>

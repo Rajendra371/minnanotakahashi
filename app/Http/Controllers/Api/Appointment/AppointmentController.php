@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\Appointment;
 
 use Illuminate\Http\Request;
 use App\Models\Appointment\Appointment;
+use App\Models\Frontend\Home;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -12,6 +13,16 @@ use Illuminate\Support\Facades\Validator;
 
 class AppointmentController extends Controller
 {
+    public function index()
+    {
+        $data['branch'] = Home::get_branch_data(array('branch_type' => 1)); 
+        if ($data) {
+            return response()->json(['data' => $data, 'status' => 'success', 'message' => 'Record Added Successfully!!']);
+        } else {
+            return response()->json(['status' => 'error', 'message' => 'Operation Unsuccessful !!']);
+        }
+    }
+
     public function appointment_list()
     {
         $data = Appointment::get_appointment_list();

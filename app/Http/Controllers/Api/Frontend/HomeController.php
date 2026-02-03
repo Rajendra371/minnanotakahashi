@@ -76,7 +76,7 @@ class HomeController extends Controller
         $data['banners'] = Home::get_banner_data();
         $data['services'] = Home::get_service_data(false, 9);
         // $data['form_services'] = DB::table('services')->select('id', 'service_name')->where('is_publish', 'Y')->where('for_form', 'Y')->get();
-        $data['testimonials'] = Home::get_testimonials(array(['type', '2']), 5);
+        $data['testimonials'] = Home::get_testimonials(array(['type', '2']));
         $data['about'] = DB::table('pages')
             ->select('id', 'page_title', 'page_slug', 'short_content', 'description', 'images')
             ->where('is_publish', 'Y')
@@ -158,7 +158,7 @@ class HomeController extends Controller
             ->first();
         $data['short_description'] = Home::get_short_description();
         $data['teams'] = Home::get_testimonials(array(['type', '1']));
-
+        $data['national_branch'] = Home::get_branch_data(array('branch_type' => 1));
         // $data['organization'] = Home::get_organization_data();
         $data['seo_data'] = Home::get_seo_list(array('sp.id' => 2));
         if ($data['seo_data']) {
@@ -180,7 +180,7 @@ class HomeController extends Controller
             ->where('page_slug', 'choose')
             ->first();
         $data['short_description'] = Home::get_short_description();
-
+        $data['national_branch'] = Home::get_branch_data(array('branch_type' => 1));
         // $data['organization'] = Home::get_organization_data();
         $data['seo_data'] = Home::get_seo_list(array('sp.id' => 16));
         if ($data['seo_data']) {
@@ -784,6 +784,7 @@ class HomeController extends Controller
             ->where('page_slug', 'universities')
             ->first();
         $data['categories'] = FaqCategory::with('faqs')->where('is_publish', 'Y')->select('id', 'icon', 'category_name')->orderBy('order')->get();
+        $data['national_branch'] = Home::get_branch_data(array('branch_type' => 1));
         $data['seo_data'] = Home::get_seo_list(array('sp.id' => 2));
         if ($data['seo_data']) {
             //set SEO data

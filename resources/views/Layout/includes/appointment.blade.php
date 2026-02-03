@@ -13,8 +13,8 @@
                 </div>
                 <div class="contact-form-area">
                     <div class="appointment_head">
-                        <h6> <span> ABROAD STUDY </span> : Australia | Canada | South Korea | Japan | UK</h6>
-                        <h6><span> TEST PREPARATION </span> : IELTS | PTE | Japanese Language | Korean Language</h6>
+                        <h6> <span> ABROAD STUDY </span> : South Korea | USA  | Australia | Canada |  UK</h6>
+                        <h6><span> TEST PREPARATION </span> : IELTS | PTE | Korean Language</h6>
                     </div>
                     <form class="form" id="appointmentForm" method="post" action="{{ route('appointment') }}">
                         <div class="row">
@@ -73,11 +73,12 @@
                                     <div class="icon"><i class="fa fa-flag"></i></div>
                                     <select class="form-control" aria-placeholder="Choose Country" name="country">
                                         <option value="0">Choose Country</option>
+                                        <option value="South Korea">South Korea</option>
+                                        <option value="USA">USA</option>
                                         <option value="Australia">Australia</option>
                                         <option value="Canada">Canada</option>
-                                        <option value="South Korea">South Korea</option>
                                         <option value="UK">UK</option>
-                                        <option value="Japan">Japan</option>
+                                        {{-- <option value="Japan">Japan</option> --}}
                                         {{-- <option value="New Zealand">New Zealand</option> --}}
                                         <option value="Others">Others</option>
                                     </select>
@@ -102,9 +103,12 @@
                                     <label>Nearest Branch</label>
                                     <div class="icon"><i class="fa fa-map-marker"></i></div>
                                     <select class="form-control" aria-placeholder="Nearest Branch" name="nearest_branch">
-                                        <option value="0">Nearest Branch</option>
-                                        <option value="Putalisadak">Putalisadak</option>
-                                        <option value="Kalanki">Kalanki</option>
+                                        <option value="">Choose Nearest Branch</option>
+                                        @if(!empty($national_branch))
+                                            @foreach($national_branch as $key=>$nbranch)
+                                            <option value="{{!empty($nbranch->branch_name)?$nbranch->branch_name:''}}">{{!empty($nbranch->branch_name)?$nbranch->branch_name:''}}</option>
+                                            @endforeach
+                                        @endif
                                     </select>
                                 </div>
                             </div>

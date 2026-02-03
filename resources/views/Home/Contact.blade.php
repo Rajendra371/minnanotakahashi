@@ -234,7 +234,10 @@
 <div class="contact-map">
 	<div class="mapouter">
 		<div class="gmap_canvas">
-			<iframe id="gmap_canvas" src="{{$data['organization'][0]->google_map_code}}" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+			{{-- <iframe id="gmap_canvas" src="{{$data['organization'][0]->google_map_code}}" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe> --}}
+			<iframe id="gmap_canvas"
+				src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Minnano Takahasi Japanese Language Institute Pachau Marg, Kathmandu 44600&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+				frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
 		</div>
 	</div>
 </div>

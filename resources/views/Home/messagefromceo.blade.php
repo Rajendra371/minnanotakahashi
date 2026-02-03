@@ -49,7 +49,7 @@
                                     <div class="message-box">
                                         {!!$ceomessage[0]->description!!}
                                         <h5><span>✍️</span> {{!empty($ceomessage[0]->name)?$ceomessage[0]->name:''}}</h5>
-                                        <h6>{{!empty($ceomessage[0]->designation)?$ceomessage[0]->designation:''}} <small> | Global Eye Education Consultancy</small></h6>
+                                        <h6>{{!empty($ceomessage[0]->designation)?$ceomessage[0]->designation:''}} <small> | Minnano Takahasi Japanese Language Institute</small></h6>
                                     </div>
                                     @endif
                                 <div class="clearfix"></div>

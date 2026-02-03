@@ -95,7 +95,7 @@
   text-align: center;
   margin-right: 2px;
   background: #dae9f5;
-  color: #004c90;
+  color: #031c31;
   border: 1px solid #7aaedd;
   border-radius: 100%;
   padding: 1px;
@@ -6373,3 +6373,60 @@ Quiz CSS Start By Bikash Bhandari
 	URL: www.bhandaribikash.com.np
 	Description: Global Eye Education Consultancy
 */
+
+/*======================================
+	Top Bar CSS
+========================================*/
+.top-bar {
+  background: #f8f9fa;
+  padding: 8px 0;
+  font-size: 14px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.top-bar .container-fluid {
+  max-width: 1200px;
+}
+
+.top-bar span {
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.top-bar i {
+  color: #007bff;
+  margin-right: 5px;
+}
+
+.top-bar .social-links a {
+  color: #6c757d;
+  font-size: 16px;
+  margin: 0 5px;
+  transition: color 0.3s ease;
+}
+
+.top-bar .social-links a:hover {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.top-bar .social-links a:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 768px) {
+  .top-bar {
+    padding: 10px 0;
+  }
+  
+  .top-bar span {
+    font-size: 13px;
+  }
+  
+  .top-bar .social-links {
+    margin-top: 10px;
+  }
+}
+/*======================================
+	End Top Bar CSS
+========================================*/

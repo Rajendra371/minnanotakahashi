@@ -4,6 +4,7 @@ export default class List extends Component {
   constructor() {
     super();
     this.state = {
+      branch: [],
       data: [],
       loading: false,
       pages: 0,
@@ -12,6 +13,17 @@ export default class List extends Component {
     setTimeout(function() {
       load_table_data();
     }, 1000);
+  }
+
+  componentDidMount() {
+    axios.get(constvar.api_url + "appointment").then((response) => {
+      if (response.data.status == "success") {
+        // this.setState({ email_configuration: response.data.data['email_protocol'] });
+        this.setState({ branch: response.data.data["branch"] });
+      } else {
+        this.setState({ branch: "" });
+      }
+    });
   }
 
   render() {
@@ -89,12 +101,12 @@ export default class List extends Component {
                           <Label>Country:</Label>
                           <Input type="select" name="countries" id="countries">
                             <option value="0">Select</option>
+                            <option value="South Korea">South Korea</option>
+                            <option value="USA">USA</option>
                             <option value="Australia">Australia</option>
                             <option value="Canada">Canada</option>
-                            <option value="South Korea">South Korea</option>
                             <option value="UK">UK</option>
                             <option value="Japan">Japan</option>
-                            <option value="New Zealand">New Zealand</option>
                             <option value="Others">Others</option>
                           </Input>
                         </div>
@@ -116,9 +128,19 @@ export default class List extends Component {
                         <div>
                           <Label>Nearest Branch:</Label>
                           <Input type="select" name="branches" id="branches">
-                            <option value="0">Select</option>
+                          <option value="">-- All --</option>
+                            {this.state.branch.length > 0
+                              ? this.state.branch.map((datas) => {
+                                  return (
+                                    <option key={datas.branch_name} value={datas.branch_name}>
+                                      {datas.branch_name}
+                                    </option>
+                                  );
+                                })
+                              : ""}
+                            {/* <option value="0">Select</option>
                             <option value="Putalisadak">Putalisadak</option>
-                            <option value="Kalanki">Kalanki</option>
+                            <option value="Kalanki">Kalanki</option> */}
                           </Input>
                         </div>
                       </Col>
@@ -160,7 +182,7 @@ export default class List extends Component {
                       <th width="5%">S.No.</th>
                       <th width="15%">Name</th>
                       <th width="15%">Email</th>
-                      <th width="10%">Mobile Mumber</th>
+                      <th width="10%">Mobile Number</th>
                       <th width="10%">Address</th>
                       <th width="10%">Country</th>
                       <th width="10%">Level</th>
@@ -284,6 +306,17 @@ function load_table_data() {
     });
   $(document).off("click", "#searchByDate");
   $(document).on("click", "#searchByDate", function() {
+    search_text = $("#search_text").val();
+    filter_date = $("#filter_date").val();
+    frmDate = $("#frmDate").val();
+    toDate = $("#toDate").val();
+    countries = $("#countries").val();
+    levels = $("#levels").val();
+    branches = $("#branches").val();
+    dtablelist.fnDraw();
+  });
+  $(document).off("keyup", "#search_text");
+  $(document).on("keyup", "#search_text", function() {
     search_text = $("#search_text").val();
     filter_date = $("#filter_date").val();
     frmDate = $("#frmDate").val();
