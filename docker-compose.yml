@@ -14,8 +14,10 @@ services:
       SERVICE_TAGS: prod
     volumes:
       - ./storage:/var/www/storage
+    networks:
+      - app-network
     depends_on:
-      - mysql
+      - takahashi-db
 
   # Node Service for Local Development Only
   node:
@@ -30,7 +32,7 @@ services:
       - dev
 
   # Database Service
-  mysql:
+  takahashi-db:
     image: mysql:5.7
     container_name: laravel-mysql
     restart: unless-stopped
@@ -43,10 +45,16 @@ services:
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-root}
       MYSQL_PASSWORD: ${DB_PASSWORD:-root}
       MYSQL_USER: ${DB_USERNAME:-laravel}
-      SERVICE_TAGS: dev
+      SERVICE_TAGS: prod
       SERVICE_NAME: mysql
     volumes:
       - dbdata:/var/lib/mysql
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
 
 volumes:
   dbdata:
