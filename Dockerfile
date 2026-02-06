@@ -6,7 +6,7 @@ RUN npm install
 COPY . .
 RUN npm run production
 
-# Stage 2: PHP Application
+# Stage 2: PHP Application & Nginx
 FROM php:7.4-fpm
 
 # Set working directory
@@ -27,7 +27,8 @@ RUN apt-get update && apt-get install -y \
     curl \
     libzip-dev \
     libonig-dev \
-    libxml2-dev
+    libxml2-dev \
+    nginx
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
@@ -44,11 +45,20 @@ COPY . /var/www
 # Copy built assets from node-build stage
 COPY --from=node-build /app/public /var/www/public
 
+# Copy Nginx configuration
+COPY docker/nginx/conf.d/default.conf /etc/nginx/sites-available/default
+RUN ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+
 # Install PHP dependencies
 RUN composer install --no-interaction --no-dev --optimize-autoloader
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
-EXPOSE 9000
-CMD ["php-fpm"]
+# Create startup script
+RUN echo "#!/bin/sh\nphp-fpm -D\nnginx -g 'daemon off;'" > /usr/local/bin/start-app.sh
+RUN chmod +x /usr/local/bin/start-app.sh
+
+EXPOSE 80 3006 9000
+
+CMD ["/usr/local/bin/start-app.sh"]

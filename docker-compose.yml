@@ -1,40 +1,26 @@
 version: '3.8'
 services:
 
-  # Nginx Service (Entry Point)
-  nginx:
-    image: nginx:alpine
-    container_name: laravel-nginx
-    restart: unless-stopped
-    ports:
-      - "80:80"
-      - "3006:3006"
-    volumes:
-      - ./docker/nginx/conf.d:/etc/nginx/conf.d
-      - app-code:/var/www:ro
-    networks:
-      - app-network
-    depends_on:
-      - app
-
-  # PHP Application
+  # Main Application (Nginx + PHP)
   app:
     image: ghcr.io/rajendra371/minnanotakahashi:latest
     container_name: laravel-app
     restart: unless-stopped
-    tty: true
+    ports:
+      - "80:80"
+      - "3006:3006"
     environment:
       SERVICE_NAME: app
-      SERVICE_TAGS: dev
-    entrypoint: sh -c "cp -rp /var/www/. /app-data/ && php-fpm"
+      SERVICE_TAGS: prod
     volumes:
-      - app-code:/app-data
-      - /var/www/vendor
       - ./storage:/var/www/storage
+      - ./.env:/var/www/.env
     networks:
       - app-network
+    depends_on:
+      - db
 
-  # Node Service for Frontend Watcher
+  # Node Service for Local Development Only
   node:
     image: node:14
     container_name: laravel-node
@@ -44,6 +30,8 @@ services:
     command: npm run watch
     networks:
       - app-network
+    profiles:
+      - dev
 
   # Database Service
   db:
