@@ -27,6 +27,5 @@ jobs:
         run: |
           REPO_LOWER=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
           docker buildx build \
-            --context . \
             --push \
             --tag ghcr.io/${REPO_LOWER}:latest .
