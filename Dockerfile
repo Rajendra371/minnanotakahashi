@@ -28,7 +28,8 @@ RUN apt-get update && apt-get install -y \
     libzip-dev \
     libonig-dev \
     libxml2-dev \
-    nginx
+    nginx \
+    iputils-ping
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
@@ -69,6 +70,14 @@ RUN echo "#!/bin/sh\n\
 mkdir -p /var/www/storage/framework/cache/data /var/www/storage/framework/sessions /var/www/storage/framework/views /var/www/storage/logs\n\
 chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache\n\
 chmod -R 775 /var/www/storage /var/www/bootstrap/cache\n\
+\n\
+# Diagnostics: Check if we can see the database\n\
+echo \"--- DNS Diagnostic ---\"\n\
+ping -c 1 takahashi-db || echo \"CANNOT RESOLVE takahashi-db\"\n\
+echo \"----------------------\"\n\
+\n\
+# Clear Laravel Cache (Crucial for Laravel 5.7 when changing ENV)\n\
+php artisan config:clear\n\
 \n\
 php-fpm -D\n\
 nginx -g 'daemon off;'" > /usr/local/bin/start-app.sh
