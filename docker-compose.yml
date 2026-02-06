@@ -11,7 +11,7 @@ services:
       - "3006:3006"
     volumes:
       - ./docker/nginx/conf.d:/etc/nginx/conf.d
-      - /var/www/public
+      - app-code:/var/www
     networks:
       - app-network
     depends_on:
@@ -27,6 +27,7 @@ services:
       SERVICE_NAME: app
       SERVICE_TAGS: dev
     volumes:
+      - app-code:/var/www
       - /var/www/vendor
       - ./storage:/var/www/storage
     networks:
@@ -70,4 +71,6 @@ networks:
 
 volumes:
   dbdata:
+    driver: local
+  app-code:
     driver: local
