@@ -73,7 +73,7 @@ chmod -R 775 /var/www/storage /var/www/bootstrap/cache\n\
 \n\
 # Diagnostics: Check if we can see the database\n\
 echo \"--- DNS Diagnostic ---\"\n\
-ping -c 1 takahashi-db || echo \"CANNOT RESOLVE takahashi-db\"\n\
+ping -c 1 db || echo \"CANNOT RESOLVE db\"\n\
 echo \"----------------------\"\n\
 \n\
 # Clear Laravel Cache (Crucial for Laravel 5.7 when changing ENV)\n\
