@@ -24,12 +24,9 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push Docker image
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          push: true
-          tags: ghcr.io/${{ github.repository }}:latest
-
-      - name: Trigger HOST Deployment
         run: |
-          curl --request GET '${{ secrets.HOST_WEBHOOK_URL }}' --header 'Authorization: Bearer ${{ secrets.HOST_TOKEN }}'
+          REPO_LOWER=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
+          docker buildx build \
+            --context . \
+            --push \
+            --tag ghcr.io/${REPO_LOWER}:latest .
