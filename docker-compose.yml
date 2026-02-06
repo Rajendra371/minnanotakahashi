@@ -43,6 +43,7 @@ services:
       MYSQL_USER: ${DB_USERNAME:-laravel}
     volumes:
       - dbdata:/var/lib/mysql
+      - ./takahashi.sql:/docker-entrypoint-initdb.d/takahashi.sql
 
 volumes:
   dbdata:
