@@ -13,6 +13,10 @@ if (strpos($requrl, 'admin') !== false || strpos($requrl, 'badministrator') !== 
     Route::get('/badministrator/{any}', function () {
         return view('index');
     })->where('any', '.*');
+
+    Route::get('/app/{any?}', function () {
+        return view('frontend');
+    })->where('any', '.*');
 } else {
     Route::get('/maintenance_mode', 'Api\Frontend\HomeController@maintenance')->name('maintenance');
     Route::post('/maintenance_mode', 'Api\Frontend\HomeController@maintenance_submit');

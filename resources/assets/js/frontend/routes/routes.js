@@ -7,7 +7,7 @@ import Contact from "../components/Contact";
 import Blogs from "../components/Blog/Blogs";
 import News from "../components/News/News";
 import Videos from "../components/Videos/Videos";
-import StudyDestination from "../components/StudyDestinations";
+import StudyDestination from "../components/StudyDestinations/Index";
 import StudyDestinationDetails from "../components/StudyDestinations/Detail";
 import BlogDetails from "../components/Blog/BlogDetails";
 import NewsDetails from "../components/News/NewsDetails";
