@@ -48,6 +48,7 @@ COPY --from=node-build /app/public /var/www/public
 # Copy Nginx configuration
 COPY docker/nginx/conf.d/default.conf /etc/nginx/sites-available/default
 RUN ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+RUN rm -f /etc/nginx/conf.d/default.conf
 
 # Install PHP dependencies
 RUN composer install --no-interaction --no-dev --optimize-autoloader
