@@ -53,11 +53,21 @@ RUN rm -f /etc/nginx/conf.d/default.conf
 # Install PHP dependencies
 RUN composer install --no-interaction --no-dev --optimize-autoloader
 
+# Configure PHP-FPM to catch workers output and not clear environment variables
+RUN sed -i 's/;catch_workers_output = yes/catch_workers_output = yes/g' /usr/local/etc/php-fpm.d/www.conf && \
+    sed -i 's/;clear_env = no/clear_env = no/g' /usr/local/etc/php-fpm.d/www.conf
+
 # Set permissions
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
 # Create startup script
-RUN echo "#!/bin/sh\nphp-fpm -D\nnginx -g 'daemon off;'" > /usr/local/bin/start-app.sh
+RUN echo "#!/bin/sh\n\
+# Fix permissions at runtime for mounted volumes\n\
+chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache\n\
+chmod -R 775 /var/www/storage /var/www/bootstrap/cache\n\
+\n\
+php-fpm -D\n\
+nginx -g 'daemon off;'" > /usr/local/bin/start-app.sh
 RUN chmod +x /usr/local/bin/start-app.sh
 
 EXPOSE 80 3006 9000
