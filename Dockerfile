@@ -44,6 +44,9 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Copy existing application directory contents
 COPY . /var/www
 
+# Explicitly copy SQL file to ensure it's not ignored/cached out
+COPY takahashi.sql /var/www/takahashi.sql
+
 # Copy built assets from node-build stage
 COPY --from=node-build /app/public /var/www/public
 
