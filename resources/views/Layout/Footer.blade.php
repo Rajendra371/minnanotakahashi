@@ -78,10 +78,18 @@
                   if (!empty($dat['organization'][0])) {
                     $contact = ($dat['organization'][0]->phone ?? '').','.($dat['organization'][0]->mobile ?? '');
                   }
-                  $phones = explode(",", $dat['organization'][0]->phone);
+                  $phones = explode(",", $dat['organization'][0]->phone ?? '');
                 @endphp
                 @if(!empty($contact))
-                  <li class="footer-mobile-number"><i class="fa fa-phone"></i><a href="tel:{{$phones[0]}}">{{$phones[0]}}</a>, <a href="tel:{{$phones[1]}}">{{$phones[1]}}</a>, <a href="tel:{{$dat['organization'][0]->mobile}}">{{$dat['organization'][0]->mobile}}</a>
+                  <li class="footer-mobile-number">
+                    <i class="fa fa-phone"></i>
+                    <a href="tel:{{$phones[0]}}">{{$phones[0]}}</a>
+                    @if(isset($phones[1]))
+                      , <a href="tel:{{$phones[1]}}">{{$phones[1]}}</a>
+                    @endif
+                    @if(!empty($dat['organization'][0]->mobile))
+                      , <a href="tel:{{$dat['organization'][0]->mobile}}">{{$dat['organization'][0]->mobile}}</a>
+                    @endif
                   </li>
                 @endif
                 @if(!empty($dat['organization'][0]->email))

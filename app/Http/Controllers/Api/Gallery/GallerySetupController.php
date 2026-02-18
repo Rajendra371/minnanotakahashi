@@ -472,24 +472,33 @@ class GallerySetupController extends Controller
             $id = $request->id;
             $master = DB::table('gallery_master')->where('id', $id)->first();
             if (empty($master)) {
-                return response()->json(['status' => 'error', 'message' => 'Operation Unsuccessful !!']);
+                return response()->json(['status' => 'error', 'message' => 'Record not found!!']);
             }
+            
+            DB::beginTransaction();
+            
             $details = GallerySetup::where('master_id', $id)->get();
-            if (!empty($details)) {
+            if (!empty($details) && count($details) > 0) {
                 foreach ($details as $key => $data) {
                     if ($data->image_file && File::exists(public_path('uploads/gallery_image/' . $data->image_file))) {
                         unlink(public_path('uploads/gallery_image/' . $data->image_file));
                     }
                 }
+                DB::table('galleries')->where('master_id', $id)->delete();
             }
+            
             $delete = DB::table('gallery_master')->where('id', $id)->delete();
-            DB::table('galleries')->where('master_id', $id)->delete();
+            
             if ($delete) {
-                return response()->json(['status' => 'success', 'message' => 'Record Deleted !!']);
+                DB::commit();
+                return response()->json(['status' => 'success', 'message' => 'Record Deleted Successfully!!', 'refresh' => true]);
             }
-            return response()->json(['status' => 'error', 'message' => 'Operation Unsuccessful !!']);
+            
+            DB::rollBack();
+            return response()->json(['status' => 'error', 'message' => 'Failed to delete record!!']);
         } catch (\Throwable $th) {
-            return response()->json(['status' => 'error', 'message' => 'Operation Unsuccessful !!']);
+            DB::rollBack();
+            return response()->json(['status' => 'error', 'message' => $th->getMessage()]);
         }
     }
 
