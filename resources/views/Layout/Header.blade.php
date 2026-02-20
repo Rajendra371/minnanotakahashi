@@ -132,12 +132,12 @@
                     if (!empty($dat['organization'][0])) {
                       $contact = $dat['organization'][0]->phone;
                     }
-                    $phones = explode(",", $dat['organization'][0]->phone);
+                    $phones = explode(",", $dat['organization'][0]->phone ?? '');
                    
                 @endphp  
                 {{-- <div class="single-contact"><i class="fa fa-phone"></i>Phone:{{trim($contact,',')}}</div> --}}
               
-                @if(!empty($dat['organization'][0]))<div class="single-contact"><i class="fa fa-phone"></i><a href="tel:{{$phones[0]}}">{{$phones[0]}}</a>, <a href="tel:{{$phones[1]}}">{{$phones[1]}}</a></div>@endif
+                @if(!empty($dat['organization'][0]))<div class="single-contact"><i class="fa fa-phone"></i><a href="tel:{{$phones[0]}}">{{$phones[0]}}</a>@if(isset($phones[1])), <a href="tel:{{$phones[1]}}">{{$phones[1]}}</a>@endif</div>@endif
                 @if(!empty($dat['organization'][0]))<div class="single-contact"><i class="fa fa-envelope"></i><a href="mailto:{{$dat['organization'][0]->email}}">{{$dat['organization'][0]->email}}</a></div>@endif
               </div>
               <!-- End Top Contact --> 
