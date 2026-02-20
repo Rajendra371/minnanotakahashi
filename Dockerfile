@@ -58,9 +58,9 @@ RUN rm -f /etc/nginx/conf.d/default.conf
 # Install PHP dependencies
 RUN composer install --no-interaction --no-dev --optimize-autoloader
 
-# Ensure all Laravel storage directories exist
-RUN mkdir -p storage/framework/cache/data storage/framework/sessions storage/framework/testing storage/framework/views storage/logs && \
-    chown -R www-data:www-data storage bootstrap/cache
+# Ensure all Laravel storage directories exist (including uploads for public files)
+RUN mkdir -p storage/framework/cache/data storage/framework/sessions storage/framework/testing storage/framework/views storage/logs public/uploads && \
+    chown -R www-data:www-data storage bootstrap/cache public/uploads
 
 # Configure PHP-FPM to handle logs and environment correctly
 RUN sed -i 's/;catch_workers_output = yes/catch_workers_output = yes/g' /usr/local/etc/php-fpm.d/www.conf && \
@@ -71,9 +71,9 @@ RUN sed -i 's/;catch_workers_output = yes/catch_workers_output = yes/g' /usr/loc
 # Create startup script
 RUN echo "#!/bin/sh\n\
 # Fix permissions at runtime for mounted volumes\n\
-mkdir -p /var/www/storage/framework/cache/data /var/www/storage/framework/sessions /var/www/storage/framework/views /var/www/storage/logs\n\
-chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache\n\
-chmod -R 775 /var/www/storage /var/www/bootstrap/cache\n\
+mkdir -p /var/www/storage/framework/cache/data /var/www/storage/framework/sessions /var/www/storage/framework/views /var/www/storage/logs /var/www/public/uploads\n\
+chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache /var/www/public/uploads\n\
+chmod -R 775 /var/www/storage /var/www/bootstrap/cache /var/www/public/uploads\n\
 \n\
 # Diagnostics: Check if we can see the database\n\
 echo \"--- DNS Diagnostic ---\"\n\
