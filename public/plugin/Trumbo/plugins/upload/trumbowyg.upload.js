@@ -53,11 +53,6 @@
                 file: 'File',
                 uploadError: 'Error'
             },
-            by: {
-                upload: 'Загрузка',
-                file: 'Файл',
-                uploadError: 'Памылка'
-            },
             cs: {
                 upload: 'Nahrát obrázek',
                 file: 'Soubor',

@@ -8,9 +8,6 @@
             en: {
                 template: 'Template'
             },
-            by: {
-                template: 'Шаблон'
-            },
             da: {
                 template: 'Skabelon'
             },

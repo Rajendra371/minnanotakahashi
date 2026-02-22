@@ -28,9 +28,6 @@
             en: {
                 specialChars: 'Special characters'
             },
-            by: {
-                specialChars: 'Спецыяльныя сімвалы'
-            },
             et: {
                 specialChars: 'Erimärgid'
             },
@@ -42,12 +39,6 @@
             },
             ko: {
                 specialChars: '특수문자'
-            },
-            ru: {
-                specialChars: 'Специальные символы'
-            },
-            tr: {
-                specialChars: 'Özel karakterler'
             },
         },
         plugins: {

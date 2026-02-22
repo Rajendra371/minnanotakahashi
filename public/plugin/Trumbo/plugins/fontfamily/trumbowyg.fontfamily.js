@@ -7,9 +7,6 @@
             en: {
                 fontFamily: 'Font'
             },
-            by: {
-                fontFamily: 'Шрыфт'
-            },
             es: {
                 fontFamily: 'Fuente'
             },
@@ -36,9 +33,6 @@
             },
             pt_br: {
                 fontFamily: 'Fonte',
-            },
-            ru: {
-                fontFamily: 'Шрифт'
             },
             tr: {
                 fontFamily: 'Yazı tipi'
