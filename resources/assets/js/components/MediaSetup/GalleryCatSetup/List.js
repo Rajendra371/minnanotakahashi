@@ -3,18 +3,20 @@ import { Link, Route } from "react-router-dom";
 
 export default class List extends Component {
   constructor() {
-    load_datepicker();
-    setTimeout(function() {
-      load_table_data();
-    }, 1000);
     super();
     this.state = {
       seo: [],
-      // deplist:[],
       data: [],
       loading: false,
       pages: 0,
     };
+  }
+
+  componentDidMount() {
+    load_datepicker();
+    setTimeout(function () {
+      load_table_data();
+    }, 1000);
   }
 
   render() {
@@ -78,7 +80,7 @@ function load_table_data() {
       bServerSide: true,
       sAjaxSource: dataurl,
 
-      fnServerData: function(sSource, aoData, fnCallback) {
+      fnServerData: function (sSource, aoData, fnCallback) {
         $.ajax({
           dataType: "json",
           type: "GET",
@@ -109,18 +111,18 @@ function load_table_data() {
         { data: "action" },
       ],
 
-      fnServerParams: function(aoData) {
+      fnServerParams: function (aoData) {
         // aoData.push({ name: "frmDate", value: frmDate });
         // aoData.push({ name: "toDate", value: toDate });
       },
 
-      fnRowCallback: function(nRow, aData, iDisplayIndex) {
+      fnRowCallback: function (nRow, aData, iDisplayIndex) {
         var oSettings = dtablelist.fnSettings();
         $("td:first", nRow).html(oSettings._iDisplayStart + iDisplayIndex + 1);
         return nRow;
       },
 
-      fnCreatedRow: function(nRow, aData, iDisplayIndex) {
+      fnCreatedRow: function (nRow, aData, iDisplayIndex) {
         var oSettings = dtablelist.fnSettings();
         var tblid = oSettings._iDisplayStart + iDisplayIndex + 1;
         $(nRow).attr("id", "listid_" + tblid);
