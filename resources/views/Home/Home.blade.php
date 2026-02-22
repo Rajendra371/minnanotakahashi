@@ -15,35 +15,35 @@
 </style>
 
 <ul class="social_media">
-    @if(!empty($organization[0]->facebook_link))
+    @if(count($organization) > 0 && !empty($organization[0]->facebook_link))
       <li>
         <a href="{{$organization[0]->facebook_link}}" target="_blank" data-toggle="tooltip" title="Facebook" data-placement="left">
           <i class="fa fa-facebook-f"></i>
         </a>
       </li>		
     @endif
-    @if(!empty($organization[0]->instagram_link))						
+    @if(count($organization) > 0 && !empty($organization[0]->instagram_link))						
       <li>
         <a href="{{$organization[0]->instagram_link}}" target="_blank" data-toggle="tooltip" title="Instagram" data-placement="left">
           <i class="fa fa-instagram"></i>
         </a>
       </li>		
     @endif	
-    @if(!empty($organization[0]->linkedin_link))						
+    @if(count($organization) > 0 && !empty($organization[0]->linkedin_link))						
       <li>
         <a href="{{$organization[0]->linkedin_link}}" target="_blank"  data-toggle="tooltip" title="Linkedin" data-placement="left">
           <i class="fa fa-linkedin"></i>
         </a>
       </li>		
     @endif	
-    @if(!empty($organization[0]->tiktok_link))					
+    @if(count($organization) > 0 && !empty($organization[0]->tiktok_link))					
       <li>
         <a href="{{$organization[0]->tiktok_link}}" target="_blank"  data-toggle="tooltip" title="TikTok" data-placement="left">
           <img src="{{ asset("uploads/tiktok-logo-4500.svg") }}" alt="TikTok icon" />
         </a>
       </li>	
     @endif
-    @if(!empty($organization[0]->youtube_link))								
+    @if(count($organization) > 0 && !empty($organization[0]->youtube_link))								
       <li>
         <a href="{{$organization[0]->youtube_link}}" target="_blank" data-toggle="tooltip" title="YouTube" data-placement="left">
           <i class="fa fa-youtube-play"></i>
@@ -54,7 +54,7 @@
 
 
     <!-- Hero Slider -->
-    @if ($banners)
+    @if(count($banners) > 0)
         <section class="hero-slider style1">
             <div class="home-slider">
                 @foreach ($banners as $banner)
@@ -176,7 +176,7 @@
     </section>
 
     <!-- services -->
-    @if ($services)
+    @if (count($services) > 0)
         <section class="services section-bg section-space">
             <div class="container">
                 <div class="row">
@@ -587,7 +587,7 @@
      <!--/ End Latest News -->
 
     <!-- Testimonials -->
-    @if ($testimonials)
+    @if (count($testimonials) > 0)
         <section class="testimonials section-space"
             style="background-image:url('{{ asset('frontend/img/testimonial-bg.jpg') }}')">
             <div class="container">
@@ -633,7 +633,7 @@
         </section>
         <!--/ End Testimonials -->
     @endif
-    @if(!empty($advertisement))     
+    @if(count($advertisement) > 0)     
     <div id="myModal2" class="modal fade main-modal" role="dialog">
       
         <div class="modal-dialog modal-lg">
