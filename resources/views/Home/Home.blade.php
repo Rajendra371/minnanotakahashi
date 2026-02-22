@@ -15,37 +15,37 @@
 </style>
 
 <ul class="social_media">
-    @if(count($organization) > 0 && !empty($organization[0]->facebook_link))
+    @if(count($organization) > 0 && !empty($organization->first()->facebook_link))
       <li>
-        <a href="{{$organization[0]->facebook_link}}" target="_blank" data-toggle="tooltip" title="Facebook" data-placement="left">
+        <a href="{{$organization->first()->facebook_link}}" target="_blank" data-toggle="tooltip" title="Facebook" data-placement="left">
           <i class="fa fa-facebook-f"></i>
         </a>
       </li>		
     @endif
-    @if(count($organization) > 0 && !empty($organization[0]->instagram_link))						
+    @if(count($organization) > 0 && !empty($organization->first()->instagram_link))						
       <li>
-        <a href="{{$organization[0]->instagram_link}}" target="_blank" data-toggle="tooltip" title="Instagram" data-placement="left">
+        <a href="{{$organization->first()->instagram_link}}" target="_blank" data-toggle="tooltip" title="Instagram" data-placement="left">
           <i class="fa fa-instagram"></i>
         </a>
       </li>		
     @endif	
-    @if(count($organization) > 0 && !empty($organization[0]->linkedin_link))						
+    @if(count($organization) > 0 && !empty($organization->first()->linkedin_link))						
       <li>
-        <a href="{{$organization[0]->linkedin_link}}" target="_blank"  data-toggle="tooltip" title="Linkedin" data-placement="left">
+        <a href="{{$organization->first()->linkedin_link}}" target="_blank"  data-toggle="tooltip" title="Linkedin" data-placement="left">
           <i class="fa fa-linkedin"></i>
         </a>
       </li>		
     @endif	
-    @if(count($organization) > 0 && !empty($organization[0]->tiktok_link))					
+    @if(count($organization) > 0 && !empty($organization->first()->tiktok_link))					
       <li>
-        <a href="{{$organization[0]->tiktok_link}}" target="_blank"  data-toggle="tooltip" title="TikTok" data-placement="left">
+        <a href="{{$organization->first()->tiktok_link}}" target="_blank"  data-toggle="tooltip" title="TikTok" data-placement="left">
           <img src="{{ asset("uploads/tiktok-logo-4500.svg") }}" alt="TikTok icon" />
         </a>
       </li>	
     @endif
-    @if(count($organization) > 0 && !empty($organization[0]->youtube_link))								
+    @if(count($organization) > 0 && !empty($organization->first()->youtube_link))								
       <li>
-        <a href="{{$organization[0]->youtube_link}}" target="_blank" data-toggle="tooltip" title="YouTube" data-placement="left">
+        <a href="{{$organization->first()->youtube_link}}" target="_blank" data-toggle="tooltip" title="YouTube" data-placement="left">
           <i class="fa fa-youtube-play"></i>
         </a>
       </li>	
@@ -222,16 +222,16 @@
                 </div>
                 @if (!empty($video) && count($video))
                     <div class="col-lg-5 col-md-12 col-sm-12 col-12">
-                        <div class="img-feature"> <img src="{{ asset('uploads/video_gallery/' . $video[0]->image_url) }}"
-                                alt="{{ $video[0]->title }}">
-                            @if(!empty($video[0]->homepage_video_link))
+                        <div class="img-feature"> <img src="{{ asset('uploads/video_gallery/' . $video->first()->image_url) }}"
+                                alt="{{ $video->first()->title }}">
+                            @if(!empty($video->first()->homepage_video_link))
                             <div class="video-play">
 
-                                <a href="{{ $video[0]->homepage_video_link }}" class="video video-popup mfp-iframe">
+                                <a href="{{ $video->first()->homepage_video_link }}" class="video video-popup mfp-iframe">
                                     <i class="fa fa-play"></i> 
                                 </a>
                                 
-                                {{-- <a href="{{$video[0]->link ?? ''}}" class="play-btn lightbox-image" data-fancybox="images" target="_blank">
+                                {{-- <a href="{{$video->first()->link ?? ''}}" class="play-btn lightbox-image" data-fancybox="images" target="_blank">
                                     <i class="fa fa-play"></i> 
                                 </a> --}}
 
@@ -641,12 +641,12 @@
           <!-- Modal content-->
           <div class="modal-content">
             <div class="modal-header">
-              <span>{{!empty($advertisement[0]->title)?$advertisement[0]->title:''}} </span>
+              <span>{{!empty($advertisement->first()->title)?$advertisement->first()->title:''}} </span>
               <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"></i> Skip This</button>
             </div>
             <div class="modal-body">
                 <figure>
-                  <img src="{{ URL::asset('uploads/advertisement/' . $advertisement[0]->adv_image) }}" alt="Image" class="img-responsive" />
+                  <img src="{{ URL::asset('uploads/advertisement/' . $advertisement->first()->adv_image) }}" alt="Image" class="img-responsive" />
                 </figure>
             </div>
           </div>
