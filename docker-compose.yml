@@ -1,4 +1,9 @@
 version: '3.8'
+
+networks:
+  minnano_net:
+    driver: bridge
+
 services:
 
   # Main Application (Nginx + PHP)
@@ -15,9 +20,10 @@ services:
     volumes:
       - ./storage:/var/www/storage
     depends_on:
-      - db
-    links:
-      - db
+      db:
+        condition: service_healthy
+    networks:
+      - minnano_net
 
   # Node Service (Local Dev Only)
   node:
@@ -26,6 +32,8 @@ services:
     profiles: [dev]
     volumes:
       - ./:/app
+    networks:
+      - minnano_net
 
   # Database Service
   db:
@@ -44,6 +52,14 @@ services:
     volumes:
       - dbdata:/var/lib/mysql
       - ./takahashi.sql:/docker-entrypoint-initdb.d/takahashi.sql
+    networks:
+      - minnano_net
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "${DB_USERNAME:-laravel}", "-p${DB_PASSWORD:-root}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
 
 volumes:
   dbdata:
