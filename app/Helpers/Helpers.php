@@ -54,7 +54,7 @@ function get_real_ipaddr()
     $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
   else
     $ip = $_SERVER['REMOTE_ADDR'];
-  return $ip;
+  return substr($ip, 0, 15);
 }
 
 function clean_url($str, $replace = array(), $delimiter = '-')
