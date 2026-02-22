@@ -2,12 +2,6 @@ import React, { Component } from "react";
 
 export default class List extends Component {
   constructor() {
-    componentDidMount() 
-      load_datepicker();
-      setTimeout(function() {
-        load_table_data();
-      }, 1000);
-    
     super();
     this.state = {
       seo: [],
@@ -17,7 +11,12 @@ export default class List extends Component {
     };
   }
 
-
+  componentDidMount() {
+    load_datepicker();
+    setTimeout(function () {
+      load_table_data();
+    }, 1000);
+  }
 
   render() {
     return (
@@ -31,7 +30,7 @@ export default class List extends Component {
                   <button
                     className="btnRefresh"
                     id="btnRefresh"
-                    // data-table="galleryTable"
+                  // data-table="galleryTable"
                   >
                     <i className="fa fa-refresh" aria-hidden="true" />
                   </button>
@@ -85,7 +84,7 @@ function load_table_data() {
       bServerSide: true,
       sAjaxSource: dataurl,
 
-      fnServerData: function(sSource, aoData, fnCallback) {
+      fnServerData: function (sSource, aoData, fnCallback) {
         $.ajax({
           dataType: "json",
           type: "GET",
@@ -118,17 +117,17 @@ function load_table_data() {
         { data: "action" },
       ],
 
-      fnServerParams: function(aoData) {
+      fnServerParams: function (aoData) {
         // aoData.push({ name: "frmDate", value: frmDate });
       },
 
-      fnRowCallback: function(nRow, aData, iDisplayIndex) {
+      fnRowCallback: function (nRow, aData, iDisplayIndex) {
         var oSettings = dtablelist.fnSettings();
         $("td:first", nRow).html(oSettings._iDisplayStart + iDisplayIndex + 1);
         return nRow;
       },
 
-      fnCreatedRow: function(nRow, aData, iDisplayIndex) {
+      fnCreatedRow: function (nRow, aData, iDisplayIndex) {
         var oSettings = dtablelist.fnSettings();
         var tblid = oSettings._iDisplayStart + iDisplayIndex + 1;
         $(nRow).attr("id", "listid_" + tblid);

@@ -4,6 +4,9 @@ class MainForm extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+  }
+
+  componentDidMount() {
     load_ckeditor();
     load_datepicker();
   }
