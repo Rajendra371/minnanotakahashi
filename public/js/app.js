@@ -191444,12 +191444,6 @@ var List = function (_Component) {
   function List() {
     _classCallCheck(this, List);
 
-    componentDidMount();
-    load_datepicker();
-    setTimeout(function () {
-      load_table_data();
-    }, 1000);
-
     var _this = _possibleConstructorReturn(this, (List.__proto__ || Object.getPrototypeOf(List)).call(this));
 
     _this.state = {
@@ -191462,6 +191456,14 @@ var List = function (_Component) {
   }
 
   _createClass(List, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      load_datepicker();
+      setTimeout(function () {
+        load_table_data();
+      }, 1000);
+    }
+  }, {
     key: "render",
     value: function render() {
       return _react2.default.createElement(
@@ -191491,8 +191493,8 @@ var List = function (_Component) {
                     "button",
                     {
                       className: "btnRefresh",
-                      id: "btnRefresh"
-                      // data-table="galleryTable"
+                      id: "btnRefresh",
+                      "data-table": "galleryTable"
                     },
                     _react2.default.createElement("i", { className: "fa fa-refresh", "aria-hidden": "true" })
                   )
