@@ -25,7 +25,7 @@ class General
             $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
         else
             $ip = $_SERVER['REMOTE_ADDR'];
-        return $ip;
+        return substr($ip, 0, 15);
     }
 
     public static function get_Mac_Address()
@@ -277,7 +277,7 @@ class General
 
                 $dataarray1 = $this->ip_info(NULL, "location", TRUE);
                 $insertdataarray = array(
-                    'ip_adr' => $_SERVER['REMOTE_ADDR'],
+                    'ip_adr' => substr($_SERVER['REMOTE_ADDR'], 0, 15),
                     'referer' => $this->referer,
                     'client' => $_SERVER['HTTP_USER_AGENT'],
                     'visit_date' => date("Y-m-d"),
@@ -298,7 +298,7 @@ class General
 
     public function check_last_visit()
     {
-        $result = DB::table('ip2visits')->select(DB::raw('time + 0 as times'))->where(array('ip_adr' => $_SERVER['REMOTE_ADDR'], 'visit_date' => date("Y-m-d"), 'on_page' => $this->onpage))->orderBy('time', 'DESC')->first();
+        $result = DB::table('ip2visits')->select(DB::raw('time + 0 as times'))->where(array('ip_adr' => substr($_SERVER['REMOTE_ADDR'], 0, 15), 'visit_date' => date("Y-m-d"), 'on_page' => $this->onpage))->orderBy('time', 'DESC')->first();
 
         if (!empty($result)) {
             $last_hour = date("H") - 0;

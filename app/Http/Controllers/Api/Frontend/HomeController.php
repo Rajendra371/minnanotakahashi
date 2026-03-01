@@ -597,7 +597,7 @@ class HomeController extends Controller
 			$data['og_blog_image']=!empty($og_blog_image)?$og_blog_image:'';
         }
         // dd($data['service_details']);
-        return view('Home.Destinationdetail', $data);
+        return view('Home.Destinationdetails', $data);
     }
 
 

@@ -165675,12 +165675,16 @@ var MainForm = function (_Component) {
     };
 
     _this.state = {};
-    load_ckeditor();
-    load_datepicker();
     return _this;
   }
 
   _createClass(MainForm, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      load_ckeditor();
+      load_datepicker();
+    }
+  }, {
     key: "render",
     value: function render() {
       return _react2.default.createElement(
@@ -191106,16 +191110,10 @@ var List = function (_Component) {
   function List() {
     _classCallCheck(this, List);
 
-    load_datepicker();
-    setTimeout(function () {
-      load_table_data();
-    }, 1000);
-
     var _this = _possibleConstructorReturn(this, (List.__proto__ || Object.getPrototypeOf(List)).call(this));
 
     _this.state = {
       seo: [],
-      // deplist:[],
       data: [],
       loading: false,
       pages: 0
@@ -191124,6 +191122,14 @@ var List = function (_Component) {
   }
 
   _createClass(List, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      load_datepicker();
+      setTimeout(function () {
+        load_table_data();
+      }, 1000);
+    }
+  }, {
     key: "render",
     value: function render() {
       return _react2.default.createElement(

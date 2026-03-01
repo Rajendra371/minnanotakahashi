@@ -24,9 +24,8 @@
     <link href="{{asset('/plugin/select2/select2.css')}}" rel="stylesheet" type="text/css" /> 
     <link href="{{asset('/plugin/template/all.css')}}" rel="stylesheet" type="text/css" /> 
     <link rel="stylesheet" href="{{asset('/plugin/autocomplete/jquery-ui.css')}}">
-    <link href="{{ asset('/plugin/Trumbo/dist/ui/trumbowyg.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('/plugin/Trumbo/dist/plugins/table/ui/trumbowyg.table.min.css') }}" rel="stylesheet"
-    type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/trumbowyg@2.25.1/dist/ui/trumbowyg.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/trumbowyg@2.25.1/dist/plugins/table/ui/trumbowyg.table.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
     <script src="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone-min.js"></script>
@@ -193,9 +192,9 @@ function checkValidValue(value=false,selector=false){
 <script src="{{asset('/js/modal.js')}}"></script>
 <script src="{{asset('/plugin/print/printthis.js')}}"></script>
 {{-- <script src="{{asset('/plugin/ckeditor/ckeditor.js')}}"></script>  --}}
-<script src="{{ asset('/plugin/Trumbo/dist/trumbowyg.js') }}"></script>
-<script src="{{ asset('plugin/Trumbo/dist/plugins/base64/trumbowyg.base64.min.js') }}"></script>
-<script src="{{ asset('plugin/Trumbo/dist/plugins/table/trumbowyg.table.min.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/trumbowyg@2.25.1/dist/trumbowyg.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/trumbowyg@2.25.1/dist/plugins/base64/trumbowyg.base64.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/trumbowyg@2.25.1/dist/plugins/table/trumbowyg.table.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
 
 
