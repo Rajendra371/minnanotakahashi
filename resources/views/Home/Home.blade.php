@@ -55,43 +55,70 @@
 
     <!-- Hero Slider -->
     @if(count($banners) > 0)
+    <section class="hero-slider style1">
+        <div class="home-slider owl-carousel">
+            @foreach ($banners as $banner)
+                <div class="single-slider">
+                    <figure class="slider-image-wrap">
+                        <img src="{{ asset("uploads/banner_image/$banner->banner_img") }}" alt="{{ $banner->heading ?? 'Banner Image' }}">
+                    </figure>
+
+                    <div class="slide-overlay"></div>
+
+                    <div class="container slider-content-wrap">
+                        <div class="row">
+                            <div class="col-lg-7 col-md-9 col-12">
+                                <div class="welcome-text">
+                                    <div class="hero-text">
+                                        @if(!empty($banner->heading))
+                                            <h4>{{ $banner->heading }}</h4>
+                                        @endif
+
+                                        @if(!empty($banner->content))
+                                            <h1>{!! strip_tags($banner->content) !!}</h1>
+                                        @endif
+
+                                        @if(!empty($banner->button_text1))
+                                            <div class="button">
+                                                <a
+                                                    @if (Route::has($banner->button_url1))
+                                                        href="{{ route($banner->button_url1) }}"
+                                                    @else
+                                                        href="{{ url($banner->button_url1) }}"
+                                                    @endif
+                                                    class="homes-btn theme-1 effect"
+                                                >
+                                                    {{ $banner->button_text1 }}
+                                                </a>
+                                            </div>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </section>
+@endif
+    {{-- @if(count($banners) > 0)
         <section class="hero-slider style1">
             <div class="home-slider">
                 @foreach ($banners as $banner)
-                    <!-- Single Slider -->
                     <div class="single-slider">
-
-                        {{-- style="background-image:url('{{ asset("uploads/banner_image/$banner->banner_img") }}')" --}}
 
                         <figure>
                             <img src="{{ asset("uploads/banner_image/$banner->banner_img") }}" />
                         </figure> 
 
-                        {{-- <div class="container">
-                            <div class="row">
-                                <div class="col-lg-7 col-md-8 col-12">
-                                    <div class="welcome-text">
-                                        <div class="hero-text">
-                                            <h4>{{ $banner->heading }}</h4>
-                                            <h1>{!! strip_tags($banner->content) !!}</h1>
-                                            <div class="button"> <a
-                                                    @if (Route::has($banner->button_url1)) href="{{ route("$banner->button_url1") }}" 
-                                                    @else
-                                                    href="{{ url("$banner->button_url1") }}" @endif
-                                                    class="homes-btn theme-1 effect">{{ $banner->button_text1 }}</a> </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> --}}
+                       
 
                     </div>
-                    <!--/ End Single Slider -->
                 @endforeach
             </div>
         </section>
-        <!--/ End Hero Slider -->
-    @endif
+    @endif --}}
 
     <!-- Features Area -->
     <section class="att-area section-space">
