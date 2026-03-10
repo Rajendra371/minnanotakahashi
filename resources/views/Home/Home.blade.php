@@ -1,84 +1,90 @@
 @extends('Layout.Main')
 @section('content')
-<style>
-    .main-modal .modal-header .close {
-    position: absolute;
-    top: 25px;
-    right: 15px;
-    font-size: 16px;
-    background: #e00c1b;
-    color: #fff;
-    padding: 5px 10px;
-    opacity: 1;
-    font-weight: normal;
-}
-</style>
+    <style>
+        .main-modal .modal-header .close {
+            position: absolute;
+            top: 25px;
+            right: 15px;
+            font-size: 16px;
+            background: #e00c1b;
+            color: #fff;
+            padding: 5px 10px;
+            opacity: 1;
+            font-weight: normal;
+        }
+    </style>
 
-<ul class="social_media">
-    @if(count($organization) > 0 && !empty($organization->first()->facebook_link))
-      <li>
-        <a href="{{$organization->first()->facebook_link}}" target="_blank" data-toggle="tooltip" title="Facebook" data-placement="left">
-          <i class="fa fa-facebook-f"></i>
-        </a>
-      </li>		
-    @endif
-    @if(count($organization) > 0 && !empty($organization->first()->instagram_link))						
-      <li>
-        <a href="{{$organization->first()->instagram_link}}" target="_blank" data-toggle="tooltip" title="Instagram" data-placement="left">
-          <i class="fa fa-instagram"></i>
-        </a>
-      </li>		
-    @endif	
-    @if(count($organization) > 0 && !empty($organization->first()->linkedin_link))						
-      <li>
-        <a href="{{$organization->first()->linkedin_link}}" target="_blank"  data-toggle="tooltip" title="Linkedin" data-placement="left">
-          <i class="fa fa-linkedin"></i>
-        </a>
-      </li>		
-    @endif	
-    @if(count($organization) > 0 && !empty($organization->first()->tiktok_link))					
-      <li>
-        <a href="{{$organization->first()->tiktok_link}}" target="_blank"  data-toggle="tooltip" title="TikTok" data-placement="left">
-          <img src="{{ asset("uploads/tiktok-logo-4500.svg") }}" alt="TikTok icon" />
-        </a>
-      </li>	
-    @endif
-    @if(count($organization) > 0 && !empty($organization->first()->youtube_link))								
-      <li>
-        <a href="{{$organization->first()->youtube_link}}" target="_blank" data-toggle="tooltip" title="YouTube" data-placement="left">
-          <i class="fa fa-youtube-play"></i>
-        </a>
-      </li>	
-    @endif																							
-  </ul>
+    <ul class="social_media">
+        @if (count($organization) > 0 && !empty($organization->first()->facebook_link))
+            <li>
+                <a href="{{ $organization->first()->facebook_link }}" target="_blank" data-toggle="tooltip" title="Facebook"
+                    data-placement="left">
+                    <i class="fa fa-facebook-f"></i>
+                </a>
+            </li>
+        @endif
+        @if (count($organization) > 0 && !empty($organization->first()->instagram_link))
+            <li>
+                <a href="{{ $organization->first()->instagram_link }}" target="_blank" data-toggle="tooltip" title="Instagram"
+                    data-placement="left">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </li>
+        @endif
+        @if (count($organization) > 0 && !empty($organization->first()->linkedin_link))
+            <li>
+                <a href="{{ $organization->first()->linkedin_link }}" target="_blank" data-toggle="tooltip" title="Linkedin"
+                    data-placement="left">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+            </li>
+        @endif
+        @if (count($organization) > 0 && !empty($organization->first()->tiktok_link))
+            <li>
+                <a href="{{ $organization->first()->tiktok_link }}" target="_blank" data-toggle="tooltip" title="TikTok"
+                    data-placement="left">
+                    <img src="{{ asset('uploads/tiktok-logo-4500.svg') }}" alt="TikTok icon" />
+                </a>
+            </li>
+        @endif
+        @if (count($organization) > 0 && !empty($organization->first()->youtube_link))
+            <li>
+                <a href="{{ $organization->first()->youtube_link }}" target="_blank" data-toggle="tooltip" title="YouTube"
+                    data-placement="left">
+                    <i class="fa fa-youtube-play"></i>
+                </a>
+            </li>
+        @endif
+    </ul>
 
 
     <!-- Hero Slider -->
-    @if(count($banners) > 0)
-    <section class="hero-slider style1">
-        <div class="home-slider owl-carousel">
-            @foreach ($banners as $banner)
-                <div class="single-slider">
-                    <figure class="slider-image-wrap">
-                        <img src="{{ asset("uploads/banner_image/$banner->banner_img") }}" alt="{{ $banner->heading ?? 'Banner Image' }}">
-                    </figure>
+    @if (count($banners) > 0)
+        <section class="hero-slider style1">
+            <div class="home-slider owl-carousel">
+                @foreach ($banners as $banner)
+                    <div class="single-slider">
+                        <figure class="slider-image-wrap">
+                            <img src="{{ asset("uploads/banner_image/$banner->banner_img") }}"
+                                alt="{{ $banner->heading ?? 'Banner Image' }}">
+                        </figure>
 
-                    <div class="slide-overlay"></div>
+                        <div class="slide-overlay"></div>
 
-                    <div class="container slider-content-wrap">
-                        <div class="row">
-                            <div class="col-lg-7 col-md-9 col-12">
-                                <div class="welcome-text">
-                                    <div class="hero-text">
-                                        @if(!empty($banner->heading))
+                        <div class="container slider-content-wrap">
+                            <div class="row">
+                                <div class="col-lg-7 col-md-9 col-12">
+                                    <div class="welcome-text">
+                                        {{-- <div class="hero-text">
+                                        @if (!empty($banner->heading))
                                             <h4>{{ $banner->heading }}</h4>
                                         @endif
 
-                                        @if(!empty($banner->content))
+                                        @if (!empty($banner->content))
                                             <h1>{!! strip_tags($banner->content) !!}</h1>
                                         @endif
 
-                                        @if(!empty($banner->button_text1))
+                                        @if (!empty($banner->button_text1))
                                             <div class="button">
                                                 <a
                                                     @if (Route::has($banner->button_url1))
@@ -92,17 +98,17 @@
                                                 </a>
                                             </div>
                                         @endif
+                                    </div> --}}
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
-        </div>
-    </section>
-@endif
-    {{-- @if(count($banners) > 0)
+                @endforeach
+            </div>
+        </section>
+    @endif
+    {{-- @if (count($banners) > 0)
         <section class="hero-slider style1">
             <div class="home-slider">
                 @foreach ($banners as $banner)
@@ -142,8 +148,8 @@
                             <img src="{{ asset('uploads/page_image/' . $about->images) }}" alt="About Us image">
                         </div>
                         <div class="col-lg-8 col-md-8 col-12">
-                            <p>{!! str_limit($about->description,550) !!}</p>
-                           {{-- {!! Illuminate\Support\Str::limit(strip_tags($about->description), 500) !!}  --}}
+                            <p>{!! str_limit($about->description, 550) !!}</p>
+                            {{-- {!! Illuminate\Support\Str::limit(strip_tags($about->description), 500) !!}  --}}
                             {{-- {{ Illuminate\Support\Str::limit($about->description, 550)}} --}}
                             {{-- <p>Global Eye Education Consultancy is one of the top resource providers for international
                                 education at top Universities, which is based in Newplaza, Putalisadak, Kathmandu. We assist
@@ -242,32 +248,34 @@
                         </div>
 
                         {{-- {!! $choose->description !!} --}}
-                        <p>{!! str_limit($choose->description,300) !!}</p>
+                        <p>{!! str_limit($choose->description, 300) !!}</p>
                         <div class="feature-btn"> <a href="{{ route('choose') }}" class="homes-btn theme-1">View More</a>
                         </div>
                     </div>
                 </div>
                 @if (!empty($video) && count($video))
                     <div class="col-lg-5 col-md-12 col-sm-12 col-12">
-                        <div class="img-feature"> <img src="{{ asset('uploads/video_gallery/' . $video->first()->image_url) }}"
+                        <div class="img-feature"> <img
+                                src="{{ asset('uploads/video_gallery/' . $video->first()->image_url) }}"
                                 alt="{{ $video->first()->title }}">
-                            @if(!empty($video->first()->homepage_video_link))
-                            <div class="video-play">
+                            @if (!empty($video->first()->homepage_video_link))
+                                <div class="video-play">
 
-                                <a href="{{ $video->first()->homepage_video_link }}" class="video video-popup mfp-iframe">
-                                    <i class="fa fa-play"></i> 
-                                </a>
-                                
-                                {{-- <a href="{{$video->first()->link ?? ''}}" class="play-btn lightbox-image" data-fancybox="images" target="_blank">
+                                    <a href="{{ $video->first()->homepage_video_link }}"
+                                        class="video video-popup mfp-iframe">
+                                        <i class="fa fa-play"></i>
+                                    </a>
+
+                                    {{-- <a href="{{$video->first()->link ?? ''}}" class="play-btn lightbox-image" data-fancybox="images" target="_blank">
                                     <i class="fa fa-play"></i> 
                                 </a> --}}
 
-                                <div class="waves-block">
-                                    <div class="waves wave-1"></div>
-                                    <div class="waves wave-2"></div>
-                                    <div class="waves wave-3"></div>
+                                    <div class="waves-block">
+                                        <div class="waves wave-1"></div>
+                                        <div class="waves wave-2"></div>
+                                        <div class="waves wave-3"></div>
+                                    </div>
                                 </div>
-                            </div>
                             @endif
                             <span>Watch Our Video</span>
                         </div>
@@ -295,18 +303,19 @@
                                 <div class="icon-head"><i class="{{ $tile->icon }}"></i></div>
                             @elseif($tile->image)
                                 <div class="country-img">
-                                    <a href="{{route('destination-details',"$tile->slug-$tile->id")}}">
+                                    <a href="{{ route('destination-details', "$tile->slug-$tile->id") }}">
                                         <figure> <img src="{{ asset("uploads/study_destinations/$tile->image") }}" />
                                         </figure>
                                     </a>
                                 </div>
                             @endif
 
-                            <h4><a href="{{route('destination-details',"$tile->slug-$tile->id")}}">{{ $tile->title }}</a>
+                            <h4><a
+                                    href="{{ route('destination-details', "$tile->slug-$tile->id") }}">{{ $tile->title }}</a>
                             </h4>
                             <p>{!! Illuminate\Support\Str::limit($tile->content, 120, '...') !!}</p>
-                            <div class="button"> <a href="{{route('destination-details',"$tile->slug-$tile->id")}}" class="homes-btn"><i
-                                        class="fa fa-long-arrow-right"></i>Learn More</a> </div>
+                            <div class="button"> <a href="{{ route('destination-details', "$tile->slug-$tile->id") }}"
+                                    class="homes-btn"><i class="fa fa-long-arrow-right"></i>Learn More</a> </div>
                         </div>
                     @endforeach
                 </div>
@@ -435,61 +444,62 @@
 
     <!-- Latest New -->
     @if (!empty($news) && count($news))
-    <section class="latest-blog news section-space">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12">
-                    <div class="section-title default text-center">
-                        <div class="section-top">
-                            <h2><span>Our News</span> <b>Latest News</b></h2>
+        <section class="latest-blog news section-space">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12">
+                        <div class="section-title default text-center">
+                            <div class="section-top">
+                                <h2><span>Our News</span> <b>Latest News</b></h2>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            @if (!empty($news) && count($news))
-                <div class="row">
-                    <div class="col-12">
-                        <div class="blog-latest blog-latest-slider">
-                            @foreach ($news as $newsk)
-                                <div class="single-slider">
-                                    <!-- Single New -->
-                                    <div class="single-news">
-                                        <div class="news-head overlay">
-                                            <figure>
-                                                <img src="{{ asset('uploads/nne_image/' . $newsk->image) }}"/>
-                                            </figure>
-                                            {{-- <span class="news-img"
+                @if (!empty($news) && count($news))
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="blog-latest blog-latest-slider">
+                                @foreach ($news as $newsk)
+                                    <div class="single-slider">
+                                        <!-- Single New -->
+                                        <div class="single-news">
+                                            <div class="news-head overlay">
+                                                <figure>
+                                                    <img src="{{ asset('uploads/nne_image/' . $newsk->image) }}" />
+                                                </figure>
+                                                {{-- <span class="news-img"
                                                 style="background-image:url('{{ asset('uploads/blog_image/' . $newsk->image) }}')"></span> --}}
-                                            <a href="{{route('news-details',"$newsk->slug-$newsk->id")}}"
-                                                class="homes-btn theme-2">Read more <i class="fa fa-long-arrow-right"></i> </a>
-                                        </div>
-                                        <div class="news-body">
-                                            <div class="news-content">
-                                                <h3 class="news-title">
-                                                    <a href="{{route('news-details',"$newsk->slug-$newsk->id")}}">{{ $newsk->title }}
-                                                    </a>
-                                                </h3>
-                                                <div class="news-text">
-                                                    <p>{{ Illuminate\Support\Str::limit(strip_tags($newsk->description), 200, '...') }}
-                                                    </p>
+                                                <a href="{{ route('news-details', "$newsk->slug-$newsk->id") }}"
+                                                    class="homes-btn theme-2">Read more <i
+                                                        class="fa fa-long-arrow-right"></i> </a>
+                                            </div>
+                                            <div class="news-body">
+                                                <div class="news-content">
+                                                    <h3 class="news-title">
+                                                        <a href="{{ route('news-details', "$newsk->slug-$newsk->id") }}">{{ $newsk->title }}
+                                                        </a>
+                                                    </h3>
+                                                    <div class="news-text">
+                                                        <p>{{ Illuminate\Support\Str::limit(strip_tags($newsk->description), 200, '...') }}
+                                                        </p>
+                                                    </div>
+                                                    <ul class="news-meta">
+                                                        <li class="date"><i
+                                                                class="fa fa-calendar"></i>{{ date('j F, Y', strtotime($newsk->postdatead)) }}
+                                                        </li>
+                                                    </ul>
                                                 </div>
-                                                <ul class="news-meta">
-                                                    <li class="date"><i
-                                                            class="fa fa-calendar"></i>{{ date('j F, Y', strtotime($newsk->postdatead)) }}
-                                                    </li>
-                                                </ul>
                                             </div>
                                         </div>
+                                        <!--/ End Single News -->
                                     </div>
-                                    <!--/ End Single News -->
-                                </div>
-                            @endforeach
+                                @endforeach
+                            </div>
                         </div>
                     </div>
-                </div>
-            @endif
-        </div>
-    </section>
+                @endif
+            </div>
+        </section>
     @endif
     <!--/ End Latest News -->
 
@@ -515,12 +525,13 @@
                                     <div class="single-news">
                                         <div class="news-head overlay">
                                             <figure>
-                                                <img src="{{ asset('uploads/blog_image/' . $blog->image) }}"/>
+                                                <img src="{{ asset('uploads/blog_image/' . $blog->image) }}" />
                                             </figure>
                                             {{-- <span class="news-img"
                                                 style="background-image:url('{{ asset('uploads/blog_image/' . $blog->image) }}')"></span> --}}
                                             <a href="{{ route('blog-details', "$blog->blog_slug-$blog->id") }}"
-                                                class="homes-btn theme-2">Read more <i class="fa fa-long-arrow-right"></i> </a>
+                                                class="homes-btn theme-2">Read more <i class="fa fa-long-arrow-right"></i>
+                                            </a>
                                         </div>
                                         <div class="news-body">
                                             <div class="news-content">
@@ -553,65 +564,67 @@
     </section>
     <!--/ End Latest blog -->
 
-     <!-- Latest New -->
-     @if (!empty($events) && count($events))
-     <section class="latest-blog news section-space">
-         <div class="container">
-             <div class="row">
-                 <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12">
-                     <div class="section-title default text-center">
-                         <div class="section-top">
-                             <h2><span>Our Events</span> <b>Latest Events</b></h2>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-             @if (!empty($events) && count($events))
-                 <div class="row">
-                     <div class="col-12">
-                         <div class="blog-latest blog-latest-slider">
-                             @foreach ($events as $eventk)
-                                 <div class="single-slider">
-                                     <!-- Single New -->
-                                     <div class="single-news">
-                                         <div class="news-head overlay">
-                                             <figure>
-                                                 <img src="{{ asset('uploads/nne_image/' . $eventk->image) }}"/>
-                                             </figure>
-                                             {{-- <span class="news-img"
+    <!-- Latest New -->
+    @if (!empty($events) && count($events))
+        <section class="latest-blog news section-space">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12">
+                        <div class="section-title default text-center">
+                            <div class="section-top">
+                                <h2><span>Our Events</span> <b>Latest Events</b></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @if (!empty($events) && count($events))
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="blog-latest blog-latest-slider">
+                                @foreach ($events as $eventk)
+                                    <div class="single-slider">
+                                        <!-- Single New -->
+                                        <div class="single-news">
+                                            <div class="news-head overlay">
+                                                <figure>
+                                                    <img src="{{ asset('uploads/nne_image/' . $eventk->image) }}" />
+                                                </figure>
+                                                {{-- <span class="news-img"
                                                  style="background-image:url('{{ asset('uploads/blog_image/' . $eventk->image) }}')"></span> --}}
-                                             <a href="{{route('event-details',"$eventk->slug-$eventk->id")}}"
-                                                 class="homes-btn theme-2">Read more <i class="fa fa-long-arrow-right"></i> </a>
-                                         </div>
-                                         <div class="news-body">
-                                             <div class="news-content">
-                                                 <h3 class="news-title">
-                                                     <a href="{{route('event-details',"$eventk->slug-$eventk->id")}}">{{ $eventk->title }}
-                                                     </a>
-                                                 </h3>
-                                                 <div class="news-text">
-                                                     <p>{{ Illuminate\Support\Str::limit(strip_tags($eventk->description), 200, '...') }}
-                                                     </p>
-                                                 </div>
-                                                 <ul class="news-meta">
-                                                     <li class="date"><i
-                                                             class="fa fa-calendar"></i>{{ date('j F, Y', strtotime($eventk->postdatead)) }}
-                                                     </li>
-                                                 </ul>
-                                             </div>
-                                         </div>
-                                     </div>
-                                     <!--/ End Single News -->
-                                 </div>
-                             @endforeach
-                         </div>
-                     </div>
-                 </div>
-             @endif
-         </div>
-     </section>
-     @endif
-     <!--/ End Latest News -->
+                                                <a href="{{ route('event-details', "$eventk->slug-$eventk->id") }}"
+                                                    class="homes-btn theme-2">Read more <i
+                                                        class="fa fa-long-arrow-right"></i> </a>
+                                            </div>
+                                            <div class="news-body">
+                                                <div class="news-content">
+                                                    <h3 class="news-title">
+                                                        <a
+                                                            href="{{ route('event-details', "$eventk->slug-$eventk->id") }}">{{ $eventk->title }}
+                                                        </a>
+                                                    </h3>
+                                                    <div class="news-text">
+                                                        <p>{{ Illuminate\Support\Str::limit(strip_tags($eventk->description), 200, '...') }}
+                                                        </p>
+                                                    </div>
+                                                    <ul class="news-meta">
+                                                        <li class="date"><i
+                                                                class="fa fa-calendar"></i>{{ date('j F, Y', strtotime($eventk->postdatead)) }}
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--/ End Single News -->
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                @endif
+            </div>
+        </section>
+    @endif
+    <!--/ End Latest News -->
 
     <!-- Testimonials -->
     @if (count($testimonials) > 0)
@@ -660,26 +673,28 @@
         </section>
         <!--/ End Testimonials -->
     @endif
-    @if(count($advertisement) > 0)     
-    <div id="myModal2" class="modal fade main-modal" role="dialog">
-      
-        <div class="modal-dialog modal-lg">
-         
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div class="modal-header">
-              <span>{{!empty($advertisement->first()->title)?$advertisement->first()->title:''}} </span>
-              <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"></i> Skip This</button>
+    @if (count($advertisement) > 0)
+        <div id="myModal2" class="modal fade main-modal" role="dialog">
+
+            <div class="modal-dialog modal-lg">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span>{{ !empty($advertisement->first()->title) ? $advertisement->first()->title : '' }} </span>
+                        <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"></i> Skip
+                            This</button>
+                    </div>
+                    <div class="modal-body">
+                        <figure>
+                            <img src="{{ URL::asset('uploads/advertisement/' . $advertisement->first()->adv_image) }}"
+                                alt="Image" class="img-responsive" />
+                        </figure>
+                    </div>
+                </div>
+
             </div>
-            <div class="modal-body">
-                <figure>
-                  <img src="{{ URL::asset('uploads/advertisement/' . $advertisement->first()->adv_image) }}" alt="Image" class="img-responsive" />
-                </figure>
-            </div>
-          </div>
-         
+
         </div>
-       
-      </div>
     @endif
 @endsection
