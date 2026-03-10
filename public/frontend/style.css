@@ -6470,7 +6470,7 @@ Quiz CSS Start By Bikash Bhandari
 	Top Bar CSS
 ========================================*/
 .top-bar {
-  background: #f8f9fa;
+  background: #090d42;
   padding: 8px 0;
   font-size: 14px;
   border-bottom: 1px solid #e9ecef;
@@ -6481,12 +6481,12 @@ Quiz CSS Start By Bikash Bhandari
 }
 
 .top-bar span {
-  color: #6c757d;
+  color:#e4eaef;
   font-weight: 500;
 }
 
 .top-bar i {
-  color: #007bff;
+  color:#eef2f7;
   margin-right: 5px;
 }
 
