@@ -196,7 +196,7 @@
   padding: 10px 28px;
   position: relative;
   display: block;
-  background: #0059a9;
+  background:#2D325A;
   letter-spacing: 0.014em;
   border-right: 1px solid #004c90;
 }
@@ -206,7 +206,7 @@
 .header .nav li.active a,
 .header .nav li:hover a {
   color: #fff;
-  background: #ff343f;
+  background:#F17D2A;
   border-color: #ed0310;
 }
 /*.header .nav li a::before {
@@ -1881,7 +1881,7 @@ p.has-large-font-size {
 }
 .footer .footer-top {
   padding: 30px 0 0;
-  background: #090d42;
+  background: #2D325A
 }
 .footer .single-widget {
   margin-top: 0px;
@@ -2126,7 +2126,7 @@ p.has-large-font-size {
   overflow: hidden;
   padding: 10px 0;
   border-top: 1px solid #ebebeb3b;
-  background: #0059a8;
+  background:#F47C26;
 }
 .footer .copyright-content p {
   color: #eee;
@@ -5048,7 +5048,8 @@ p.has-large-font-size {
 }
 .side.overlay:before {
   width: 80%;
-  background: #ff343f;
+  /* background: #ff343f; */
+  background: #212775;
   transform: rotate(75deg);
   left: 45%;
   z-index: 0;
@@ -6540,7 +6541,7 @@ Quiz CSS Start By Bikash Bhandari
 	Top Bar CSS
 ========================================*/
 .top-bar {
-  background: #090d42;
+  background: #2D325A;
   padding: 8px 0;
   font-size: 14px;
   border-bottom: 1px solid #e9ecef;
