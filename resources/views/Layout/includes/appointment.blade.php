@@ -13,8 +13,8 @@
                 </div>
                 <div class="contact-form-area">
                     <div class="appointment_head">
-                        <h6> <span> ABROAD STUDY </span> : South Korea | USA  | Australia | Canada |  UK</h6>
-                        <h6><span> TEST PREPARATION </span> : IELTS | PTE | Korean Language</h6>
+                        <h6> <span> ABROAD STUDY </span> : Japan </h6>
+                        <h6><span> TEST PREPARATION </span> : Japanese Language</h6>
                     </div>
                     <form class="form" id="appointmentForm" method="post" action="{{ route('appointment') }}">
                         <div class="row">
@@ -102,11 +102,15 @@
                                 <div class="form-group">
                                     <label>Nearest Branch</label>
                                     <div class="icon"><i class="fa fa-map-marker"></i></div>
-                                    <select class="form-control" aria-placeholder="Nearest Branch" name="nearest_branch">
+                                    <select class="form-control" aria-placeholder="Nearest Branch"
+                                        name="nearest_branch">
                                         <option value="">Choose Nearest Branch</option>
-                                        @if(!empty($national_branch))
-                                            @foreach($national_branch as $key=>$nbranch)
-                                            <option value="{{!empty($nbranch->branch_name)?$nbranch->branch_name:''}}">{{!empty($nbranch->branch_name)?$nbranch->branch_name:''}}</option>
+                                        @if (!empty($national_branch))
+                                            @foreach ($national_branch as $key => $nbranch)
+                                                <option
+                                                    value="{{ !empty($nbranch->branch_name) ? $nbranch->branch_name : '' }}">
+                                                    {{ !empty($nbranch->branch_name) ? $nbranch->branch_name : '' }}
+                                                </option>
                                             @endforeach
                                         @endif
                                     </select>
@@ -116,7 +120,8 @@
                                 <div class="form-group">
                                     <label>Appointment(Date & Time)</label>
                                     <div class="icon"><i class="fa fa-clock-o"></i></div>
-                                    <input type="datetime" name="appointmentdate" placeholder="Appointment(Date & Time)">
+                                    <input type="datetime" name="appointmentdate"
+                                        placeholder="Appointment(Date & Time)">
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-12">

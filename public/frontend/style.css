@@ -73,8 +73,8 @@
   border: 1px solid transparent;
 }
 .topbar-right .button .homes-btn:hover {
-  background: #ff343f;
-  border-color: #ff343f;
+  background: #F17D2A;
+  border-color: #031c31;
   color: #fff;
 }
 /* Social Icons */
@@ -1881,7 +1881,7 @@ p.has-large-font-size {
 }
 .footer .footer-top {
   padding: 30px 0 0;
-  background: #2D325A
+  background: #2d325a;
 }
 .footer .single-widget {
   margin-top: 0px;
@@ -2773,6 +2773,7 @@ p.has-large-font-size {
   color: #fff;
   padding: 10px 30px;
 }
+
 .single-feature .button {
   margin-top: 15px;
 }
@@ -6177,7 +6178,7 @@ Quiz CSS Start By Bikash Bhandari
   border-top: 1px solid #fff;
 }
 .appointment_head {
-  background-color: #4fb3dd;
+  background-color: #031c31;
   letter-spacing: 0.025em;
   padding: 5px 30px;
   margin-top: 15px;
@@ -6188,7 +6189,7 @@ Quiz CSS Start By Bikash Bhandari
   letter-spacing: 0.025em;
 }
 .appointment_head h6 span {
-  color: #000;
+  color: #ff7426;
   display: inline-block;
   position: relative;
   min-width: 165px;

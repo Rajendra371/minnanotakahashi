@@ -74,7 +74,7 @@
                         <i class="bi bi-geo-alt"></i> <span class="d-none d-sm-inline">Pachau Marg, Kathmandu 44600</span><span class="d-inline d-sm-none">Kathmandu</span>
                     </span> &nbsp;
                     <span class="mb-2 mb-md-0">
-                        <i class="bi bi-telephone"></i> +977-1-4975530
+                        <i class="bi bi-telephone"></i> +977-1-4975530,  9743900536
                     </span>
                 </div>
             </div>
