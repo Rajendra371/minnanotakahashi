@@ -5013,7 +5013,7 @@ p.has-large-font-size {
 }
 .img-feature .experience:hover .small-icon {
   opacity: 1;
-  visibility: ;
+  visibility: visible;
   color: #7aaedd;
 }
 

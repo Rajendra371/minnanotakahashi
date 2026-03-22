@@ -675,26 +675,77 @@
     @endif
     @if (count($advertisement) > 0)
         <div id="myModal2" class="modal fade main-modal" role="dialog">
-
             <div class="modal-dialog modal-lg">
-
-                <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
-                        <span>{{ !empty($advertisement->first()->title) ? $advertisement->first()->title : '' }} </span>
-                        <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"></i> Skip
-                            This</button>
+                        <button type="button" id="adv-skip-btn" class="close" onclick="advSkip()">
+                            <i class="fa fa-times"></i> Skip This
+                        </button>
                     </div>
-                    <div class="modal-body">
-                        <figure>
-                            <img src="{{ URL::asset('uploads/advertisement/' . $advertisement->first()->adv_image) }}"
-                                alt="Image" class="img-responsive" />
-                        </figure>
+                    <div class="modal-body" style="padding:0;">
+                        <div id="adv-slider">
+                            @foreach ($advertisement as $index => $adv)
+                                <div class="adv-slide" style="display:{{ $index === 0 ? 'block' : 'none' }};">
+                                    <img src="{{ URL::asset('uploads/advertisement/' . $adv->adv_image) }}"
+                                        alt="{{ !empty($adv->title) ? $adv->title : 'Advertisement' }}"
+                                        style="width:100%; height:auto; display:block;" />
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
+        <script>
+            var advIndex = 0;
+            var advTotal = {{ count($advertisement) }};
+            var advTimer;
+
+            function advShow() {
+                var slides = document.querySelectorAll('.adv-slide');
+                slides.forEach(function(s) { s.style.display = 'none'; });
+                slides[advIndex].style.display = 'block';
+            }
+
+            function advSkip() {
+                clearInterval(advTimer);
+                advIndex++;
+                if (advIndex >= advTotal) {
+                    // last ad skipped — close modal
+                    advIndex = 0;
+                    $('#myModal2').modal('hide');
+                } else {
+                    advShow();
+                    // resume auto-advance from current position
+                    advTimer = setInterval(function() {
+                        advIndex++;
+                        if (advIndex >= advTotal) {
+                            advIndex = 0;
+                            $('#myModal2').modal('hide');
+                        } else {
+                            advShow();
+                        }
+                    }, 4000);
+                }
+            }
+
+            $('#myModal2').on('shown.bs.modal', function () {
+                advIndex = 0;
+                advShow();
+                clearInterval(advTimer);
+                advTimer = setInterval(function() {
+                    advIndex++;
+                    if (advIndex >= advTotal) {
+                        advIndex = 0;
+                        $('#myModal2').modal('hide');
+                    } else {
+                        advShow();
+                    }
+                }, 4000);
+            }).on('hidden.bs.modal', function () {
+                clearInterval(advTimer);
+                advIndex = 0;
+            });
+        </script>
     @endif
 @endsection
