@@ -41,30 +41,28 @@
 		<div class="row">
 			@foreach ($destination as $tile)
 			<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 u_list">
-				<div class="single-feature country" style="height: 300px; display: flex; flex-direction: column; border: 1px solid #e0e0e0; border-radius: 10px; overflow: hidden; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-					@if ($tile->icon)
-						<div class="icon-head" style="flex: 1; display: flex; align-items: center; justify-content: center;"><i class="{{ $tile->icon }}"></i></div>
-					@elseif($tile->image)
-						<div class="country-img" style="height: 200px; overflow: hidden;">
-							<a href="{{route('country-details',"$tile->slug-$tile->id")}}">
+				<a href="{{route('country-details',"$tile->slug-$tile->id")}}" style="text-decoration: none; color: inherit; display: block;">
+					<div class="single-feature country" style="height: 300px; display: flex; flex-direction: column; border: 1px solid #e0e0e0; border-radius: 10px; overflow: hidden; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s ease, box-shadow 0.2s ease; cursor: pointer;" 
+						 onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.15)'" 
+						 onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'">
+						@if ($tile->icon)
+							<div class="icon-head" style="flex: 1; display: flex; align-items: center; justify-content: center;"><i class="{{ $tile->icon }}"></i></div>
+						@elseif($tile->image)
+							<div class="country-img" style="height: 200px; overflow: hidden;">
 								<figure style="margin: 0; height: 100%;"> 
 									<img src="{{ asset("uploads/study_destinations/$tile->image") }}" 
-										 style="width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.3s ease;" 
-										 onmouseover="this.style.transform='scale(1.05)'" 
-										 onmouseout="this.style.transform='scale(1)'" />
+										 style="width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.3s ease;" />
 								</figure>
-							</a>
-						</div>
-					@endif
+							</div>
+						@endif
 
-					<div class="country-content" style="height: 100px; display: flex; align-items: center; justify-content: center; padding: 15px; text-align: center;">
-						<h4 style="margin: 0; font-size: 16px; line-height: 1.3; font-weight: 600; color: #333; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">
-							<a href="{{route('country-details',"$tile->slug-$tile->id")}}" style="text-decoration: none; color: inherit; hover: color: #007bff;">
+						<div class="country-content" style="height: 100px; display: flex; align-items: center; justify-content: center; padding: 15px; text-align: center;">
+							<h4 style="margin: 0; font-size: 16px; line-height: 1.3; font-weight: 600; color: #333; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">
 								{{ $tile->title }}
-							</a>
-						</h4>
+							</h4>
+						</div>
 					</div>
-				</div>
+				</a>
 			</div>
 			@endforeach
 		</div>
