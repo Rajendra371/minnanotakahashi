@@ -34,6 +34,26 @@ function datetime($time = false)
   }
   return date('Y-m-d H:i:s');
 }
+if (!function_exists('canonical_url')) {
+  function canonical_url($path = null)
+  {
+      $baseUrl = rtrim(config('app.url'), '/');
+      
+      if ($path !== null) {
+          return $baseUrl . '/' . ltrim($path, '/');
+      }
+      
+      // Current path without query parameters
+      $currentPath = request()->getPathInfo(); // Returns '/' for homepage, '/subpage' for others
+      
+      // Ensure homepage has no trailing slash in final URL
+      if ($currentPath === '/') {
+          return $baseUrl;
+      }
+      
+      return $baseUrl . $currentPath;
+  }
+}
 
 // function get_site_settings_info()
 // {

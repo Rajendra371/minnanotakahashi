@@ -18,6 +18,8 @@
 <title>
   {{!empty($page_title)?$page_title:''}} 
 </title>
+<!-- Canonical Tag -->
+<link rel="canonical" href="{{ $canonical_url ?? canonical_url() }}" />
 <?php if(!empty($og_title)):?>  
 <meta property="og:title" content="<?php echo $og_title; ?>" />
 <?php endif; ?>
